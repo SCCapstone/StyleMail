@@ -9,6 +9,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Garrett's Change.
+          Edit <code>This is Kevin </code> and save to reload. Alec's change. Olivia's change.
         </p>
         <a
           className="App-link"
