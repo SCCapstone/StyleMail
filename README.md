@@ -74,8 +74,8 @@ Explain how to run the automated tests.
 
 # Authors
 
-Kevin Hagan: kmhagan@email.sc.edu
-Olivia Monty: omonty@email.sc.edu
-Sierra Stewart: sierrais@email.sc.edu
-AJ Farmer: jaf10@email.sc.edu
-Garrett Erven: gerven@email.sc.edu
+Kevin Hagan: kmhagan@email.sc.edu  
+Olivia Monty: omonty@email.sc.edu  
+Sierra Stewart: sierrais@email.sc.edu  
+AJ Farmer: jaf10@email.sc.edu  
+Garrett Erven: gerven@email.sc.edu  
