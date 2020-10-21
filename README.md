@@ -6,6 +6,12 @@ and adjust a few settings, then click a button to copy the template into your em
 Whether you're looking to give a fun vibe for digital party invitations or a professional vibe for a business memo, 
 spice up your emails with StyleMail!
 
+Design Milestone: https://github.com/SCCapstone/StyleMail/wiki/Design-Milestone
+Requirements Milestone: https://github.com/SCCapstone/StyleMail/wiki/Requirements-Milestone
+Architecture Milestone: https://github.com/SCCapstone/StyleMail/wiki/Architecture-Milestone
+
+Will be using the HTML/CSS Style Guide: https://google.github.io/styleguide/htmlcssguide.html
+
 Your audience for the Readme.md are other developers who are joining your team.
 Specifically, the file should contain detailed instructions that any developer
 can follow to install, compile, run, and test your project. These are not only
