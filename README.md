@@ -28,6 +28,7 @@ In order to build this project you first have to install:
 
 * [Node.js](https://nodejs.org/en/)
 * [npm](https://www.npmjs.com/)
+* A web browser such as Firefox, Chrome, or Edge
 
 If possible, list the actual commands you used to install these, so the reader
 can just cut-n-paste the commands and get everything setup.
