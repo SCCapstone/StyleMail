@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Welcome to StyleMail.
+          Garrett's Change.
         </p>
         <a
           className="App-link"
