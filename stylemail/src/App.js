@@ -11,7 +11,6 @@ function App() {
           Garrett's Change.
           Edit <code>This is Kevin </code> and save to reload. Alec's change. Olivia's change.
           Kevin's Change !!!
-          Sierra's Change is done!
         </p>
         <a
           className="App-link"
