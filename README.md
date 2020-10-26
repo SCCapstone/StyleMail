@@ -6,6 +6,15 @@ and adjust a few settings, then click a button to copy the template into your em
 Whether you're looking to give a fun vibe for digital party invitations or a professional vibe for a business memo, 
 spice up your emails with StyleMail!
 
+Hagan Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Kevin-Hagan-Personal-Log  
+Erven Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Garrett-Erven-Personal-Log  
+Monty Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Monty-Personal-Log  
+Stewart Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Sierra-Stewart-Personal-Log  
+Farmer Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Farmer-Personal-Log  
+Persona 1: https://github.com/SCCapstone/StyleMail/wiki/Persona-1:-Patti-Arnold  
+Persona 2: https://github.com/SCCapstone/StyleMail/wiki/Persona-2:-Bethany-Powers  
+Persona 3: https://github.com/SCCapstone/StyleMail/wiki/Persona-3:-Clark-Hess  
+User Stories: https://github.com/SCCapstone/StyleMail/wiki/User-Stories  
 Design Milestone: https://github.com/SCCapstone/StyleMail/wiki/Design-Milestone  
 Requirements Milestone: https://github.com/SCCapstone/StyleMail/wiki/Requirements-Milestone  
 Architecture Milestone: https://github.com/SCCapstone/StyleMail/wiki/Architecture-Milestone  
