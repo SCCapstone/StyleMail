@@ -41,12 +41,14 @@ You will also need:
 ## Setup
 
 After cloning the repo:  
-
+There are no setup steps that must be taken before running the web application for the first time after cloning the repo.  
 
 ## Running
 
-To run the app from the cloned repo:  
-
+To run the app from a cloned repo:  
+1.) cd into the stylemail folder that is in the root directory  
+2.) use the 'npm start' command to run the React app in development ment  
+3.) Open http://localhost:3000 to view the app in your internet browser  
 
 # Deployment
 
