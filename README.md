@@ -39,7 +39,7 @@ Currently, there are no setup steps that must be taken before running the web ap
 
 To run the app from a cloned repo:  
 1.) cd into the stylemail folder that is in the root directory  
-2.) use the 'npm start' command to run the React app in development ment  
+2.) use the 'npm start' command to run the React app in development mode  
 3.) Open http://localhost:3000 to view the app in your internet browser  
 
 # Deployment
@@ -49,20 +49,19 @@ Internet. These should be detailed enough so anyone can re-deploy if needed.
 
 # Testing
 
-In 492 you will write automated tests. When you do you will need to add a 
-section that explains how to run them.
+To test the app:  
+1.) cd into the stylemail folder that is in the root directory  
+2.) use the 'npm test' command to launch the test runner in the interactive watch mode  
 
-The unit tests are in `/test/unit`.
-
-The behavioral tests are in `/test/casper/`.
+(More to be added to this section in 492)  
 
 ## Testing Technology
 
-In some cases you need to install test runners, etc. Explain how.
+(More to be added to this section in 492)  
 
 ## Running Tests
 
-Explain how to run the automated tests.
+(More to be added to this section in 492)  
 
 # Authors
 
