@@ -1,11 +1,8 @@
 # StyleMail
 
-Tired of dull, lifeless emails with boring text and attachments? StyleMail is a web app that allows you
-to pick from and customize stylized HTML and CSS email templates. Simply pick a style, fill out your text 
-and adjust a few settings, then click a button to copy the template into your email client to continue editing.
-Whether you're looking to give a fun vibe for digital party invitations or a professional vibe for a business memo, 
-spice up your emails with StyleMail!
+Tired of dull, lifeless emails with boring text and attachments? StyleMail is a web app that allows you to pick from and customize stylized HTML and CSS email templates. Simply pick a style, fill out your text and adjust a few settings, then click a button to copy the template into your email client to continue editing. Whether you're looking to give a fun vibe for digital party invitations or a professional vibe for a business memo, spice up your emails with StyleMail!  
 
+Important Links:  
 Persona 1: https://github.com/SCCapstone/StyleMail/wiki/Persona-1:-Patti-Arnold  
 Persona 2: https://github.com/SCCapstone/StyleMail/wiki/Persona-2:-Bethany-Powers  
 Persona 3: https://github.com/SCCapstone/StyleMail/wiki/Persona-3:-Clark-Hess  
@@ -19,12 +16,7 @@ Google HTML/CSS Style Guide: https://google.github.io/styleguide/htmlcssguide.ht
 Google JavaScript Style Guide: https://google.github.io/styleguide/jsguide.html  
 Prettify - Code Formatter VS Code Extension: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode  
 
-Your audience for the Readme.md are other developers who are joining your team.
-Specifically, the file should contain detailed instructions that any developer
-can follow to install, compile, run, and test your project. These are not only
-useful to new developers, but also to you when you have to re-install everything
-because your old laptop crashed. Also, the teachers of this class will be
-following your instructions.
+This readme.md file contains detailed instructions to install, compile, run, and test the StyleMail web application.  
 
 ## External Requirements
 
@@ -41,7 +33,7 @@ You will also need:
 ## Setup
 
 After cloning the repo:  
-There are no setup steps that must be taken before running the web application for the first time after cloning the repo.  
+Currently, there are no setup steps that must be taken before running the web application for the first time after cloning the repo.  
 
 ## Running
 
@@ -53,12 +45,7 @@ To run the app from a cloned repo:
 # Deployment
 
 Webapps need a deployment section that explains how to get it deployed on the 
-Internet. These should be detailed enough so anyone can re-deploy if needed
-. Note that you **do not put passwords in git**. 
-
-Mobile apps will also sometimes need some instructions on how to build a
-"release" version, maybe how to sign it, and how to run that binary in an
-emulator or in a physical phone.
+Internet. These should be detailed enough so anyone can re-deploy if needed.  
 
 # Testing
 
