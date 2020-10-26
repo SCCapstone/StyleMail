@@ -6,11 +6,6 @@ and adjust a few settings, then click a button to copy the template into your em
 Whether you're looking to give a fun vibe for digital party invitations or a professional vibe for a business memo, 
 spice up your emails with StyleMail!
 
-Hagan Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Kevin-Hagan-Personal-Log  
-Erven Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Garrett-Erven-Personal-Log  
-Monty Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Monty-Personal-Log  
-Stewart Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Sierra-Stewart-Personal-Log  
-Farmer Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Farmer-Personal-Log  
 Persona 1: https://github.com/SCCapstone/StyleMail/wiki/Persona-1:-Patti-Arnold  
 Persona 2: https://github.com/SCCapstone/StyleMail/wiki/Persona-2:-Bethany-Powers  
 Persona 3: https://github.com/SCCapstone/StyleMail/wiki/Persona-3:-Clark-Hess  
@@ -19,7 +14,10 @@ Design Milestone: https://github.com/SCCapstone/StyleMail/wiki/Design-Milestone
 Requirements Milestone: https://github.com/SCCapstone/StyleMail/wiki/Requirements-Milestone  
 Architecture Milestone: https://github.com/SCCapstone/StyleMail/wiki/Architecture-Milestone  
 
-Will be using the HTML/CSS Style Guide: https://google.github.io/styleguide/htmlcssguide.html  
+We will be using the following style guidelines and tools for our project:  
+Google HTML/CSS Style Guide: https://google.github.io/styleguide/htmlcssguide.html  
+Google JavaScript Style Guide: https://google.github.io/styleguide/jsguide.html  
+Prettify - Code Formatter VS Code Extension: https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode  
 
 Your audience for the Readme.md are other developers who are joining your team.
 Specifically, the file should contain detailed instructions that any developer
@@ -30,30 +28,25 @@ following your instructions.
 
 ## External Requirements
 
-List all the stuff the reader will need to install in order to get you app to 
-run in their laptop. For example:
-
 In order to build this project you first have to install:
 
-* [Node.js](https://nodejs.org/en/)
-* [npm](https://www.npmjs.com/)
-* A web browser such as Firefox, Chrome, or Edge
+* [Node.js](https://nodejs.org/en/)  
+* [npm](https://www.npmjs.com/)  
 
-If possible, list the actual commands you used to install these, so the reader
-can just cut-n-paste the commands and get everything setup.
-
-You only need to add instructions for the OS you are using.
+You will also need:  
+* A web browser such as Firefox, Chrome, or Edge (udated to the latest version)  
+* A stable internet connection  
+* The Microsoft Windows 10 Operating System was used for development of this application, but it is compatible with any OS as long as the OS supports a web browser.  
 
 ## Setup
 
-Here you list all the one-time things the developer needs to do after cloning
-your repo. Sometimes there is no need for this section, but some apps require
-some first-time configuration from the developer, for example: setting up a
-database for running your webapp locally.
+After cloning the repo:  
+
 
 ## Running
 
-Specify the commands for a developer to run the app from the cloned repo.
+To run the app from the cloned repo:  
+
 
 # Deployment
 
@@ -85,7 +78,12 @@ Explain how to run the automated tests.
 # Authors
 
 Kevin Hagan: kmhagan@email.sc.edu  
+Hagan Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Kevin-Hagan-Personal-Log  
 Olivia Monty: omonty@email.sc.edu  
+Monty Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Monty-Personal-Log  
 Sierra Stewart: sierrais@email.sc.edu  
+Stewart Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Sierra-Stewart-Personal-Log  
 AJ Farmer: jaf10@email.sc.edu  
+Farmer Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Farmer-Personal-Log  
 Garrett Erven: gerven@email.sc.edu  
+Erven Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Garrett-Erven-Personal-Log  
