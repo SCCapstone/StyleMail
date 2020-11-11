@@ -46,7 +46,8 @@ To run the app from a cloned repo:
 
 # Deployment
 
-The stand alone web pages are deployed using Github Pages. The home page can be found at https://sccapstone.github.io/StyleMail/  
+The stand alone web pages are deployed using Github Pages.  
+Home Page: https://sccapstone.github.io/StyleMail/  
 Contact Page: https://sccapstone.github.io/StyleMail/contact  
 Help Page: https://sccapstone.github.io/StyleMail/help  
 Privacy Policy Page: https://sccapstone.github.io/StyleMail/privacy  
