@@ -54,8 +54,6 @@ Privacy Policy Page: https://sccapstone.github.io/StyleMail/privacy
 Terms of Use Page: https://sccapstone.github.io/StyleMail/terms  
 The SPA web application is deployed on Firebase Hosting and can be found at https://stylemail-edf5f.web.app/
 
-(More to be added to this section while working on the Proof of Concept Milestone)  
-
 # Testing
 
 To test the app:  
