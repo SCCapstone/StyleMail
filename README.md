@@ -52,6 +52,8 @@ Contact Page: https://sccapstone.github.io/StyleMail/contact
 Help Page: https://sccapstone.github.io/StyleMail/help  
 Privacy Policy Page: https://sccapstone.github.io/StyleMail/privacy  
 Terms of Use Page: https://sccapstone.github.io/StyleMail/terms  
+(Garrett Note to Self: Get custom domain to work with Github Pages)  
+
 The SPA web application is deployed on Firebase Hosting and can be found at https://stylemail-edf5f.web.app/
 
 # Testing
