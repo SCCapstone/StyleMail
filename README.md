@@ -47,11 +47,11 @@ To run the app from a cloned repo:
 # Deployment
 
 The stand alone web pages are deployed using Github Pages.  
-Home Page: https://sccapstone.github.io/StyleMail/  
-Contact Page: https://sccapstone.github.io/StyleMail/contact  
-Help Page: https://sccapstone.github.io/StyleMail/help  
-Privacy Policy Page: https://sccapstone.github.io/StyleMail/privacy  
-Terms of Use Page: https://sccapstone.github.io/StyleMail/terms  
+Home Page: https://stylemail.app 
+Contact Page: https://stylemail.app/contact  
+Help Page: https://stylemail.app/help  
+Privacy Policy Page: https://stylemail.app/privacy  
+Terms of Use Page: https://stylemail.app/terms  
 (Garrett Note to Self: Get custom domain to work with Github Pages)  
 
 The SPA web application is deployed on Firebase Hosting and can be found at https://stylemail-edf5f.web.app/
