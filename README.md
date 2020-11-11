@@ -47,7 +47,7 @@ To run the app from a cloned repo:
 # Deployment
 
 The stand alone web pages are deployed using Github Pages.  
-Home Page: https://stylemail.app 
+Home Page: https://stylemail.app  
 Contact Page: https://stylemail.app/contact  
 Help Page: https://stylemail.app/help  
 Privacy Policy Page: https://stylemail.app/privacy  
