@@ -46,7 +46,8 @@ To run the app from a cloned repo:
 
 # Deployment
 
-The team plans to deploy the web application on Google Cloud Platform.  
+The stand alone web pages are deployed using Github Pages. The home page can be found at https://sccapstone.github.io/StyleMail/  
+The SPA web application is deployed on Google Cloud Platform and can be found at https://stylemail.app/  
 
 (More to be added to this section while working on the Proof of Concept Milestone)  
 
