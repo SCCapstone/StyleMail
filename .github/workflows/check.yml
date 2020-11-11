@@ -11,8 +11,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
+      working-directory: ./StyleMail/stylemail
         with:
           node-version: 12
+      working-directory: ./StyleMail/stylemail
       - run: npm ci
       - run: npm test
       - run: npm run build
