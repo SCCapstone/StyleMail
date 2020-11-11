@@ -47,6 +47,10 @@ To run the app from a cloned repo:
 # Deployment
 
 The stand alone web pages are deployed using Github Pages. The home page can be found at https://sccapstone.github.io/StyleMail/  
+Contact Page: https://sccapstone.github.io/StyleMail/contact  
+Help Page: https://sccapstone.github.io/StyleMail/help  
+Privacy Policy Page: https://sccapstone.github.io/StyleMail/privacy  
+Terms of Use Page: https://sccapstone.github.io/StyleMail/terms  
 The SPA web application is deployed on Google Cloud Platform and can be found at https://stylemail-edf5f.web.app/
 
 (More to be added to this section while working on the Proof of Concept Milestone)  
