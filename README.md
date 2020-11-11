@@ -52,7 +52,6 @@ Contact Page: https://stylemail.app/contact
 Help Page: https://stylemail.app/help  
 Privacy Policy Page: https://stylemail.app/privacy  
 Terms of Use Page: https://stylemail.app/terms  
-(Garrett Note to Self: Get custom domain to work with Github Pages)  
 
 The SPA web application is deployed on Firebase Hosting and can be found at https://stylemail-edf5f.web.app/
 
