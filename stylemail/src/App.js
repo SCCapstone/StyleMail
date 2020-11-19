@@ -39,6 +39,48 @@ function App() {
   );
 }
 
+// Get elements
+  // Grab email entry element
+  // Grab password entry element
+  // Grab login button element
+  // Grab signup button element
+  // Grab logout button element
+
+/* Add login (regular email & pass) event
+btnLogin.addEventListener('click', e => {
+  const email = // email txt
+  const pass = // pass txt
+  const promise = auth.signInWithEmailAndPassword(//email txt, pass txt);
+  promise.catch(e => console.log(e.message));
+});
+*/
+
+/* Add signup event
+btnSignUp.addEventListener('click', e => {
+  const email = // email txt
+  const pass = // pass txt
+  const promise = auth.createUserWithEmailAndPassword(//email txt, pass txt);
+  promise.catch(e => console.log(e.message));
+});
+*/
+
+/* Add logout event
+btnLogout.addEventListener('click', e => {
+  firebase.auth().signout();
+});
+*/
+
+// Add realtime listener
+firebase.auth().onAuthStateChanged(firebaseUser => {
+  if (firebaseUser) {
+    console.log(firebaseUser); // show popup to user
+  }
+  else {
+    console.log('not logged in') // show popup to user
+  }
+});
+
+
 function SignIn() {
 
   const signInWithGoogle = () => {
