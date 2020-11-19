@@ -57,6 +57,7 @@ btnLogin.addEventListener('click', e => {
 
 /* Add signup event
 btnSignUp.addEventListener('click', e => {
+  //TODO check if email is valid
   const email = // email txt
   const pass = // pass txt
   const promise = auth.createUserWithEmailAndPassword(//email txt, pass txt);
