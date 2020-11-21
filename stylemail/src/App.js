@@ -15,7 +15,6 @@ firebase.initializeApp({
   messagingSenderId: "506653836700",
   appId: "1:506653836700:web:b0a2808623db1a3fc0b459",
   measurementId: "G-F80D8NFME2"
-
 })
 
 const auth = firebase.auth();
@@ -39,37 +38,40 @@ function App() {
   );
 }
 
-// Get elements
-  // Grab email entry element
-  // Grab password entry element
-  // Grab login button element
-  // Grab signup button element
-  // Grab logout button element
+/// Get elements from html
 
-/* Add login (regular email & pass) event
+// Get email entry element
+const emailTxt = document.getElementById(/* element id */);
+// Get password entry element
+const passTxt = document.getElementById(/* element id */);
+// Get login button element
+const btnLogin = document.getElementById(/* element id */);
+// Get signup button element
+const btnSignUp = document.getElementById(/* element id */);
+// Get logout button element
+const btnLogout = document.getElementById(/* element id */);
+
+// Add login (regular email & pass) event
 btnLogin.addEventListener('click', e => {
-  const email = // email txt
-  const pass = // pass txt
-  const promise = auth.signInWithEmailAndPassword(//email txt, pass txt);
-  promise.catch(e => console.log(e.message));
+  const email = emailTxt.value;
+  const pass = passTxt.value;
+  const promise = auth.signInWithEmailAndPassword(email, pass);
+  promise.catch(e => console.log(e.message)); // Show error message when failed
 });
-*/
 
-/* Add signup event
+// Add signup event
 btnSignUp.addEventListener('click', e => {
   //TODO check if email is valid
-  const email = // email txt
-  const pass = // pass txt
-  const promise = auth.createUserWithEmailAndPassword(//email txt, pass txt);
-  promise.catch(e => console.log(e.message));
+  const email = emailTxt.value;
+  const pass = passTxt.value;
+  const promise = auth.createUserWithEmailAndPassword(email, pass);
+  promise.catch(e => console.log(e.message)); // Show error message when failed
 });
-*/
 
-/* Add logout event
+// Add logout event
 btnLogout.addEventListener('click', e => {
   firebase.auth().signout();
 });
-*/
 
 // Add realtime listener
 firebase.auth().onAuthStateChanged(firebaseUser => {
