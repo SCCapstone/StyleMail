@@ -30,15 +30,15 @@ body, html {
 
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
-  <div class="w3-bar w3-white w3-card" id="myNavbar">
-    <a href="#home" class="w3-bar-item w3-button w3-wide">LOGO</a>
+  <div class="logo-pic">
+    <a href="index.html" class="w3-bar-item w3-button w3-wide">
+      <img class ="logo" src="StyleMail Logo.jpg" height="100" width="125">
+    </a>
     <!-- Right-sided navbar links -->
     <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-      <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
-      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> WORK</a>
-      <a href="#pricing" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> PRICING</a>
-      <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+      <a href="privacy.html" class="w3-bar-item w3-button">Privacy </a>
+      <a href="terms.html" class="w3-bar-item w3-button"> Terms </a>
+      <a href="contact.html" class="w3-bar-item w3-button"> Contact </a>
     </div>
     <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -51,29 +51,23 @@ body, html {
 <!-- Sidebar on small screens when clicking the menu icon -->
 <nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
   <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
-  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
-  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
-  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
-  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+  <a href="terms.html" onclick="w3_close()" class="w3-bar-item w3-button">Terms</a>
+  <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
 </nav>
 
 <!-- Contact Section -->
 <div class="w3-container w3-light-grey" style="padding:128px 16px" id="contact">
-  <h3 class="w3-center">CONTACT</h3>
-  <p class="w3-center w3-large">Lets get in touch. Send us a message:</p>
+  <h3 class="w3-center">Spill the Beans... </h3>
+  <p class="w3-center w3-large">We want to hear from you! How can we serve you better? </p>
   <div style="margin-top:48px">
-    <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> Chicago, US</p>
-    <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> Phone: +00 151515</p>
-    <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"> </i> Email: mail@mail.com</p>
-    <br>
+    <h4> Contact Form </h4>
     <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-border " type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-border" type="text" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-border" type="text" placeholder="Subject" required name="Subject"></p>
       <p><input class="w3-input w3-border" type="text" placeholder="Message" required name="Message"></p>
       <p>
-        <button class="w3-button w3-black" type="submit">
+        <button class="w3-button w3-white" type="submit">
           <i class="fa fa-paper-plane"></i> SEND MESSAGE
         </button>
       </p>
