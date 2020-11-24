@@ -53,7 +53,7 @@ Help Page: https://stylemail.app/help
 Privacy Policy Page: https://stylemail.app/privacy  
 Terms of Use Page: https://stylemail.app/terms  
 
-The SPA web application is deployed on Firebase Hosting and can be found at https://stylemail-edf5f.web.app/ (soon will be https://run.stylemail.app)  
+The SPA web application is deployed on Firebase Hosting and can be found at https://run.stylemail.app (this is the entry point of the application)  
 
 # Testing
 
