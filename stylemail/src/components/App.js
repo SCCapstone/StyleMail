@@ -1,24 +1,16 @@
 //import React, { useRef, useState } from 'react';
-import './App.css';
 
-import firebase from 'firebase/app';
-import 'firebase/auth';
-
-import { useAuthState } from 'react-firebase-hooks/auth';
-
-firebase.initializeApp({
-  apiKey: "AIzaSyCLs1a1LcEeXEiOAomAG3EodV5Js3LOnAY",
-  authDomain: "stylemail-edf5f.firebaseapp.com",
-  databaseURL: "https://stylemail-edf5f.firebaseio.com",
-  projectId: "stylemail-edf5f",
-  storageBucket: "stylemail-edf5f.appspot.com",
-  messagingSenderId: "506653836700",
-  appId: "1:506653836700:web:b0a2808623db1a3fc0b459",
-  measurementId: "G-F80D8NFME2"
-})
-
-const auth = firebase.auth();
-
+import React from "react"
+import Signup from "./Signup"
+import { Container } from "react-bootstrap"
+import { AuthProvider } from "../contexts/AuthContext"
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
+import Dashboard from "./Dashboard"
+import Login from "./Login"
+import PrivateRoute from "./PrivateRoute"
+import ForgotPassword from "./ForgotPassword"
+//import UpdateProfile from "./UpdateProfile"
+/*
 function App() {
 
   const [user] = useAuthState(auth);
@@ -37,19 +29,36 @@ function App() {
     </div>
   );
 }
+<PrivateRoute path="/update-profile" component={UpdateProfile} />
+*/
 
-/// Get elements from html
-
-// Get email entry element
-const emailTxt = document.getElementById(/* element id */);
-// Get password entry element
-const passTxt = document.getElementById(/* element id */);
-// Get login button element
-const btnLogin = document.getElementById(/* element id */);
-// Get signup button element
-const btnSignUp = document.getElementById(/* element id */);
-// Get logout button element
-const btnLogout = document.getElementById(/* element id */);
+function App() {
+  return (
+    <Container
+      className="d-flex align-items-center justify-content-center"
+      style={{ minHeight: "100vh" }}
+    >
+      <div className="w-100" style={{ maxWidth: "400px" }}>
+        <Router>
+          <AuthProvider>
+            <Switch>
+              <PrivateRoute exact path="/" component={Dashboard} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/login" component={Login} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+            </Switch>
+          </AuthProvider>
+        </Router>
+      </div>
+    </Container>
+  )
+}
+/*
+const emailTxt = document.getElementById();
+const passTxt = document.getElementById();
+const btnLogin = document.getElementById();
+const btnSignUp = document.getElementById();
+const btnLogout = document.getElementById();
 
 // Add login (regular email & pass) event
 btnLogin.addEventListener('click', e => {
@@ -83,7 +92,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
   }
 });
 
-
+/*
 function SignIn() {
 
   const signInWithGoogle = () => {
@@ -130,5 +139,5 @@ function Test() {
     </>
   )
 }
-
+*/
 export default App;
