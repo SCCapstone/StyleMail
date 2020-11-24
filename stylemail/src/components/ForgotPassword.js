@@ -13,6 +13,7 @@ export default function ForgotPassword() {
   async function handleSubmit(e) {
     e.preventDefault()
 
+    // Sends email if successful to reset password
     try {
       setMessage("")
       setError("")

@@ -15,10 +15,12 @@ export default function Signup() {
   async function handleSubmit(e) {
     e.preventDefault()
 
+    // Will display error for non-matching passwords
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
-
+    // Try signup -- displays errors for password too short (length of 7 or more)
+    // and wrong email format
     try {
       setError("")
       setLoading(true)
@@ -64,38 +66,3 @@ export default function Signup() {
     </>
   )
 }
-
-/*
-function SignIn() {
-
-  const signInWithGoogle = () => {
-    const googleProvider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(googleProvider);
-  }
-
-  const signInWithFacebook = () => {
-    const facebookProvider = new firebase.auth.FacebookAuthProvider();
-    auth.signInWithPopup(facebookProvider);
-  }
-
-  const signInWithTwitter = () => {
-    const twitterProvider = new firebase.auth.TwitterAuthProvider();
-    auth.signInWithPopup(twitterProvider);
-  }
-
-  const signInWithGithub = () => {
-    const githubProvider = new firebase.auth.GithubAuthProvider();
-    auth.signInWithPopup(githubProvider);
-  }
-
-  return (
-    <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-      <button className="sign-in" onClick={signInWithFacebook}>Sign in with Facebook</button>
-      <button className="sign-in" onClick={signInWithTwitter}>Sign in with Twitter</button>
-      <button className="sign-in" onClick={signInWithGithub}>Sign in with GitHub</button>
-      <p>Please login.</p>
-    </>
-  )
-}
-*/

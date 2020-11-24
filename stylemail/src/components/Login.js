@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-import "../firebase.js"
-import app from "../firebase.js"
 
 export default function Login() {
   const emailRef = useRef()
@@ -16,6 +14,7 @@ export default function Login() {
   async function handleSubmit(e) {
     e.preventDefault()
 
+    // Try login -- will display errors for failed login, wrong password
     try {
       setError("")
       setLoading(true)
@@ -27,60 +26,7 @@ export default function Login() {
 
     setLoading(false)
   }
-/*
-  function SignIn() {
 
-    const signInWithGoogle = () => {
-      const googleProvider = new app.auth.GoogleAuthProvider();
-      app.signInWithPopup(googleProvider);
-    }
-  
-    const signInWithFacebook = () => {
-      const facebookProvider = new app.auth.FacebookAuthProvider();
-      app.signInWithPopup(facebookProvider);
-    }
-  
-    const signInWithTwitter = () => {
-      const twitterProvider = new app.auth.TwitterAuthProvider();
-      app.signInWithPopup(twitterProvider);
-    }
-  
-    const signInWithGithub = () => {
-      const githubProvider = new app.auth.GithubAuthProvider();
-      app.signInWithPopup(githubProvider);
-    }
-  
-    return (
-      <>
-        <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-        <button className="sign-in" onClick={signInWithFacebook}>Sign in with Facebook</button>
-        <button className="sign-in" onClick={signInWithTwitter}>Sign in with Twitter</button>
-        <button className="sign-in" onClick={signInWithGithub}>Sign in with GitHub</button>
-        <p>Please login.</p>
-      </>
-    )
-  }
-
-const signInWithGoogle = () => {
-  const googleProvider = new app.auth.GoogleAuthProvider();
-  app.auth.signInWithPopup(googleProvider);
-}
-
-const signInWithFacebook = () => {
-  const facebookProvider = new app.auth.FacebookAuthProvider();
-  app.signInWithPopup(facebookProvider);
-}
-
-const signInWithTwitter = () => {
-  const twitterProvider = new app.auth.TwitterAuthProvider();
-  app.signInWithPopup(twitterProvider);
-}
-
-const signInWithGithub = () => {
-  const githubProvider = new app.auth.GithubAuthProvider();
-  app.signInWithPopup(githubProvider);
-}
-*/
   return (
     <>
       <Card>
@@ -95,12 +41,6 @@ const signInWithGithub = () => {
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
-            </Form.Group>
-            <Button className="w-100" onClick={signInWithGoogle} type="button">Google</Button>
-            <Button className="w-100" type="button">Facebook</Button>
-            <Button className="w-100" type="button">Twitter</Button>
-            <Button className="w-100" type="button">GitHub</Button>
-            <Form.Group>
             </Form.Group>
             <Button disabled={loading} className="w-100" type="submit">
               Log In
