@@ -46,6 +46,10 @@ header {
   
   flex-basis:50%;
 }
+#sign-btns{
+  display:flex;
+  justify-content: space-evenly;
+}
 footer{
   background: #a2a2e6;
   height: 100px;
@@ -77,14 +81,18 @@ footer{
   </div>
   <div id="mid-section">
       <div id = "summary">StyleMail is the new way to send correspondence for any occasion. Choose from pre-made templates or create your own! You will be able to save, print, or email your correspondence!</div>
-        <div id="images"></div>
+        <div id="images">
+          <img src = "invitation_template.jpg" id = "transition" />
+          <img src = "email_template.png" id = "transition" />
+          <img src = "postcard_template.png" id = "transition" />
+        </div>
   </div>
   <div id="sign-btns">
     <a href="signup.html" class="w3-button w3-light-grey">Create Account</a>
     <a href="signin.html" class="w3-button w3-light-grey">Sign In</a>
   </div>
  
-
+</div>
 <!-- Footer -->
 <footer>
   <div class = "linking-btns">
@@ -94,6 +102,27 @@ footer{
 </footer>
  
 <script>
+/*
+//Image Transition
+//Code referenced from https://www.geeksforgeeks.org/image-transition-with-fading-effect-using-javascript/
+startingTransition();
+
+function startingTransition(){
+  var images = document.getElementById("transition");
+  for(var i = 0; i < images.length; i++){
+    images[i].style.opacity = 1;
+  }
+
+  var top = 1;
+  var cur = images.length -1;
+  setInterval(changeImage, 3000);
+
+  async function changeImage(){
+    var next = 1 + cur % images.length;
+    images[cur].style.zInde
+  }
+}
+
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -101,7 +130,7 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-
+*/
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
