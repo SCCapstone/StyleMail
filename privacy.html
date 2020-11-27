@@ -6,95 +6,77 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="icon" href="stylemailicon.png">
 <style>
-  *{
-    font-family: "Raleway", sans-serif;
-    color: black;
-    }
+  body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
   
-  body{
+  body, html {
     height: 100%;
     line-height: 1.8;
-    color: #382492;
-  
-  }
-  header {
-    color: #a2a2e6;
-    padding: 10px;
-  }
-  #main-content{
-    padding: 20px;
-  }
-  #mid-section{
-    display:flex;
-    justify-content:space-between;
   }
   
-  #banner{
-    justify-content: center; 
-    align-content: center;
-    display:block;
-  }
-  
-  
-  #summary{
-    
-    flex-basis:50%;
-  }
-  footer{
-    background: #a2a2e6;
-    width:100%;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .linking-btns{
-    padding: 20px;
-    height: 20px;
-  
+  /* Full height image header */
+  .bgimg-1 {
+    background-position: center;
+    background-size: cover;
+    background-image: url("/WebsiteBanner.png");
+    min-height: 100%;
   }
   
   .w3-bar .w3-button {
     padding: 16px;
   }
+
+  /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #372392;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #b14f82;
+  color: white;
+}
   </style>
   <body>
 
 <!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="logo-pic">
-    <a href="index.html" class="w3-bar-item w3-button w3-wide">
-      <img class ="logo" src="StyleMail Logo.jpg" height="100" width="125">
-    </a>
-    <!-- Right-sided navbar links -->
-    <div class="w3-right w3-hide-small">
-      <a href="privacy.html" class="w3-bar-item w3-button">Privacy </a>
-      <a href="terms.html" class="w3-bar-item w3-button"> Terms </a>
-      <a href="contact.html" class="w3-bar-item w3-button"> Contact </a>
-    </div>
-    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
-    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+
+<div class="topnav">
+  <a href="https://stylemail.app/index">Home</a>
+  <a href="https://run.stylemail.app">Login</a>
+  <a href="https://run.stylemail.app">Signup</a>
+  <a href="https://stylemail.app/help">Help</a>
+  <a href="https://stylemail.app/contact">Contact</a>
+  <a class="active" href="https://stylemail.app/privacy">Privacy Policy</a>
+  <a href="https://stylemail.app/terms">Terms of Use</a>
 </div>
 
-<!-- Sidebar on small screens when clicking the menu icon -->
-<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
-  <a href="terms.html" onclick="w3_close()" class="w3-bar-item w3-button">Terms</a>
-  <a href="contact.html" onclick="w3_close()" class="w3-bar-item w3-button">Contact</a>
-</nav>
-
 <!-- Contact Section -->
-<div class="w3-container w3-light-purple" style="padding:128px 16px" id="contact">
+<div class="w3-container w3-light-purple" style="padding:50px 16px; padding-left: 100px; padding-right: 100px;" id="contact">
   <h1 class="w3-center">Privacy Policy</h1>
   <p class="w3-center w3-large"> At StyleMail, we respect the privacy rights of our users and recognize the importance of protecting the personal information we collect about you. 
     Our Privacy Policy is designed to help you understand what information we collect and how we use and share that information. This Privacy Policy applies to our Websites and StyleMail editor. 
     It is also important to us that you know the <a href="https://stylemail.app/terms">terms of use</a>. Please make sure to read all the following information.</p>
-  <h3 class="w4-center"> Information We Collect </h3>
+  <h2 class="w4-center"> Information We Collect </h2>
 
   <p> <b> Registration, Company and Contact Information.</b> We collect information about you when you (a) register to use the Services and (b) otherwise provide contact information to us via 
     email, mail, social networks, or through our editor. This information you provide may include your email address, first name, last name, photo, preferred language, Facebook ID, phone number, company name, website 
@@ -107,7 +89,7 @@
   <p> <b>Third Party Platforms.</b> We may collect information when you interact with our advertisements and other content on third-party sites or platforms, such as social networking sites. This may include information such as «Likes», profile information 
     gathered from social networking sites or the fact that you viewed or interacted with our content. </p>
 
-  <h3 class="w4-center">How this Information is Used  </h3>
+  <h2 class="w4-center">How this Information is Used  </h2>
 
   <p> To provide, maintain and improve the StyleMail editor and our other products and services, including to operate certain features and functionality of the StyleMail
     (for example, by remembering your information so that you will not have to re-enter it during this or subsequent visits); <br/>
@@ -124,7 +106,7 @@
 
   </p>
 
-    <h3 class="w4-center"> Your Controls and Choices  </h3>
+    <h2 class="w4-center"> Your Controls and Choices  </h2>
 
 <p> <b>Opt-Outs.</b> We may provide you with the opportunity to «opt-out» of having your personal information used for certain purposes when we ask for this information. If you decide to opt-out, we may not be able to provide certain features of the StyleMail to you. <br/>
 
@@ -137,7 +119,7 @@
   <b>Changes to the Privacy Policy</b> We reserve the right to change our Privacy Policy at any time. If we make changes, we will post them and will indicate on this page the policy’s new effective date. If we make material changes to this policy, we will notify you by email or through notice on the StyleMail.
    </p>
 
-  <h3 class="w4-center">Your Consent</h3>
+  <h2 class="w4-center">Your Consent</h2>
 
   <p> <b>BY USING OUR SITE, YOU ACCEPT OUR PRIVACY POLICY.</b> <br/>
         If you have any questions about our Privacy Policy, feel free to <a href="https://stylemail.app/contact">contact us</a>.
@@ -146,10 +128,8 @@
 </div>
 
 <!-- Footer -->
-<footer class="w3-center w3-white w3-padding-100">
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the Top</a>
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Privacy Policy</a>
-  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>Terms of Use</a>
+<footer class="w3-center w3-padding-32" style="background-color: #372392">
+  <p style="color: white; font-size: 20px;">Copyright © 2020 StyleMail. All rights reserved.</p>
 </footer>
  
 <script>
