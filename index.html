@@ -47,6 +47,11 @@ header {
   
   flex-basis:50%;
 }
+
+.transition{
+  position:absolute;
+  right: 400px;
+}
 #sign-btns{
   display:flex;
   justify-content: space-evenly;
@@ -124,9 +129,9 @@ footer{
   <div id="mid-section">
       <div id = "summary">StyleMail is the new way to send correspondence for any occasion. Choose from pre-made templates or create your own! You will be able to save, print, or email your correspondence!</div>
         <div id="images">
-          <img src = "invitation_template.jpg" id = "transition" />
-          <img src = "email_template.png" id = "transition" />
-          <img src = "postcard_template.png" id = "transition" />
+          <img src = "invitation_template.jpg" class = "transition" />
+          <img src = "email_template.png" class = "transition" />
+          <img src = "postcard_template.png" class = "transition" />
         </div>
 
   </div>
@@ -143,27 +148,62 @@ footer{
 </footer>
  
 <script>
-/*
+
 //Image Transition
 //Code referenced from https://www.geeksforgeeks.org/image-transition-with-fading-effect-using-javascript/
-startingTransition();
+startImageTransition(); 
+  
+  function startImageTransition() { 
+      var images = document.getElementsByClassName("transition"); 
 
-function startingTransition(){
-  var images = document.getElementById("transition");
-  for(var i = 0; i < images.length; i++){
-    images[i].style.opacity = 1;
-  }
+      for (var i = 0; i < images.length; ++i) { 
+          images[i].style.opacity = 1; 
+      } 
 
-  var top = 1;
-  var cur = images.length -1;
-  setInterval(changeImage, 3000);
+      var top = 1; 
 
-  async function changeImage(){
-    var next = 1 + cur % images.length;
-    images[cur].style.zInde
-  }
-}
+      var cur = images.length - 1; 
 
+      setInterval(changeImage, 3000); 
+
+      async function changeImage() { 
+
+          var nextImage = (1 + cur) % images.length; 
+
+          images[cur].style.zIndex = top + 1; 
+          images[nextImage].style.zIndex = top; 
+
+          await transition(); 
+
+          images[cur].style.zIndex = top; 
+
+          images[nextImage].style.zIndex = top + 1; 
+
+          top = top + 1; 
+
+          images[cur].style.opacity = 1; 
+          
+          cur = nextImage; 
+
+      } 
+
+      function transition() { 
+          return new Promise(function(resolve, reject) { 
+              var del = 0.01; 
+
+              var id = setInterval(changeOpacity, 10); 
+
+              function changeOpacity() { 
+                  images[cur].style.opacity -= del; 
+                  if (images[cur].style.opacity <= 0) { 
+                      clearInterval(id); 
+                      resolve(); 
+                  } 
+              } 
+
+          }) 
+      } 
+  } 
 // Modal Image Gallery
 function onClick(element) {
   document.getElementById("img01").src = element.src;
@@ -171,7 +211,7 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
-*/
+
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
