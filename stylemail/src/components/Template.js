@@ -45,6 +45,9 @@ class Template extends Component {
         if (item.id !== id) {
           return item;
         }
+        else {
+            return null;
+        }
       })
     });
   }      
