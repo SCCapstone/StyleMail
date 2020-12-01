@@ -2,6 +2,8 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+//import { signInWithGoogle, auth } from '../firebase'
+import "./Login.css"
 
 export default function Login() {
   const emailRef = useRef()
@@ -26,7 +28,20 @@ export default function Login() {
 
     setLoading(false)
   }
-
+  
+  // Google signin will be added in the next version
+/*
+<Form.Group>
+    <div class="or-container">
+      <div class="line-separator"></div>
+      <div class="or-label">or</div>
+      <div class="line-separator"></div>
+    </div>
+    <button onClick={logInWithGoogle} class="loginBtn loginBtn--google">
+      Login with Google
+    </button>
+ </Form.Group>
+*/
   return (
     <>
       <Card>
@@ -51,7 +66,7 @@ export default function Login() {
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-2 na">
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
     </>
