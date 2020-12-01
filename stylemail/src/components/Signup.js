@@ -57,6 +57,7 @@ export default function Signup() {
             <Form.Group id="password">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
+              <p className="w-100 text-center mt-2">Password must be between 7 and 20 characters in length and must include 1 uppercase letter and 1 number</p>
             </Form.Group>
             <Form.Group id="password-confirm">
               <Form.Label>Password Confirmation</Form.Label>
