@@ -85,7 +85,7 @@ class Template extends Component {
   }
   
   handleBack() {
-    console.log("hee");
+    
     this.setState({
       editMenuOpen: false,    
   });
@@ -96,13 +96,10 @@ class Template extends Component {
 
   render() {
     return (
-        <div className = "idk"> 
-
+        <div class = "Template"> 
            {this.state.editMenuOpen ? (
             <>
              <TemplateEdit/>
-
-
              <button Back
                onClick={()=> this.setState({editMenuOpen: false})}
               >
@@ -125,8 +122,7 @@ class Template extends Component {
                   </button>
                 </form>        
                 {this.state.starterData.map((item) => (
-                <ul>                          
-                 
+                <ul>                        
                 {item.title}
                 <br/>
                 <ReactLogo4/>
@@ -140,13 +136,10 @@ class Template extends Component {
                   onClick={this.onEditHandle.bind(this, item.id, item.title)}
                   >
                     <ReactLogo />
-                </button>   
-                
+                </button>                   
               <div> 
                 <br/>
-              </div>          
-
-
+              </div>        
             </ul> 
             ))}   
             
