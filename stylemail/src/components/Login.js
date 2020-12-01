@@ -1,12 +1,14 @@
-import React, { useRef, useState } from "react"
+import React, { useRef, useState, useContext } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
+import { useAuth, AuthProvider } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+//import { signInWithGoogle, auth } from '../firebase'
+import "./Login.css"
 
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login } = useAuth()
+  const { login, logInWithGoogle } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
@@ -27,6 +29,12 @@ export default function Login() {
     setLoading(false)
   }
 
+  //const { currentUser } = useContext(AuthProvider);
+  //  if (currentUser) {
+  //    return history.push("/")
+  //  }
+  
+
   return (
     <>
       <Card>
@@ -45,13 +53,23 @@ export default function Login() {
             <Button disabled={loading} className="w-100" type="submit">
               Log In
             </Button>
+            <Form.Group>
+            <div class="or-container">
+              <div class="line-separator"></div>
+              <div class="or-label">or</div>
+              <div class="line-separator"></div>
+            </div>
+            <button onClick={logInWithGoogle} class="loginBtn loginBtn--google">
+            Login with Google
+            </button>
+            </Form.Group>
           </Form>
           <div className="w-100 text-center mt-3">
             <Link to="/forgot-password">Forgot Password?</Link>
           </div>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-2 na">
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
     </>

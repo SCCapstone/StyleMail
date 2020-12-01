@@ -19,20 +19,28 @@ export default function Signup() {
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match")
     }
-    // Try signup -- displays errors for password too short (length of 7 or more)
-    // and wrong email format
-    try {
-      setError("")
-      setLoading(true)
-      await signup(emailRef.current.value, passwordRef.current.value)
-      history.push("/")
-    } catch(err) {
-      setError(err.message)
-      //setError("Failed to create an account")
-      //console.log(e.message)
+    // Regex for password
+    var regex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/;
+    
+    // Checks if passwords match regex ( 1 capital letter, 1 number, at least 7 long )
+    if (!passwordRef.current.value.match(regex)) {
+      setError('Your password must have 1 uppercase letter, 1 number, and be more than 7 characters')
+    } else {
+
+      // Try signup -- displays errors for password too short (length of 7 or more)
+      // and wrong email format
+      try {
+        setError("")
+        setLoading(true)
+        await signup(emailRef.current.value, passwordRef.current.value)
+        history.push("/")
+      } catch(err) {
+        setError(err.message)
+      }
+  
+      setLoading(false)
     }
 
-    setLoading(false)
   }
 
   return (
@@ -60,7 +68,7 @@ export default function Signup() {
           </Form>
         </Card.Body>
       </Card>
-      <div className="w-100 text-center mt-2">
+      <div className="w-100 text-center mt-2 color-white na">
         Already have an account? <Link to="/login">Log In</Link>
       </div>
     </>

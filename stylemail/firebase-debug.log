@@ -1,0 +1,43 @@
+[debug] [2020-12-01T02:55:54.418Z] ----------------------------------------------------------------------
+[debug] [2020-12-01T02:55:54.445Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2020-12-01T02:55:54.445Z] CLI Version:   8.16.2
+[debug] [2020-12-01T02:55:54.447Z] Platform:      darwin
+[debug] [2020-12-01T02:55:54.447Z] Node Version:  v12.16.1
+[debug] [2020-12-01T02:55:54.451Z] Time:          Mon Nov 30 2020 21:55:54 GMT-0500 (Eastern Standard Time)
+[debug] [2020-12-01T02:55:54.451Z] ----------------------------------------------------------------------
+[debug] [2020-12-01T02:55:54.451Z] 
+[debug] [2020-12-01T02:55:54.525Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-12-01T02:55:54.526Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: auth, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, hosting"}}
+[debug] [2020-12-01T02:55:54.733Z] [hub] writing locator at /var/folders/p2/_4f7tzd96vvddg7h2c6sgjr80000gn/T/hub-stylemail-edf5f.json
+[debug] [2020-12-01T02:55:59.424Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/stylemail-edf5f/webApps/-/config  
+ 
+[debug] [2020-12-01T02:55:59.789Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 01 Dec 2020 02:55:59 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5000\u001b[22m\u001b[24m"}}
+[debug] [2020-12-01T02:55:59.832Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2020-12-01T02:55:59.832Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2020-12-01T02:55:59.833Z] Starting Emulator UI with command {"binary":"node","args":["/Users/alecfarmer/.cache/firebase/emulators/ui-v1.2.2/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/alecfarmer/.cache/firebase/emulators/ui-v1.2.2/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2020-12-01T02:55:59.981Z] Web / API server started at http://localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4000\n"}}
+[info] 
+┌────────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! View status and logs at localhost:4000 │
+└────────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI │
+├────────────────┼────────────────┼─────────────────────┤
+│ Authentication │ localhost:9099 │ localhost:4000/auth │
+├────────────────┼────────────────┼─────────────────────┤
+│ Hosting        │ localhost:5000 │ n/a                 │
+└────────────────┴────────────────┴─────────────────────┘
+  Other reserved ports: 4400, 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] "GET / HTTP/1.1" 200 2282 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] \"GET / HTTP/1.1\" 200 2282 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0\""}}
+[info] i  hosting: 127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] "GET /static/js/main.522e89b5.chunk.js HTTP/1.1" 200 8971 "http://localhost:5000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] \"GET /static/js/main.522e89b5.chunk.js HTTP/1.1\" 200 8971 \"http://localhost:5000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0\""}}
+[info] i  hosting: 127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] "GET /static/css/main.bdf34c6f.chunk.css HTTP/1.1" 200 924 "http://localhost:5000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] \"GET /static/css/main.bdf34c6f.chunk.css HTTP/1.1\" 200 924 \"http://localhost:5000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0\""}}
+[info] i  hosting: 127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] "GET /static/js/2.4e8c060c.chunk.js HTTP/1.1" 200 396128 "http://localhost:5000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [01/Dec/2020:02:56:01 +0000] \"GET /static/js/2.4e8c060c.chunk.js HTTP/1.1\" 200 396128 \"http://localhost:5000/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:83.0) Gecko/20100101 Firefox/83.0\""}}
