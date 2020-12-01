@@ -8,11 +8,10 @@ import './Template.css'
 
 
 
-
 class Template extends Component {     
   constructor(props) {
     super(props);   
-    
+
     this.state = {
       editMenuOpen: false,      
       starterData: [
@@ -61,16 +60,15 @@ class Template extends Component {
   }      
   
   
-  updateTemplate(event) {
-    event.preventDefault();
+  updateTemplate(e) {
+    e.preventDefault();
     
     this.setState({
       starterData: this.state.starterData.map((item) => {
         if (item.id === this.state.id) {
-          item["title"] = event.target.updatedItem.value;
+          item["title"] = e.target.updatedItem.value;
           return item;
         }
-
         return item;
       })
     });
@@ -78,7 +76,7 @@ class Template extends Component {
         editMenuOpen: false
     });
   }
-  onEditHandle(event) {
+  onEditHandle(e) {
     this.setState({
         editMenuOpen: true,
       id: arguments[0],
@@ -87,11 +85,12 @@ class Template extends Component {
   }
   
   handleBack() {
+    console.log("hee");
     this.setState({
-        editMenuOpen: false,     
-    });
+      editMenuOpen: false,    
+  });
+
   }
-  
 
 
 
@@ -102,6 +101,13 @@ class Template extends Component {
            {this.state.editMenuOpen ? (
             <>
              <TemplateEdit/>
+
+
+             <button Back
+               onClick={()=> this.setState({editMenuOpen: false})}
+              >
+                Back
+             </button>
             </>
            ) : (
             <>                             
@@ -119,7 +125,7 @@ class Template extends Component {
                   </button>
                 </form>        
                 {this.state.starterData.map((item) => (
-                <form>                          
+                <ul>                          
                  
                 {item.title}
                 <br/>
@@ -138,11 +144,10 @@ class Template extends Component {
                 
               <div> 
                 <br/>
-              </div>
-               
+              </div>          
 
 
-            </form> 
+            </ul> 
             ))}   
             
             </>
