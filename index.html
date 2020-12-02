@@ -19,26 +19,27 @@ body{
   background: #382492;
 
 }
-header {
+.reviews {
   background: #a2a2e6;
-  padding: 50px;
+  padding: 10px;
 }
 #main-content{
+  display:flex;
   padding: 10px;
 }
 #mid-section{
-  display:flex;
+  
   justify-content:space-around;
 }
 #column{
 float:left;
-width:50%;
+width:100%;
 text-align: center;
-padding: 0px 70px 0px 0px;
-height:20%;
+padding: 20px 0px 20px 0px;
 font-size:xx-large;
-justify-content: center;;
+justify-content: center;
 align-items: center;
+margin:auto;
 }
 #banner{
   justify-content: center; 
@@ -58,10 +59,11 @@ align-items: center;
   position:absolute;
   right: 400px;
 }
+
 #sign-btns{
-  display:block;
-  justify-content: space-between;
-  margin: 50px;
+  display:flex;
+  justify-content: space-evenly;
+  margin: 30px;
 }
 footer{
   background: #a2a2e6;
@@ -109,56 +111,12 @@ footer{
   color: white;
 }
 
-/*Scrolling Text before Footer */
-.reviews {
- height: 20px;  
- overflow: hidden;
- position: relative;
-}
-.reviews p {
- font-size: 3em;
- color: white;
- position: absolute;
- width: 100%;
- height: 100%;
- margin: 0;
- line-height: 50px;
- text-align: center;
- /* Starting position */
- -moz-transform:translateX(100%);
- -webkit-transform:translateX(100%);  
- transform:translateX(100%);
- /* Apply animation to this element */  
- -moz-animation: reviews 15s linear infinite;
- -webkit-animation: reviews 15s linear infinite;
- animation: reviews 15s linear infinite;
-}
-/* Move it (define the animation) */
-@-moz-keyframes reviews {
- 0%   { -moz-transform: translateX(100%); }
- 100% { -moz-transform: translateX(-100%); }
-}
-@-webkit-keyframes reviews {
- 0%   { -webkit-transform: translateX(100%); }
- 100% { -webkit-transform: translateX(-100%); }
-}
-@keyframes reviews {
- 0%   { 
- -moz-transform: translateX(100%); /* Firefox bug fix */
- -webkit-transform: translateX(100%); /* Firefox bug fix */
- transform: translateX(100%);     
- }
- 100% { 
- -moz-transform: translateX(-100%); /* Firefox bug fix */
- -webkit-transform: translateX(-100%); /* Firefox bug fix */
- transform: translateX(-100%); 
- }
-}
+
 </style>
 
 <body>
   <div class="topnav">
-    <a class="active" href="https://stylemail.app/index">Home</a>
+    <a class="active" href="https://stylemail.app/">Home</a>
     <a href="https://run.stylemail.app">Login</a>
     <a href="https://run.stylemail.app">Signup</a>
     <a href="https://stylemail.app/help">Help</a>
@@ -173,27 +131,29 @@ footer{
 <div id="main-content">
   <div id="banner" style="text-align: center">
       <img class="logo" src="StyleMail Logo.jpg" alt="Three envelopes behind the name Style Mail. Under the image reads, Easy communication for every occasion./>
-  </div>
+  
                                                                        
   <div id="mid-section">
-      <div id = "column">StyleMail is the new way to send correspondence for any occasion. Choose from pre-made templates or create your own! You will be able to save, print, or email your correspondence! </div>
-        <div id="column">
-          <img src = "invitation_template.jpg" class = "transition" width= "400" height="400"/>
-          <img src = "email_template.png" class = "transition" width= "400" height="400"/>
-          <img src = "postcard_template.png" class = "transition" width= "400" height="400"/>
+      <div id = "column">StyleMail is the new way to send correspondence for any occasion. Choose from pre-made templates or create your own! You will be able to save, print, or email your correspondence! Scroll down to create an account or sign in.</div>
+      <div id = "column">Check out a few templates that our customers made below</div>
+      <div id = "column">&#129035;</div>  
+      <div id="column">
+          <img src = "invitation_template.jpg" class = "transition" width= "700" height="550"/>
+          <img src = "email_template.png" class = "transition" width= "700" height="550"/>
+          <img src = "postcard_template.png" class = "transition" width= "700" height="550"/>
         </div>
+      </div>
+  </div>
 
+  <div id="sign-btns" style="text-align: center">
+    <a href="https://run.stylemail.app/signup" class="w3-button w3-light-grey">Create Account</a>
+    <a href="https://run.stylemail.app/login" class="w3-button w3-light-grey">Sign In</a>
   </div>
 </div>
 
-  <div id="sign-btns" style="text-align: center">
-    <a href="https://run.stylemail.app" class="w3-button w3-light-grey">Create Account</a>
-    <a href="https://run.stylemail.app" class="w3-button w3-light-grey">Sign In</a>
+  <div class= "reviews" style="text-align: center">
+    <marquee behavior="scroll" direction="left">"Style Mail has saved me so much time and money" - Patti Arnold      "The StyleMail application has so many designs and options to send e-vites!" -Bethany Powers         "I use StyleMail for everything from work emails to emails for my son's little league baseball team" -Clark Hess </marquee>
   </div>
-
-  <header class= "reviews" style="text-align: center">
-    <p>"Style Mail has saved me so much time and money when shopping for cards for my family." - Patti Arnold      "The StyleMail application has so many designs and options to send e-vites!" -Bethany Powers         "I use StyleMail for everything from work emails to emails for my son's little league baseball team" -Clark Hess </p>
-  </header>
 
 
 <!-- Footer -->
@@ -218,7 +178,7 @@ startImageTransition();
 
       var cur = images.length - 1; 
 
-      setInterval(changeImage, 3000); 
+      setInterval(changeImage, 10000); 
 
       async function changeImage() { 
 
@@ -258,14 +218,6 @@ startImageTransition();
           }) 
       } 
   } 
-// Modal Image Gallery
-function onClick(element) {
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
-
 
 // Toggle between showing and hiding the sidebar when clicking the menu icon
 var mySidebar = document.getElementById("mySidebar");
