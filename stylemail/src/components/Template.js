@@ -5,12 +5,14 @@ import {ReactComponent as ReactLogo2} from './Images/deletePic.svg';
 import {ReactComponent as ReactLogo3} from './Images/add.svg';
 import {ReactComponent as ReactLogo4} from './Images/square.svg';
 import './Template.css'
+import {db} from '../firebase';
+
 
 
 
 class Template extends Component {     
   constructor(props) {
-    super(props);   
+    super(props); 
 
     this.state = {
       editMenuOpen: false,      
@@ -93,6 +95,21 @@ class Template extends Component {
   }
 
 
+  onSave() {
+    db.collection("UserData")
+    .add({
+      String: "test"
+    })
+
+   
+
+
+  }
+
+
+
+
+
 
   render() {
     return (
@@ -141,7 +158,15 @@ class Template extends Component {
                 <br/>
               </div>        
             </ul> 
+            
+           
+            
             ))}   
+             <button
+            onClick ={this.onSave}
+            >
+                  Save
+            </button>
             
             </>
             )}                   
