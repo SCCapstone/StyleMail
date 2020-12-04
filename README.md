@@ -26,6 +26,7 @@ In order to build this project you first have to install:
 
 * [Node.js](https://nodejs.org/en/)  
 * [npm](https://www.npmjs.com/)  
+* The application depends on multiple node modules to be installed  
 
 You will also need:  
 * A web browser such as Firefox, Chrome, or Edge (udated to the latest version)  
