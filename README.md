@@ -66,11 +66,17 @@ To test the app:
 
 ## Testing Technology
 
-(More to be added to this section in 492)  
+Unit Test  
+Firebase Unit Testing:  
+
+Behavioral Test  
+WebDriverIO: https://webdriver.io/ - The test nagivates to the login page, uses test login credentials to login as if it were a user, and then verifies that it has been directed to the template page after logging in.  
 
 ## Running Tests
 
-(More to be added to this section in 492)  
+How to run unit test:  
+
+How to run behavioral test:  
 
 # Authors
 
