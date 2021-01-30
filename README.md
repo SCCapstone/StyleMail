@@ -74,7 +74,7 @@ WebDriverIO: https://webdriver.io/ - The test nagivates to the login page, uses 
 
 How to run unit test:  
 
-How to run behavioral test:  
+How to run behavioral test: cd within the stylemail directory and run the command NPX WDIO  
 
 # Authors
 
