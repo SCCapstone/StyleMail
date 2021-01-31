@@ -81,7 +81,7 @@ How to run behavioral test: cd to StyleMail/stylemail and run the command npx wd
 
 Unit Test:
 
-Behavioral tests can be found in StyleMail/stylemail/Tests/specs
+Behavioral tests can be found in StyleMail/stylemail/test/specs/
 
 
 # Authors
