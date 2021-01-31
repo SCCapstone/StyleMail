@@ -5,6 +5,7 @@ import { Link, useHistory } from "react-router-dom"
 //import { signInWithGoogle, auth } from '../firebase'
 import "./Login.css"
 
+// Exports the `Login` function so it can be called elsewhere
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
@@ -13,6 +14,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false)
   const history = useHistory()
 
+  // Error checks the submitting of logins -- Catches and displays errors found
   async function handleSubmit(e) {
     e.preventDefault()
 

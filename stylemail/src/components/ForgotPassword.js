@@ -3,6 +3,7 @@ import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link } from "react-router-dom"
 
+// Exports function `ForgotPassword` so it can be used elsewhere 
 export default function ForgotPassword() {
   const emailRef = useRef()
   const { resetPassword } = useAuth()
@@ -10,6 +11,7 @@ export default function ForgotPassword() {
   const [message, setMessage] = useState("")
   const [loading, setLoading] = useState(false)
 
+  // Calls submit function to handle existing passwords
   async function handleSubmit(e) {
     e.preventDefault()
 
@@ -26,7 +28,7 @@ export default function ForgotPassword() {
 
     setLoading(false)
   }
-
+  // Displaying bootstrap formating
   return (
     <>
       <Card>
