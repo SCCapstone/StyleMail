@@ -1,15 +1,15 @@
 name: Build & Deploy on Merge
-
+## Executes workflow only on pushes to master branch
 on:
   push:
     branches: [ master ]
-
+## Redirects the working directory to inner stylemail folder
 defaults:
   run:
     working-directory: stylemail
 
 jobs:
-  build:
+  build: ### Job 1: Sets up virtual ubuntu environment, builds code, tests if it passes
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,7 +18,7 @@ jobs:
           node-version: 12
       - run: npm ci
       - run: npm run build
-  deploy:
+  deploy: ### If `Job 1` is successful, Job 2: Sets up virtual Ubuntu environment, builds code, pushes new build to firebase server
     needs: build
     runs-on: ubuntu-latest
     steps:

@@ -12,6 +12,11 @@ import ForgotPassword from "./ForgotPassword"
 
 // Private route is only accessable from authorized users
 
+/*
+ * Builds main app functionality
+ * Uses React Router library to route traffic to specific components
+ * Only authenticated traffic is grated access to specific paths
+ */
 function App() {
   return (
     <Container

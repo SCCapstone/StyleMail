@@ -9,6 +9,7 @@ export default function Dashboard() {
   const { currentUser, logout } = useAuth()
   const history = useHistory()  
 
+  // Handles logout function -- Will push user to dashboad if possible -- Displays error if one is found
   async function handleLogout() {
     setError("")
 

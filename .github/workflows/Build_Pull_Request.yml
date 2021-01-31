@@ -1,15 +1,15 @@
 name: Build on Pull Request
-
+## Executes workflow only on pull requests on the master branch
 on:
   pull_request:
     branches: [ master ]
-
+## Redirects the working directory to inner stylemail folder
 defaults:
   run:
     working-directory: stylemail
 
 jobs:
-  build:
+  build: ### Job 1: Sets up virtual ubuntu environment, builds code, tests if it passes
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

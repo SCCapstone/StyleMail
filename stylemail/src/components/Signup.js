@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
+import { generateUser } from "../firebase"
 
 export default function Signup() {
   const emailRef = useRef()
@@ -33,6 +34,7 @@ export default function Signup() {
         setError("")
         setLoading(true)
         await signup(emailRef.current.value, passwordRef.current.value)
+        generateUser(emailRef.current.value)
         history.push("/")
       } catch(err) {
         setError(err.message)
@@ -42,7 +44,7 @@ export default function Signup() {
     }
 
   }
-
+  // Bootstrap formatting calling functions above
   return (
     <>
       <Card>
