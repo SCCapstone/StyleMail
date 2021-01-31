@@ -65,21 +65,22 @@ To test the app:
 ## Testing Technology
 
 Unit Test  
-Firebase Unit Testing: https://firebase.google.com/docs/rules/unit-tests - The test checks if the user is authorized to login or not.  
+Firebase Unit Testing: https://firebase.google.com/docs/rules/unit-tests - The test checks if the user is authorized to login or not.
+Mocha: https://mochajs.org/ - The tests check if an authenticated user is able to modify a document of their own in our database while also checking if they are able to modify a document of a different user.
 
 Behavioral Test  
 WebDriverIO: https://webdriver.io/ - The test nagivates to the login page, uses test login credentials to login as if it were a user, and then verifies that it has been successfully directed to the template list page after logging in.  
 
 ## Running Tests
 
-How to run unit test:  
+How to run unit test: cd to StyleMail/stylemail/test and run the command npm test
 
 How to run behavioral test: cd to StyleMail/stylemail and run the command npx wdio  
 
 
 ## Test Locations 
 
-Unit Test:
+Unit Tests can be found in StyleMail/stylemail/test/test.js
 
 Behavioral tests can be found in StyleMail/stylemail/test/specs/
 
@@ -95,7 +96,7 @@ Monty Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Monty-Personal-
 Sierra Stewart: sierrais@email.sc.edu  
 Stewart Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Sierra-Stewart-Personal-Log  
 
-AJ Farmer: jaf10@email.sc.edu  
+Alec Farmer: jaf10@email.sc.edu  
 Farmer Personal Log: https://github.com/SCCapstone/StyleMail/wiki/Farmer-Personal-Log  
 
 Garrett Erven: gerven@email.sc.edu  
