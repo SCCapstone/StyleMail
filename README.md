@@ -69,6 +69,7 @@ Behavioral Test
 WebDriverIO: https://webdriver.io/ - The test nagivates to the login page, uses test login credentials to login as if it were a user, and then verifies that it has been successfully directed to the template list page after logging in.  
 
 To run the tests, you must install WebDriverIO. You can install the WebDriverIO CLI by using the command: $ npm i --save-dev @wdio/cli  
+Google Chrome: https://www.google.com/chrome/browser-tools/ is required for this test to run properly!
 
 ## Running Tests
 
