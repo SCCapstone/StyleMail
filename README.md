@@ -69,16 +69,17 @@ Behavioral Test
 WebDriverIO: https://webdriver.io/ - The test nagivates to the login page, uses test login credentials to login as if it were a user, and then verifies that it has been successfully directed to the template list page after logging in.  
 
 To run the tests, you must install WebDriverIO. You can install the WebDriverIO CLI by using the command: $ npm i --save-dev @wdio/cli  
-Then you must setup the conffiguration file for the test runner using the command: $ npx wdio config -y
-Then you must copy and paste the TestLogin.js file in the directory StyleMail/stylemail/test/specs/ to C:\Users\<USERNAME>\test\specs  
-After copying and pasting the file, run the command: $ npx wdio wdio.conf.js (in a new terminal window)
 Google Chrome: https://www.google.com/chrome/browser-tools/ is required for this test to run properly!
 
 ## Running Tests
 
 How to run unit test: cd to StyleMail/stylemail/test and run the command: npm test  
 
-How to run behavioral test: cd to StyleMail/stylemail and run the command: npx wdio  
+How to run behavioral test:
+You must setup the configuration file for the test runner using the command: $ npx wdio config -y (in a new terminal window)
+Then you must copy and paste the file StyleMail/stylemail/test/specs/TestLogin.js to the directory C:\Users\<USERNAME>\test\specs (created by the configuration file in the previous step)  
+After copying and pasting the file, run the command: $ npx wdio wdio.conf.js (in a new terminal window)
+The test will open a new Google Chrome window, run, and then exit the window upon completion.
 
 
 ## Test Locations 
