@@ -73,12 +73,14 @@ Google Chrome: https://www.google.com/chrome/ is required for this test to run p
 
 ## Running Tests
 
-How to run unit test: cd to StyleMail/stylemail/test and run the command: npm test  
+How to run unit test:
+* cd to StyleMail/stylemail/test and run the command "npm install" (to install dependencies required for the test)
+* After the dependencies finish installing, run the command "npm test" (to run the test)  
 
 How to run behavioral test:  
-* You must setup the configuration file for the test runner. To do this, open a new terminal window (don't cd into anything) and run the command: $ npx wdio config -y  
+* You must setup the configuration file for the test runner. To do this, open a new terminal window (don't cd into anything) and run the command "npx wdio config -y"  
 * The previous command creates a directory C:\Users\<USERNAME>\test\specs (with your username of course). You must copy and paste the file StyleMail/stylemail/test/specs/TestLogin.js from our repo into that directory  
-* After copying and pasting the file, open a new terminal window (don't cd into anything) and run the command: $ npx wdio wdio.conf.js  
+* After copying and pasting the file, open a new terminal window (don't cd into anything) and run the command "npx wdio wdio.conf.js"  
 * The test will open a new Google Chrome window, run, and then exit the window upon completion.  
 
 
