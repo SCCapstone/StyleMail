@@ -56,33 +56,28 @@ Terms of Use Page: https://stylemail.app/terms
 
 The SPA web application is deployed on Firebase Hosting and can be found at https://run.stylemail.app (this is the entry point of the React application)  
 
-# Testing
-
-To test the app:  
-1.) cd into the stylemail folder that is in the root directory  
-2.) use the 'npm test' command to launch the test runner in the interactive watch mode  
+# Testing 
 
 ## Testing Technology
 
 Unit Test  
-Firebase Unit Testing: https://firebase.google.com/docs/rules/unit-tests - The test checks if the user is authorized to login or not.
-Mocha: https://mochajs.org/ - The tests check if an authenticated user is able to modify a document of their own in our database while also checking if they are able to modify a document of a different user.
+Mocha: https://mochajs.org/ - The tests check if an authenticated user is able to modify a document of their own in our database while also checking if they are able to modify a document of a different user.  
 
 Behavioral Test  
 WebDriverIO: https://webdriver.io/ - The test nagivates to the login page, uses test login credentials to login as if it were a user, and then verifies that it has been successfully directed to the template list page after logging in.  
 
 ## Running Tests
 
-How to run unit test: cd to StyleMail/stylemail/test and run the command npm test
+How to run unit test: cd to StyleMail/stylemail/test and run the command npm test  
 
 How to run behavioral test: cd to StyleMail/stylemail and run the command npx wdio  
 
 
 ## Test Locations 
 
-Unit Tests can be found in StyleMail/stylemail/test/test.js
+Unit Tests can be found in StyleMail/stylemail/test/test.js  
 
-Behavioral tests can be found in StyleMail/stylemail/test/specs/
+Behavioral tests can be found in StyleMail/stylemail/test/specs/  
 
 
 # Authors
