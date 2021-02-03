@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "public",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -12,13 +12,13 @@
       "port": 9099
     },
     "hosting": {
-      "port": 5000
+      "port": 5050
     },
     "ui": {
       "enabled": true
     },
     "firestore": {
-      "port": 8080
+      "port": 8085
     }
   },
   "firestore": {
