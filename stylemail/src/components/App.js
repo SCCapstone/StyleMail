@@ -12,6 +12,8 @@ import Profile from "./Profile"
 import ForgotPassword from "./ForgotPassword"
 import SavedTemplates from "./SavedTemplates"
 import LogOut from "./LogOut"
+import NavBar from "./NavBar"
+
 
 // Private route is only accessable from authorized users
 
@@ -20,13 +22,21 @@ import LogOut from "./LogOut"
  * Uses React Router library to route traffic to specific components
  * Only authenticated traffic is grated access to specific paths
  */
+
 function App() {
+
+   <NavBar />
+
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
-    >
+    >    
+
       <div className="w-100" style={{ maxWidth: "3000px" }}>
+
+      
+
         <Router>
           <AuthProvider>
             <Switch>

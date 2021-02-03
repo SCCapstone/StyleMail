@@ -29,13 +29,13 @@ export default function Dashboard() {
   }
 
   return (
-    <>
-          <Card>
-            <NavBar />
-          </Card>  
-        
+    <> 
+    
+      <Card>
+        <NavBar />
+      </Card> 
 
-
+      
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">Welcome back!</h2>
