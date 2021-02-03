@@ -3,12 +3,18 @@ import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { useHistory } from "react-router-dom"
 import Template from "./Template"
+import NavBar from "./NavBar"
+import  "./Dashboard.css"
+
+
 
 export default function Dashboard() {
   const [error, setError] = useState("")
   const { currentUser, logout } = useAuth()
   const history = useHistory()  
 
+
+  
   // Handles logout function -- Will push user to dashboad if possible -- Displays error if one is found
   async function handleLogout() {
     setError("")
@@ -16,6 +22,7 @@ export default function Dashboard() {
     try {
       await logout()
       history.push("/login")
+      NavBar.state.loggedIn = true;
     } catch {
       setError("Failed to log out")
     }
@@ -23,13 +30,19 @@ export default function Dashboard() {
 
   return (
     <>
+          <Card>
+            <NavBar />
+          </Card>  
+        
+
+
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">You made it!</h2>
+          <h2 className="text-center mb-4">Welcome back!</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <strong>Email:</strong> {currentUser.email}          
         </Card.Body>       
-      </Card>
+       </Card>
 
       
         <Card.Body>

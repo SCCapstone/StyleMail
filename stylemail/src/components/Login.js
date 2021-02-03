@@ -4,6 +4,7 @@ import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
 //import { signInWithGoogle, auth } from '../firebase'
 import "./Login.css"
+import NavBar from './NavBar'
 
 // Exports the `Login` function so it can be called elsewhere
 export default function Login() {

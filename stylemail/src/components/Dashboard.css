@@ -1,0 +1,93 @@
+body {
+  height: 100%;
+  line-height: 1.8;
+  background: #382492;
+}
+.reviews {
+  background: #a2a2e6;
+  padding: 10px;
+}
+#main-content {
+  display: flex;
+  padding: 20px;
+}
+#mid-section {
+  justify-content: space-around;
+}
+#column {
+  float: left;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0px 20px 0px;
+  font-size: xx-large;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+#banner {
+  justify-content: center;
+  align-content: center;
+  display: block;
+  height: 1500px;
+}
+.logo {
+  width: 60%;
+  height: 35%;
+  align-content: center;
+  margin: auto;
+}
+
+.transition {
+  position: absolute;
+  right: 400px;
+}
+
+#sign-btns {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px;
+}
+footer {
+  background: #a2a2e6;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  content: "\A";
+}
+.linking-btns {
+  padding: 20px;
+  height: 20px;
+}
+
+.w3-bar .w3-button {
+  padding: 16px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #372392;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #b14f82;
+  color: white;
+}
