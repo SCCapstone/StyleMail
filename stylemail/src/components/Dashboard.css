@@ -1,6 +1,11 @@
 body {
   height: 100%;
   line-height: 1.8;
+  position: absolute;
+  top:0; 
+  bottom:0; 
+  right:0; 
+  left:0;
   background: #382492;
 }
 .reviews {
@@ -68,6 +73,7 @@ footer {
 .topnav {
   background-color: #372392;
   overflow: hidden;
+  margin: 0;
 }
 
 /* Style the links inside the navigation bar */

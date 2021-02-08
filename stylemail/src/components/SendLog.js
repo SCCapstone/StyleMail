@@ -3,15 +3,12 @@ import NavBar from "./NavBar"
 import  "./Dashboard.css"
 
 
-export default function Profile() {
+export default function SendLog() {
 
     return (
-
-
-        <div >
+        <div>
             <NavBar />
-            <h1> This will be where you edit your profile! </h1>
+            <h1> This will be where you send the log </h1>
         </div>
     )
 }
-

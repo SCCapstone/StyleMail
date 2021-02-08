@@ -13,6 +13,8 @@ import ForgotPassword from "./ForgotPassword"
 import SavedTemplates from "./SavedTemplates"
 import LogOut from "./LogOut"
 import NavBar from "./NavBar"
+import AllTemplates from "./AllTemplates"
+import SendLog from "./SendLog"
 
 
 // Private route is only accessable from authorized users
@@ -43,6 +45,8 @@ function App() {
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path ="/profile" component={Profile} />
               <PrivateRoute path ="/savedtemplates" component={SavedTemplates} />
+              <PrivateRoute path ="/alltemplates" component={AllTemplates} />
+              <PrivateRoute path ="/sendlog" component={SendLog} />
               <PrivateRoute path ="/logout" component={LogOut} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
