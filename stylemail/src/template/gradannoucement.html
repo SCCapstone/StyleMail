@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <h1 style = "text-align: center; font-size: 75px; font-family: Brush Script MT; margin-bottom: 0;">Class of "Year"</h1>
+    </header>
+    <body style="background-color: antiquewhite;">
+        <div class = "container">
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div style = "display: block; text-align: center; margin-bottom: 0px;">
+                <img src = "C:\Users\Sierra Stewart\csce492\StyleMail\stylemail\src\components\Images\grad.jpg" width = "300" height = "400" style = "margin-bottom: 0;">
+                <p style = "font-family:fantasy; font-size:40px;margin:0;">Name of Graduate</p>
+                <p style = "font-family:fantasy; font-size:40px;margin:0;">"Degree Name"</p>
+                <br>
+                <p style = "font-family:fantasy; font-size:30px;margin:0;">"Time and Place"</p>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <p style= "font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;font-size:14px;">This is a paragraph where the graduate can talk about accomplishments and future plans. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque consequat eleifend ante, vitae auctor est convallis sed. Aliquam sed ex metus. Cras finibus, purus nec tincidunt pretium, tortor tortor elementum leo, at pharetra lorem mi ac est. Aliquam ac euismod odio. Maecenas ac diam sed lorem consequat faucibus. Ut tristique tempor ullamcorper. Sed malesuada neque sem, eu sagittis est ullamcorper non. Morbi a leo dapibus, hendrerit lacus id, gravida mi. Nullam tempor sem eget arcu lobortis sagittis.
+
+                    Nam efficitur urna eros, sed porta risus pharetra at. Phasellus ornare tortor a nibh hendrerit vulputate. Phasellus ullamcorper sem ac massa finibus, eget vestibulum metus vehicula. Nunc porttitor et ligula vitae blandit. Nullam massa mauris, mattis ut odio quis, laoreet tempus erat. Mauris neque urna, eleifend sit amet ex ac, ultricies aliquet ipsum. Curabitur aliquam eleifend lacus, sit amet hendrerit elit ultrices vel. Maecenas at est ultrices, maximus nunc quis, ultricies nunc. Pellentesque et felis sit amet magna mollis rhoncus. Vestibulum semper odio sed varius volutpat. Morbi molestie ex sed erat consequat consequat. Suspendisse tempor malesuada metus.</p>
+            </div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+            <div class = "confetti"></div>
+
+        </div>
+        <!-- CSS for confetti from https://forum.webflow.com/t/add-falling-confetti-with-css/103687-->
+        <style>
+            .container {
+                  width: 100%;
+              height: 100%;
+            }
+            .confetti {
+              width: 15px;
+              height: 15px;
+              background-color: #f2d74e;
+              position: absolute;
+              left: 50%;
+              animation: confetti 5s ease-in-out -2s infinite;
+              transform-origin: left top;
+            }
+            .confetti:nth-child(1) {
+              background-color: #f2d74e; left: 10%; animation-delay: 0;
+            }
+            .confetti:nth-child(2) {
+              background-color: #95c3de; left: 20%; animation-delay: -5s;
+            }
+            .confetti:nth-child(3) {
+              background-color: #ff9a91; left: 30%; animation-delay: -3s;
+            }
+            .confetti:nth-child(4) {
+              background-color: #f2d74e; left: 40%; animation-delay: -2.5s;
+            }
+            .confetti:nth-child(5) {
+              background-color: #95c3de; left: 50%; animation-delay: -4s;
+            }
+            .confetti:nth-child(6) {
+              background-color: #ff9a91; left: 60%; animation-delay: -6s;
+            }
+            .confetti:nth-child(7) {
+              background-color: #f2d74e; left: 70%; animation-delay: -1.5s;
+            }
+            .confetti:nth-child(8) {
+              background-color: #95c3de; left: 80%; animation-delay: -2s;
+            }
+            .confetti:nth-child(9) {
+              background-color: #ff9a91; left: 90%; animation-delay: -3.5s;
+            }
+            .confetti:nth-child(10) {
+              background-color: #f2d74e; left: 100%; animation-delay: -2.5s;
+            }
+    
+            @keyframes confetti {
+              0% { transform: rotateZ(15deg) rotateY(0deg) translate(0,0); }
+              25% { transform: rotateZ(5deg) rotateY(360deg) translate(-5vw,20vh); }
+              50% { transform: rotateZ(15deg) rotateY(720deg) translate(5vw,60vh); }
+              75% { transform: rotateZ(5deg) rotateY(1080deg) translate(-10vw,80vh); }
+              100% { transform: rotateZ(15deg) rotateY(1440deg) translate(10vw,110vh); }
+            }
+            </style>
+    </body>
+</html>
