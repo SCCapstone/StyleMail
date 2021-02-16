@@ -2,16 +2,22 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-import { generateUser } from "../firebase"
+//import { generateUserDocument } from "../firebase"
+//import { AddUser } from "./add.user"
+import firebase from 'firebase/app';
+import "firebase/firestore";
+const db = firebase.firestore();
 
 export default function Signup() {
   const emailRef = useRef()
   const passwordRef = useRef()
   const passwordConfirmRef = useRef()
-  const { signup } = useAuth()
+  const { currentUser, signup } = useAuth()
   const [error, setError] = useState("")
   const [loading, setLoading] = useState(false)
   const history = useHistory()
+
+
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -34,7 +40,13 @@ export default function Signup() {
         setError("")
         setLoading(true)
         await signup(emailRef.current.value, passwordRef.current.value)
-        generateUser(emailRef.current.value)
+        await db.collection("users").doc(emailRef.current.value).set({email: emailRef.current.value})
+        .then((docRef) => {
+          console.log("Document written with ID:", docRef.id);
+        })
+        .catch((errorr) => {
+          console.log("Error adding document: ", errorr);
+        });
         history.push("/")
       } catch(err) {
         setError(err.message)
@@ -44,6 +56,7 @@ export default function Signup() {
     }
 
   }
+  
   // Bootstrap formatting calling functions above
   return (
     <>

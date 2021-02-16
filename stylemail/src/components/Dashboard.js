@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import { Card, Button, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { useHistory } from "react-router-dom"
-import Template from "./Template"
+//import { getUserDocument } from "../firebase"
+import TemplateList from "./TemplateList"
+import TemplateAdd from "./TemplateAdd"
 import NavBar from "./NavBar"
 import  "./Dashboard.css"
 
@@ -40,13 +42,14 @@ export default function Dashboard() {
         <Card.Body>
           <h2 className="text-center mb-4">Welcome back!</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong> {currentUser.email}          
+          <strong>Email:</strong> {currentUser.email}
         </Card.Body>       
        </Card>
 
       
         <Card.Body>
-          <Template/>
+          <TemplateList/>
+          <TemplateAdd/>
         </Card.Body>
 
 
