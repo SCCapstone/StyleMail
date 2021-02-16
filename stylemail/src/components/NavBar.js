@@ -1,10 +1,25 @@
-import React from "react"
+import React, { useState } from "react"
 import { useAuth } from "../contexts/AuthContext"
+import { useHistory } from "react-router-dom"
 import "./Dashboard.css"
 
 export default function NavBar() {
-   
+    const [setError] = useState("")
+    const { logout } = useAuth()
+    const history = useHistory()
     var login = useAuth();
+
+    async function handleLogout() {
+        setError("")
+    
+        try {
+          await logout()
+          history.push("/login")
+          NavBar.state.loggedIn = true;
+        } catch {
+          setError("Failed to log out")
+        }
+      }
     
     if(login) {
         return (   
@@ -18,7 +33,7 @@ export default function NavBar() {
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
                        <a href="https://stylemail.app/privacy" target ="_blank" rel="noopener noreferrer">Privacy Policy</a>
                        <a href="https://stylemail.app/terms" target ="_blank" rel="noopener noreferrer">Terms of Use</a>
-                       <a href="./logout">Sign Out</a>  
+                       <a href="./logout" onClick={handleLogout}>Sign Out</a>  
                    </div>
         )
     }

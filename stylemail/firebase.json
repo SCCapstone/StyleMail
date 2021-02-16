@@ -18,7 +18,7 @@
       "enabled": true
     },
     "firestore": {
-      "port": 8085
+      "port": 8086
     }
   },
   "firestore": {
