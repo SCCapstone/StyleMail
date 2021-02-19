@@ -10,6 +10,15 @@ const db = firebase.firestore();
 const TemplateList = () => {
   const [templates, setTemplates] = useState([]);
   const { currentUser } = useAuth()
+  //
+  const [title, setTitle] = React.useState();
+  const [html, setHTML] = React.useState();
+  const [template, setTemplate] = useState({
+    title: '',
+    html: ''
+  });
+
+
 
   var userTemps = db.collection('users').doc(currentUser.email).collection('templates');
 
@@ -35,12 +44,13 @@ const TemplateList = () => {
   };
 
 
-  const editTemplate = id => {
-    db.collection('users').doc(currentUser.email).collection('templates')
-    .doc(id)
-    .delete();
+  const editTemplate = id => {  
+    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,title,html}) 
   };
 
+
+
+  
 
 
 
@@ -53,8 +63,19 @@ const TemplateList = () => {
             <li key={template.id}>
               <div>
                 <div>
-                  <div>{template.title}</div>
-                  <div>{template.html}</div>
+                  <input 
+                    value={template.title}
+                    onChange={e => {
+                    setTitle(e.target.value);
+                  }}                  
+                  />       
+                                          
+                  <input 
+                    value={template.html}
+                    onChange={e => {
+                    setHTML(e.target.value);
+                  }}                  
+                  />                                                 
                 </div>
                 <div
                   onClick={() => deleteTemplate(template.id)}
