@@ -34,6 +34,16 @@ const TemplateList = () => {
     .delete();
   };
 
+
+  const editTemplate = id => {
+    db.collection('users').doc(currentUser.email).collection('templates')
+    .doc(id)
+    .delete();
+  };
+
+
+
+
   return (
     <div>
       <div>
@@ -50,7 +60,14 @@ const TemplateList = () => {
                   onClick={() => deleteTemplate(template.id)}
                   style={{ cursor: 'pointer' }} // add
                 >
-                  <i>delete</i>
+                  <i>Delete</i>
+                  </div>
+                  <div
+                  onClick={() => editTemplate(template.id)}
+                  style={{ cursor: 'pointer' }} 
+                >
+                  <i>Edit</i>
+                  
                 </div>
               </div>
             </li>
@@ -60,5 +77,4 @@ const TemplateList = () => {
     </div>
   );
 }
-
 export default TemplateList;
