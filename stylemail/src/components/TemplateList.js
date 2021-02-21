@@ -44,20 +44,11 @@ const TemplateList = () => {
   };
 
 
-  const editTemplate1 = id => {  
+  const editTemplate = id => {  
     db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,title}) 
   };
   
-  const editTemplate2 = id => {  
-    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,html}) 
-  };
-
-
-
-
-
-
-
+  
 
 
   return (
@@ -72,8 +63,7 @@ const TemplateList = () => {
                   <input 
                     placeholder={template.title}                    
                     onChange={e => {
-                    setTitle(e.target.value);
-                    editTemplate1(template.id)
+                    setTitle(e.target.value);                    
                   }                
                 }                  
                   />       
@@ -81,11 +71,8 @@ const TemplateList = () => {
                   <input 
                     placeholder={template.html}
                     onChange={e => {
-                    setHTML(e.target.value);
-                    editTemplate2(template.id)
-                  }
-                  
-                
+                    setHTML(e.target.value);                    
+                  }                
                 }                  
                   />                                                 
                 </div>
@@ -95,13 +82,13 @@ const TemplateList = () => {
                 >
                   <i>Delete</i>
                   </div>
-                  {/* <div
+                  <div
                   onClick={() => editTemplate(template.id)}
                   style={{ cursor: 'pointer' }} 
                 >
                   <i>Update</i>
                   
-                </div> */}
+                </div>
               </div>
             </li>
           ))}
