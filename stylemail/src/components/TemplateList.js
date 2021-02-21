@@ -13,8 +13,9 @@ const TemplateList = () => {
   const[searchTerm, setSearchTerm] = useState('')
 
   
-  const [title, setTitle] = React.useState();
-  const [html, setHTML] = React.useState();
+  // const [title, setTitle] = React.useState();
+  // const [html, setHTML] = React.useState();
+  
   const [template, setTemplate] = useState({
     title: '',
     html: ''
@@ -47,75 +48,93 @@ const TemplateList = () => {
 
 
   const editTemplate = id => {  
-    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,title}) 
+    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template})    
   };
   
+
+
+// const tempHelper = (e) => {
+//   setTemplate((previousState) => ({
+//     ...previousState,
+//     [e.target.name]: e.target.value  
+//   }));
+// }
+
+// const handleSubmit = e => {
+//   e.preventDefault();
+//   userTemps.add(template);
+//   setTemplate({
+//     title: '',
+//     html: ''
+//   });
+// };
+
+// const handleChange = e => {
+//   setTemplate({ ...template, [e.target.name]: e.target.value });
+// };
+// const handleChange = e => {
+//   d({ ...template, [e.target.name]: e.target.value });
+// };
+
+
+
 
   return (
     <div>
       <div>
         <h6>Templates</h6>
-
-        <input
-      type='text'
-      placeholder="Search"   
-      onChange={event =>{setSearchTerm(event.target.value)}}   
-      />
-      
-       {templates.filter((val)=> {
-        if(searchTerm =="") {
-          return val
-        } else if 
-         (val.title.toLowerCase().includes(searchTerm.toLowerCase())){
-          return val
-      }                 
-
-    }).map((val,key)=>{
-        return (
-          <div className="user" key={key}>
-          <p>{val.title}</p>
-          </div>
-        );
-      })}    
-
-
-        {/* <ul>
-          {templates.map(template => (
-            <li key={template.id}>
+          <input
+            id="searchbar"
+            type='text'
+            placeholder="Search"   
+            onChange={event =>{setSearchTerm(event.target.value)}}   
+          />
+          {templates.filter((val)=> {
+          if(searchTerm =="") {
+            return val
+          }  
+          else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())){
+            return val
+          }                 
+          }).map((val,key)=>{
+            return (
+            <div className="user" key={key}>
               <div>
-                <div>
                   <input 
-                    placeholder={template.title}                    
-                    onChange={e => {
-                    setTitle(e.target.value);                    
-                  }                
-                }                  
-                  />       
-                                          
+                    placeholder={val.title}                    
+                    onChange={e=> {
+                      db.collection('users').doc(currentUser.email).collection('templates').doc(val.id).update( {
+                        'title': e.target.value 
+                      })
+                    }  
+                  }
+                    />
+                                                                  
                   <input 
-                    placeholder={template.html}
-                    onChange={e => {
-                    setHTML(e.target.value);                    
-                  }                
-                }                  
-                  />                                                 
+                    placeholder={val.html}
+                    onChange={e=> {
+                      db.collection('users').doc(currentUser.email).collection('templates').doc(val.id).update( {
+                        'html': e.target.value 
+                      })
+                    }  
+                  }
+                    />                                       
                 </div>
                 <div
-                  onClick={() => deleteTemplate(template.id)}
+                  onClick={() => deleteTemplate(val.id)}
                   style={{ cursor: 'pointer' }} // add
                 >
                   <i>Delete</i>
                   </div>
                   <div
-                  onClick={() => editTemplate(template.id)}
+                  onClick={() => editTemplate(val.id)}
                   style={{ cursor: 'pointer' }} 
                 >
                   <i>Update</i>                  
                 </div>
-              </div>
-            </li>
-          ))}
-        </ul> */}
+          </div>
+        );
+      })}    
       </div>
     </div>
   );
