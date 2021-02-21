@@ -10,7 +10,9 @@ const db = firebase.firestore();
 const TemplateList = () => {
   const [templates, setTemplates] = useState([]);
   const { currentUser } = useAuth()
-  //
+  const[searchTerm, setSearchTerm] = useState('')
+
+  
   const [title, setTitle] = React.useState();
   const [html, setHTML] = React.useState();
   const [template, setTemplate] = useState({
@@ -48,14 +50,36 @@ const TemplateList = () => {
     db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,title}) 
   };
   
-  
-
 
   return (
     <div>
       <div>
         <h6>Templates</h6>
-        <ul>
+
+        <input
+      type='text'
+      placeholder="Search"   
+      onChange={event =>{setSearchTerm(event.target.value)}}   
+      />
+      
+       {templates.filter((val)=> {
+        if(searchTerm =="") {
+          return val
+        } else if 
+         (val.title.toLowerCase().includes(searchTerm.toLowerCase())){
+          return val
+      }                 
+
+    }).map((val,key)=>{
+        return (
+          <div className="user" key={key}>
+          <p>{val.title}</p>
+          </div>
+        );
+      })}    
+
+
+        {/* <ul>
           {templates.map(template => (
             <li key={template.id}>
               <div>
@@ -86,13 +110,12 @@ const TemplateList = () => {
                   onClick={() => editTemplate(template.id)}
                   style={{ cursor: 'pointer' }} 
                 >
-                  <i>Update</i>
-                  
+                  <i>Update</i>                  
                 </div>
               </div>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
     </div>
   );
