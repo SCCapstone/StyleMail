@@ -44,13 +44,19 @@ const TemplateList = () => {
   };
 
 
-  const editTemplate = id => {  
-    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,title,html}) 
+  const editTemplate1 = id => {  
+    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,title}) 
+  };
+  
+  const editTemplate2 = id => {  
+    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template,html}) 
   };
 
 
 
-  
+
+
+
 
 
 
@@ -64,17 +70,23 @@ const TemplateList = () => {
               <div>
                 <div>
                   <input 
-                    value={template.title}
+                    placeholder={template.title}                    
                     onChange={e => {
                     setTitle(e.target.value);
-                  }}                  
+                    editTemplate1(template.id)
+                  }                
+                }                  
                   />       
                                           
                   <input 
-                    value={template.html}
+                    placeholder={template.html}
                     onChange={e => {
                     setHTML(e.target.value);
-                  }}                  
+                    editTemplate2(template.id)
+                  }
+                  
+                
+                }                  
                   />                                                 
                 </div>
                 <div
@@ -83,13 +95,13 @@ const TemplateList = () => {
                 >
                   <i>Delete</i>
                   </div>
-                  <div
+                  {/* <div
                   onClick={() => editTemplate(template.id)}
                   style={{ cursor: 'pointer' }} 
                 >
-                  <i>Edit</i>
+                  <i>Update</i>
                   
-                </div>
+                </div> */}
               </div>
             </li>
           ))}
