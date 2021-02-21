@@ -33,7 +33,7 @@ export default function NavBar() {
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
                        <a href="https://stylemail.app/privacy" target ="_blank" rel="noopener noreferrer">Privacy Policy</a>
                        <a href="https://stylemail.app/terms" target ="_blank" rel="noopener noreferrer">Terms of Use</a>
-                       <a href="./logout" onClick={handleLogout}>Sign Out</a>  
+                       <a href="https://stylemail.app" onClick={handleLogout}>Sign Out</a>  
                    </div>
         )
     }
