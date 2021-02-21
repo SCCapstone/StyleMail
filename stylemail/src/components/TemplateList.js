@@ -11,16 +11,7 @@ const TemplateList = () => {
   const [templates, setTemplates] = useState([]);
   const { currentUser } = useAuth()
   const[searchTerm, setSearchTerm] = useState('')
-
-  
-  // const [title, setTitle] = React.useState();
-  // const [html, setHTML] = React.useState();
-  
-  const [template, setTemplate] = useState({
-    title: '',
-    html: ''
-  });
-
+ 
 
 
   var userTemps = db.collection('users').doc(currentUser.email).collection('templates');
@@ -45,39 +36,6 @@ const TemplateList = () => {
     .doc(id)
     .delete();
   };
-
-
-  const editTemplate = id => {  
-    db.collection('users').doc(currentUser.email).collection('templates').doc(id).set({...template})    
-  };
-  
-
-
-// const tempHelper = (e) => {
-//   setTemplate((previousState) => ({
-//     ...previousState,
-//     [e.target.name]: e.target.value  
-//   }));
-// }
-
-// const handleSubmit = e => {
-//   e.preventDefault();
-//   userTemps.add(template);
-//   setTemplate({
-//     title: '',
-//     html: ''
-//   });
-// };
-
-// const handleChange = e => {
-//   setTemplate({ ...template, [e.target.name]: e.target.value });
-// };
-// const handleChange = e => {
-//   d({ ...template, [e.target.name]: e.target.value });
-// };
-
-
-
 
   return (
     <div>
@@ -125,13 +83,7 @@ const TemplateList = () => {
                   style={{ cursor: 'pointer' }} // add
                 >
                   <i>Delete</i>
-                  </div>
-                  <div
-                  onClick={() => editTemplate(val.id)}
-                  style={{ cursor: 'pointer' }} 
-                >
-                  <i>Update</i>                  
-                </div>
+                  </div>                  
           </div>
         );
       })}    
