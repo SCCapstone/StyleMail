@@ -1,0 +1,73 @@
+[debug] [2021-02-23T20:58:29.116Z] ----------------------------------------------------------------------
+[debug] [2021-02-23T20:58:29.118Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2021-02-23T20:58:29.118Z] CLI Version:   9.3.0
+[debug] [2021-02-23T20:58:29.118Z] Platform:      darwin
+[debug] [2021-02-23T20:58:29.118Z] Node Version:  v12.16.1
+[debug] [2021-02-23T20:58:29.119Z] Time:          Tue Feb 23 2021 15:58:29 GMT-0500 (Eastern Standard Time)
+[debug] [2021-02-23T20:58:29.119Z] ----------------------------------------------------------------------
+[debug] [2021-02-23T20:58:29.119Z] 
+[debug] [2021-02-23T20:58:29.132Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-02-23T20:58:29.133Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: auth, firestore, hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore, hosting"}}
+[debug] [2021-02-23T20:58:29.167Z] [hub] writing locator at /var/folders/p2/_4f7tzd96vvddg7h2c6sgjr80000gn/T/hub-stylemail-edf5f.json
+[debug] [2021-02-23T20:58:29.217Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2021-02-23T20:58:29.217Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-02-23T20:58:29.218Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/Users/alecfarmer/.cache/firebase/emulators/cloud-firestore-emulator-v1.11.12.jar","--host","localhost","--port",8086,"--rules","/Users/alecfarmer/StyleMail/stylemail/firestore.rules"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/Users/alecfarmer/.cache/firebase/emulators/cloud-firestore-emulator-v1.11.12.jar\",\"--host\",\"localhost\",\"--port\",8086,\"--rules\",\"/Users/alecfarmer/StyleMail/stylemail/firestore.rules\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2021-02-23T20:58:30.942Z] API endpoint: http://localhost:8086
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=localhost:8086 {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://localhost:8086\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=localhost:8086"}}
+[debug] [2021-02-23T20:58:30.943Z] 
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"\n\nDev App Server is now running.\n\n"}}
+[debug] [2021-02-23T20:58:33.945Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/stylemail-edf5f/webApps/-/config [none]
+[debug] [2021-02-23T20:58:34.258Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/stylemail-edf5f/webApps/-/config 200
+[debug] [2021-02-23T20:58:34.258Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/stylemail-edf5f/webApps/-/config {"projectId":"stylemail-edf5f","databaseURL":"https://stylemail-edf5f.firebaseio.com","storageBucket":"stylemail-edf5f.appspot.com","locationId":"us-east1","apiKey":"AIzaSyCLs1a1LcEeXEiOAomAG3EodV5Js3LOnAY","authDomain":"stylemail-edf5f.firebaseapp.com","messagingSenderId":"506653836700"}
+[info] i  hosting: Serving hosting files from: build {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mbuild\u001b[22m"}}
+[info] ✔  hosting: Local server: http://localhost:5050 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5050\u001b[22m\u001b[24m"}}
+[warn] ⚠  ui: Emulator UI unable to start on port 4000, starting on 4001 instead. {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI unable to start on port 4000, starting on 4001 instead."}}
+[debug] [2021-02-23T20:58:34.580Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-02-23T20:58:34.580Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-02-23T20:58:34.580Z] Starting Emulator UI with command {"binary":"node","args":["/Users/alecfarmer/.cache/firebase/emulators/ui-v1.4.1/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/alecfarmer/.cache/firebase/emulators/ui-v1.4.1/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2021-02-23T20:58:34.753Z] Web / API server started at http://localhost:4001
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://localhost:4001\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4001                │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ localhost:9099 │ http://localhost:4001/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ localhost:8086 │ http://localhost:4001/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ localhost:5050 │ n/a                             │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:20:58:57 +0000] "GET / HTTP/1.1" 200 2282 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:20:58:57 +0000] \"GET / HTTP/1.1\" 200 2282 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] "GET /static/css/2.1a02f21c.chunk.css HTTP/1.1" 200 144723 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] \"GET /static/css/2.1a02f21c.chunk.css HTTP/1.1\" 200 144723 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] "GET /static/css/main.934d966b.chunk.css HTTP/1.1" 200 2096 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] \"GET /static/css/main.934d966b.chunk.css HTTP/1.1\" 200 2096 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] "GET /static/js/main.34bbd298.chunk.js HTTP/1.1" 200 15426 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] \"GET /static/js/main.34bbd298.chunk.js HTTP/1.1\" 200 15426 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] "GET /static/js/2.d085e266.chunk.js HTTP/1.1" 200 692960 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:20:58:58 +0000] \"GET /static/js/2.d085e266.chunk.js HTTP/1.1\" 200 692960 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:20:59:01 +0000] "GET /templateedit HTTP/1.1" 404 1808 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:20:59:01 +0000] \"GET /templateedit HTTP/1.1\" 404 1808 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:06:15 +0000] "GET / HTTP/1.1" 200 2282 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:06:15 +0000] \"GET / HTTP/1.1\" 200 2282 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] "GET /static/css/2.1a02f21c.chunk.css HTTP/1.1" 200 144723 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] \"GET /static/css/2.1a02f21c.chunk.css HTTP/1.1\" 200 144723 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] "GET /static/css/main.934d966b.chunk.css HTTP/1.1" 200 2096 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] \"GET /static/css/main.934d966b.chunk.css HTTP/1.1\" 200 2096 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] "GET /static/js/main.34bbd298.chunk.js HTTP/1.1" 200 15426 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] \"GET /static/js/main.34bbd298.chunk.js HTTP/1.1\" 200 15426 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] "GET /static/js/2.d085e266.chunk.js HTTP/1.1" 200 692960 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] \"GET /static/js/2.d085e266.chunk.js HTTP/1.1\" 200 692960 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] "GET /logo192.png HTTP/1.1" - - "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] \"GET /logo192.png HTTP/1.1\" - - \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] "GET /favicon.ico HTTP/1.1" - - "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:06:16 +0000] \"GET /favicon.ico HTTP/1.1\" - - \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:07:06 +0000] "GET /customtemplates HTTP/1.1" 404 1808 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:07:06 +0000] \"GET /customtemplates HTTP/1.1\" 404 1808 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:07:10 +0000] "GET /customtemplates HTTP/1.1" 404 1808 "http://localhost:5050/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:07:10 +0000] \"GET /customtemplates HTTP/1.1\" 404 1808 \"http://localhost:5050/\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
+[info] i  hosting: 127.0.0.1 - - [23/Feb/2021:21:07:20 +0000] "GET /templateedit HTTP/1.1" 404 1808 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0" {"metadata":{"emulator":{"name":"hosting"},"message":"127.0.0.1 - - [23/Feb/2021:21:07:20 +0000] \"GET /templateedit HTTP/1.1\" 404 1808 \"-\" \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10.16; rv:85.0) Gecko/20100101 Firefox/85.0\""}}
