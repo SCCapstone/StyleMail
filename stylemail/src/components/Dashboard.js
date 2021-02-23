@@ -40,24 +40,13 @@ export default function Dashboard() {
       
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Welcome back {currentUser.email}!</h2>
+          <h2 className="text-center mb-4">Welcome back to StyleMail {currentUser.email}!</h2>
           {error && <Alert variant="danger">{error}</Alert>}
         </Card.Body>       
        </Card>
 
       
-        <Card.Body>
-          <TemplateList/>
-          <TemplateAdd/>
-        </Card.Body>
 
-
-       
-      <div className="w-100 text-center mt-2">      
-        <Button variant="link" onClick={handleLogout}>
-          Log Out
-        </Button>
-      </div>
     </>
   )
 }
