@@ -10,14 +10,14 @@ export default function NavBar() {
     var login = useAuth();
 
     async function handleLogout() {
-        setError("")
+        //setError("")
     
         try {
           await logout()
           history.push("/login")
           NavBar.state.loggedIn = true;
         } catch {
-          setError("Failed to log out")
+          
         }
       }
     
@@ -33,7 +33,7 @@ export default function NavBar() {
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
                        <a href="https://stylemail.app/privacy" target ="_blank" rel="noopener noreferrer">Privacy Policy</a>
                        <a href="https://stylemail.app/terms" target ="_blank" rel="noopener noreferrer">Terms of Use</a>
-                       <a href="https://stylemail.app" onClick={handleLogout}>Sign Out</a>  
+                       <a style={{color:'white' }}onClick={handleLogout}>Sign Out</a>
                    </div>
         )
     }

@@ -64,6 +64,10 @@ class MyForm extends React.Component {
     sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink);
 
     window.alert("Email Sent!");
+
+    // Code to save date, time, recipient, subject to send log in firebase for the currently logged in user
+    var d = new Date();
+    console.log(d.getDate());
   }
 
   previewHandler = (event) => {
