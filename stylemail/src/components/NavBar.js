@@ -24,10 +24,11 @@ export default function NavBar() {
     if(login) {
         return (   
                    <div class="topnav">
-                       <a href="./sampletemplates">Sample Templates </a>
-                       <a href="./customtemplates">Custom Templates </a>
+                       <a href="./">Dashboard</a>
+                       <a href="./sampletemplates">Sample Templates</a>
+                       <a href="./customtemplates">Custom Templates</a>
                        <a href="./edittemplate">Edit Template</a>
-                       <a href="./sendlog"> Send Log </a>
+                       <a href="./sendlog"> Send Log</a>
                        <a href="https://stylemail.app/help" target ="_blank" rel="noopener noreferrer">Help</a>
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
                        <a href="https://stylemail.app/privacy" target ="_blank" rel="noopener noreferrer">Privacy Policy</a>

@@ -50,7 +50,7 @@ export default function Dashboard() {
           <div>
             <br></br>
           </div>
-          <button variant="link" onClick={event =>  window.location.href='/customtemplates'}>Create your own custom templates using HTML and CSS</button>
+          <button variant="link" onClick={event =>  window.location.href='/customtemplates'}>Create your own custom email templates using HTML and CSS</button>
         </Card.Body>       
        </Card>
 
