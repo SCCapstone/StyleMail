@@ -25,9 +25,8 @@ export default function NavBar() {
         return (   
                    <div class="topnav">
                        <a href="./"> Dashboard</a>
-                       <a href="./profile">Profile</a>
-                       <a href="./alltemplates">All Templates</a>
-                       <a href="./savedtemplates"> Saved Templates </a>
+                       <a href="./alltemplates">Sample Templates </a>
+                       <a href="./savedtemplates">Custom Templates </a>
                        <a href="./sendlog"> Send Log </a>
                        <a href="https://stylemail.app/help" target ="_blank" rel="noopener noreferrer">Help</a>
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
