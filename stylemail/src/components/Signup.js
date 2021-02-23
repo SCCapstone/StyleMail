@@ -2,8 +2,6 @@ import React, { useRef, useState } from "react"
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-//import { generateUserDocument } from "../firebase"
-//import { AddUser } from "./add.user"
 import firebase from 'firebase/app';
 import "firebase/firestore";
 const db = firebase.firestore();

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // removed useContext
+import React, { useState } from 'react';
 import { useAuth } from "../contexts/AuthContext";
 import firebase from 'firebase/app';
 import "firebase/firestore";
