@@ -8,7 +8,7 @@ export default function SendLog() {
     return (
         <div>
             <NavBar />
-            <h1> This will be where you send the log </h1>
+            <h1> This is where you can see your send log! </h1>
         </div>
     )
 }

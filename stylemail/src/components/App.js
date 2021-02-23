@@ -10,11 +10,12 @@ import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
 import Profile from "./Profile"
 import ForgotPassword from "./ForgotPassword"
-import SavedTemplates from "./SavedTemplates"
+import CustomTemplates from "./CustomTemplates"
 import LogOut from "./LogOut"
 import NavBar from "./NavBar"
-import AllTemplates from "./AllTemplates"
+import SampleTemplates from "./SampleTemplates"
 import SendLog from "./SendLog"
+import EditTemplate from "./EditTemplate"
 
 
 // Private route is only accessable from authorized users
@@ -44,8 +45,9 @@ function App() {
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
               <PrivateRoute path ="/profile" component={Profile} />
-              <PrivateRoute path ="/savedtemplates" component={SavedTemplates} />
-              <PrivateRoute path ="/alltemplates" component={AllTemplates} />
+              <PrivateRoute path ="/customtemplates" component={CustomTemplates} />
+              <PrivateRoute path ="/sampletemplates" component={SampleTemplates} />
+              <PrivateRoute path ="/edittemplate" component={EditTemplate} />
               <PrivateRoute path ="/sendlog" component={SendLog} />
               <PrivateRoute path ="/logout" component={LogOut} />
               <Route path="/signup" component={Signup} />

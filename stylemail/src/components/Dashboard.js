@@ -40,9 +40,8 @@ export default function Dashboard() {
       
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Welcome back!</h2>
+          <h2 className="text-center mb-4">Welcome back {currentUser.email}!</h2>
           {error && <Alert variant="danger">{error}</Alert>}
-          <strong>Email:</strong> {currentUser.email}
         </Card.Body>       
        </Card>
 
