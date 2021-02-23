@@ -27,7 +27,8 @@ export default function NavBar() {
                        <a href="./">Dashboard</a>
                        <a href="./sampletemplates">Sample Templates</a>
                        <a href="./customtemplates">Custom Templates</a>
-                       <a href="./templateedit">Edit Template</a>
+                       <a href="./edittemplatesample">Edit Template Sample</a>
+                       <a href="./edittemplatecustom">Edit Template Custom</a>
                        <a href="./sendlog"> Send Log</a>
                        <a href="https://stylemail.app/help" target ="_blank" rel="noopener noreferrer">Help</a>
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Footer from "./Footer"
 import { Card, Button, Alert } from "react-bootstrap"
 
-function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink) {
+function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     const mailgun = require("mailgun-js");
     const DOMAIN = 'mail.stylemail.app';
     const api_key = 'e9cbc6090c47f4e01c881ec9ad871702-77751bfc-f23a63ab';
@@ -12,21 +12,21 @@ function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpic
       from: 'StyleMail <mail@stylemail.app>',
       to: recipient,
       subject: subject,
-      html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p><img class=\"adapt-img\" src=\"" + imagelink + "\" width=\"600\"/></div></body></html>",
+      html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
     };
     mg.messages().send(data, function (error, body) {
       console.log(body);
     });
   }
   
-  function preview(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink) {
+  function preview(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p><img class=\"adapt-img\" src=\"" + imagelink + "\" width=\"600\"/></div></body></html>");
+    wnd.document.write("<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>");
   }
   
-  function print(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink) {
+  function print(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p><img class=\"adapt-img\" src=\"" + imagelink + "\" width=\"600\"/></div></body></html>");
+    wnd.document.write("<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>");
     wnd.print();
   }
 
@@ -40,7 +40,6 @@ class MyForm extends React.Component {
       fontselect: '',
       fontcolorpicker: '',
       bgcolorpicker: '',
-      imagelink: ''
     };
   }
 
@@ -59,15 +58,14 @@ class MyForm extends React.Component {
     let fontselect = this.state.fontselect;
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
-    let imagelink = this.state.imagelink;
 
-    sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink);
+    sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
 
     window.alert("Email Sent!");
 
     // Code to save date, time, recipient, subject to send log in firebase for the currently logged in user
     var d = new Date();
-    console.log(d.getDate());
+    d.getDate();
   }
 
   previewHandler = (event) => {
@@ -77,9 +75,8 @@ class MyForm extends React.Component {
     let fontselect = this.state.fontselect;
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
-    let imagelink = this.state.imagelink;
     
-    preview(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink);
+    preview(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
   }
 
   printHandler = (event) => {
@@ -89,9 +86,8 @@ class MyForm extends React.Component {
     let fontselect = this.state.fontselect;
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
-    let imagelink = this.state.imagelink;
     
-    print(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink);
+    print(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
   }
 
   render() {
@@ -169,14 +165,6 @@ class MyForm extends React.Component {
           Background Color:
           <br></br>
           <input type="color" name="bgcolorpicker" required onChange={this.ChangeHandler} />
-      </label>
-      <div>
-        <br></br>
-      </div>
-      <label>
-          Image (Link from an image hosted online):
-          <br></br>
-          <input type="text" name="imagelink" required onChange={this.ChangeHandler} />
       </label>
       <div>
         <br></br>
