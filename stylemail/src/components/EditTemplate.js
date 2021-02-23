@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Footer from "./Footer"
+import { Card, Button, Alert } from "react-bootstrap"
 
 function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker, imagelink) {
     const mailgun = require("mailgun-js");
@@ -92,7 +94,11 @@ class MyForm extends React.Component {
     return (
     <div style={{paddingLeft : "25px"}}>
       <form onSubmit={this.formHandler}>
-      <h1>Edit Template</h1>
+      <Card style={{backgroundColor:'#372392'}}>
+        <Card.Body>
+          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Edit Template</h1>
+        </Card.Body>
+       </Card>
       <div>
         <br></br>
       </div>
@@ -197,6 +203,10 @@ class MyForm extends React.Component {
       </div>
       <input type="submit" value="Send Email" />
       </form>
+      <div>
+        <br></br>
+      </div>
+      <Footer></Footer>
       </div>
     );
   }

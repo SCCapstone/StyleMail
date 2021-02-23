@@ -24,7 +24,6 @@ export default function NavBar() {
     if(login) {
         return (   
                    <div class="topnav">
-                       <a href="./"> Dashboard</a>
                        <a href="./sampletemplates">Sample Templates </a>
                        <a href="./customtemplates">Custom Templates </a>
                        <a href="./edittemplate">Edit Template</a>

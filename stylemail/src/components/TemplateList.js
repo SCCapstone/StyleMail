@@ -37,7 +37,7 @@ const TemplateList = () => {
   return (
     <div>
       <div>
-        <h6>Templates</h6>
+        <h6>Your Custom Templates</h6>
         <ul>
           {templates.map(template => (
             <li key={template.id}>

@@ -7,6 +7,7 @@ import TemplateList from "./TemplateList"
 import TemplateAdd from "./TemplateAdd"
 import NavBar from "./NavBar"
 import  "./Dashboard.css"
+import Footer from "./Footer"
 
 
 
@@ -40,12 +41,20 @@ export default function Dashboard() {
       
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">Welcome back to StyleMail {currentUser.email}!</h2>
-          {error && <Alert variant="danger">{error}</Alert>}
+          <h2 className="text-center mb-4">Welcome back to StyleMail, {currentUser.email}!</h2>
+          <h3>What would you like to do?</h3>
+          <div>
+            <br></br>
+          </div>
+          <button variant="link" onClick={event =>  window.location.href='/sampletemplates'}>Quickly send an email using one of our ready-to-go sample templates (Recommended)</button>
+          <div>
+            <br></br>
+          </div>
+          <button variant="link" onClick={event =>  window.location.href='/customtemplates'}>Create your own custom templates using HTML and CSS</button>
         </Card.Body>       
        </Card>
 
-      
+      <Footer></Footer>
 
     </>
   )
