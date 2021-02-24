@@ -6,7 +6,7 @@ import { Card, Button, Alert } from "react-bootstrap"
 function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     const mailgun = require("mailgun-js");
     const DOMAIN = 'mail.stylemail.app';
-    const api_key = 'e9cbc6090c47f4e01c881ec9ad871702-77751bfc-f23a63ab';
+    const api_key = '';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
