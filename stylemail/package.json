@@ -9,6 +9,7 @@
     "firebase": "^8.0.2",
     "firebase-tools": "^9.3.0",
     "hoist-non-react-statics": "^3.3.2",
+    "mailgun-js": "^0.22.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",

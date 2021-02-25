@@ -10,29 +10,31 @@ export default function NavBar() {
     var login = useAuth();
 
     async function handleLogout() {
-        setError("")
+        //setError("")
     
         try {
           await logout()
           history.push("/login")
           NavBar.state.loggedIn = true;
         } catch {
-          setError("Failed to log out")
+          
         }
       }
     
     if(login) {
         return (   
                    <div class="topnav">
-                       <a href="./sampletemplates">Sample Templates </a>
-                       <a href="./customtemplates">Custom Templates </a>
-                       <a href="./edittemplate">Edit Template</a>
-                       <a href="./sendlog"> Send Log </a>
+                       <a href="./">Dashboard</a>
+                       <a href="./sampletemplates">Sample Templates</a>
+                       <a href="./customtemplates">Custom Templates</a>
+                       <a href="./edittemplatesample">Edit Template Sample</a>
+                       <a href="./edittemplatecustom">Edit Template Custom</a>
+                       <a href="./sendlog"> Send Log</a>
                        <a href="https://stylemail.app/help" target ="_blank" rel="noopener noreferrer">Help</a>
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
                        <a href="https://stylemail.app/privacy" target ="_blank" rel="noopener noreferrer">Privacy Policy</a>
                        <a href="https://stylemail.app/terms" target ="_blank" rel="noopener noreferrer">Terms of Use</a>
-                       <a href="https://stylemail.app" onClick={handleLogout}>Sign Out</a>  
+                       <a style={{color:'white' }}onClick={handleLogout}>Sign Out</a>
                    </div>
         )
     }
