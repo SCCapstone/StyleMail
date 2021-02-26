@@ -4,53 +4,65 @@ import  "./Dashboard.css"
 import Footer from "./Footer"
 import { Link } from "react-router-dom";
 
-//export default function SampleTemplates() {
+class SampleTemplates extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      templateName: '',
+    };
+  }
 
-    const SampleTemplates = props => {
-        const [state, setState] = useState({
-          template: "",
-        });
-    
-    const TemplateHandler = event => {
-        const { name, value } = event.target;
-        setState(prevState => ({
-          ...prevState,
-          [name]: value
-        }));
-        //console.log(this.template);
-      };
+ChangeHandler = (event) => {
+  this.state.templateName = event.target.id;
 
-      /*function setTemplate(name) {
-          let newName = '';
-          newName = name;
-          this.template = newName;
-      }*/
+  localStorage.setItem('templateChoice', JSON.stringify(this.state.templateName));
+  window.location.href='/EditTemplateSample'
+}
 
+render() {
     return (
         <div>
             <NavBar />
-            <h1> This will be where you will see our 10 default templates. Picking a template will take you to the edit template page. Add image thumbnail previews for these!</h1>
             <h1>Pick a Template</h1>
-            <Link
-          className="btn btn-primary" onClick={TemplateHandler}
-          to={{
-            pathname: "/edittemplate",
-            state
-          }}
-        >
-          Get Well
-        </Link>
-            <h2>Get Well</h2>
-            <h2>Teacher Appreciation</h2>
-            <h2>Graduation Announcement</h2>
-            <h2>Save the Date</h2>
-            <h2>Thank You</h2>
-            <h2>Valentines</h2>
-            <h2>Happy Birthday</h2>
-            <h2>Business Memo</h2>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Get Well" onClick={this.ChangeHandler}>Get Well</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Teacher Appreciation" onClick={this.ChangeHandler}>Teacher Appreciation</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Grad Announcement" onClick={this.ChangeHandler}>Graduation Announcement</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Save The Date" onClick={this.ChangeHandler}>Save the Date</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Thank You" onClick={this.ChangeHandler}>Thank You</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Valentines" onClick={this.ChangeHandler}>Valentines</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Happy Birthday" onClick={this.ChangeHandler}>Happy Birthday</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Business Memo" onClick={this.ChangeHandler}>Business Memo</button>
+            <div>
+              <br></br>
+            </div>
             <Footer></Footer>
         </div>
-    )
+    );
 }
-//}
+}
+
 export default SampleTemplates;

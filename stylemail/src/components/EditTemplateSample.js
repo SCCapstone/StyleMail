@@ -17,6 +17,38 @@ function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpic
       subject: subject,
       html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
     };
+
+    if(localStorage && localStorage.getItem('templateChoice')) {
+      let tempChoice = localStorage.getItem('templateChoice');
+
+      switch(tempChoice) {
+        case 'Get Well':
+          data.html = "";
+          break;
+        case 'Teacher Appreciation':
+          data.html = "";
+          break;
+        case 'Grad Announcement':
+          data.html = "";
+          break;
+        case 'Save The Date':
+          data.html = "";
+          break;
+        case 'Thank You':
+          data.html = "";
+          break;
+        case 'Valentines':
+          data.html = "";
+          break;
+        case 'Happy Birthday':
+          data.html = "";
+          break;
+        case 'Business Memo':
+          data.html = "";
+          break;
+    }
+  }
+
     mg.messages().send(data, function (error, body) {
       console.log(error);
     });
@@ -108,18 +140,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      Choose a Template:
-      <br></br>
-      <select name="chosentemplate" required>
-        <option value="getwell">Get Well</option>
-        <option value="teacherappreciation">Teacher Appreciation</option>
-        <option value="gradannouncement">Graduation Announcement</option>
-        <option value="savethedate">Save The Date</option>
-        <option value="thankyou">Thank You</option>
-        <option value="valentines">Valentines</option>
-        <option value="bday">Happy Birthday</option>
-        <option value="bmemo">Business Memo</option>
-      </select>
+      <h3>Your chosen template is: {localStorage.getItem('templateChoice')}</h3>
       <div>
         <br></br>
       </div>
