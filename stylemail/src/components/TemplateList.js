@@ -5,13 +5,10 @@ import "firebase/firestore";
 import './TemplateList.css'
 const db = firebase.firestore();
 
-
 const TemplateList = () => {
   const [templates, setTemplates] = useState([]);
   const { currentUser } = useAuth()
   const[searchTerm, setSearchTerm] = useState('')
- 
-
 
   var userTemps = db.collection('users').doc(currentUser.email).collection('templates');
 
@@ -33,17 +30,23 @@ const TemplateList = () => {
     .doc(id)
     .delete();
   };
-
+  
   return (
     <div>
       <div>
-        <h6>Templates</h6>
+        <h4>Custom Templates</h4>
           <input
             id="searchbar"
             type='text'
             placeholder="Search"   
             onChange={event =>{setSearchTerm(event.target.value)}}   
           />
+          <div>
+            <br></br>
+          </div>
+          <div>
+            <br></br>
+          </div>
           {templates.filter((val) => {
           if(searchTerm == "") {
             return val
@@ -80,7 +83,13 @@ const TemplateList = () => {
                   style={{ cursor: 'pointer' }} // add
                 >
                   <i>Delete</i>
-                  </div>                  
+                  </div>
+                  <div id={val.html} >
+                  <i>Send</i>
+                  </div>
+                  <div>
+                    <br></br>
+                  </div>
           </div>
         );
       })}    
