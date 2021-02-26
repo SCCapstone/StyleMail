@@ -97,7 +97,7 @@ class MyForm extends React.Component {
       <form onSubmit={this.formHandler}>
       <Card style={{backgroundColor:'#372392'}}>
         <Card.Body>
-          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Edit Template</h1>
+          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Send Template</h1>
         </Card.Body>
        </Card>
        <div>
