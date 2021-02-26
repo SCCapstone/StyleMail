@@ -24,7 +24,7 @@ const SendLogs = () => {
       return () => {
         unsub();
       };
-    }, []);
+    },);
   
     return (
         <div>

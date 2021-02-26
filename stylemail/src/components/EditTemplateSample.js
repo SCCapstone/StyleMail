@@ -8,8 +8,8 @@ const db = firebase.firestore();
 
 function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     const mailgun = require("mailgun-js");
-    const DOMAIN = 'mail.alecfarmer.com';
-    const api_key = 'fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58';
+    const DOMAIN = 'MAILGUN_DOMAIN';
+    const api_key = 'MAILGUN_API_KEY';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
@@ -52,7 +52,7 @@ function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpic
     mg.messages().send(data, function (error, body) {
       console.log(error);
     });
-  }
+}
   
   function preview(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
