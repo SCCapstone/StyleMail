@@ -140,7 +140,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      <h3>Your chosen template is: {localStorage.getItem('templateChoice')}</h3>
+      <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample')}</h3>
       <div>
         <br></br>
       </div>
