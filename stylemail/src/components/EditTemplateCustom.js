@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Footer from "./Footer"
 import { Card, Button, Alert } from "react-bootstrap"
+import firebase from 'firebase/app';
+import "firebase/firestore";
+const db = firebase.firestore();
 
 function sendEmail(recipient, subject) {
     const mailgun = require("mailgun-js");
@@ -56,8 +59,12 @@ class MyForm extends React.Component {
     window.alert("Email Sent!");
 
     // Code to save date, time, recipient, subject to send log in firebase for the currently logged in user
-    var d = new Date();
-    d.getDate();
+    const months = ["Janurary", "Feburary", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const date = new Date();
+    const formattedDate = months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear() + " " + date.getHours() +":"+ date.getMinutes();
+    // Database entry
+    var log = db.collection('users').doc(firebase.auth().currentUser.email).collection('sendlog');
+    log.add({timeSent: formattedDate, emailTo: recipient, emailSubject: subject});
   }
 
   previewHandler = (event) => {

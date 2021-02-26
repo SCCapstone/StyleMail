@@ -18,7 +18,7 @@ const TemplateAdd = () => {
     userTemps.add(template);
     setTemplate({
       title: '',
-      html: ''
+      html: '',
     });
   };
 

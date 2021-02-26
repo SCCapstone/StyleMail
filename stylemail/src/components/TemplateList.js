@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import TemplateEdit from './TemplateEdit'
 import { useAuth } from "../contexts/AuthContext";
 import firebase from 'firebase/app';
 import "firebase/firestore";
@@ -17,7 +16,6 @@ const TemplateList = () => {
   var userTemps = db.collection('users').doc(currentUser.email).collection('templates');
 
   useEffect(() => {
-    console.log('effect');
     const unsub = userTemps.onSnapshot(snapshot => {
       const allTemplates = snapshot.docs.map(doc => ({
         id: doc.id,
@@ -26,7 +24,6 @@ const TemplateList = () => {
       setTemplates(allTemplates);
     });
     return () => {
-      console.log('cleanup');
       unsub();
     };
   }, []);
@@ -47,11 +44,11 @@ const TemplateList = () => {
             placeholder="Search"   
             onChange={event =>{setSearchTerm(event.target.value)}}   
           />
-          {templates.filter((val)=> {
-          if(searchTerm =="") {
+          {templates.filter((val) => {
+          if(searchTerm == "") {
             return val
           }  
-          else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())){
+          else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
             return val
           }                 
           }).map((val,key)=>{

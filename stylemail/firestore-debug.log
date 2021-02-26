@@ -1,7 +1,9 @@
-API endpoint: http://localhost:8086
+API endpoint: http://localhost:8088
 If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
 
-   export FIRESTORE_EMULATOR_HOST=localhost:8086
+   export FIRESTORE_EMULATOR_HOST=localhost:8088
 
 Dev App Server is now running.
 
+*** shutting down gRPC server since JVM is shutting down
+*** server shut down

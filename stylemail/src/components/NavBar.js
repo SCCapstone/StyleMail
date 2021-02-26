@@ -1,40 +1,38 @@
-import React, { useState } from "react"
-import { useAuth } from "../contexts/AuthContext"
-import { useHistory } from "react-router-dom"
 import "./Dashboard.css"
+import React from "react"
+import { useAuth } from "../contexts/AuthContext"
+import { Link, useHistory } from "react-router-dom"
 
 export default function NavBar() {
-    const [setError] = useState("")
     const { logout } = useAuth()
     const history = useHistory()
     var login = useAuth();
 
     async function handleLogout() {
-        //setError("")
     
         try {
           await logout()
           history.push("/login")
           NavBar.state.loggedIn = true;
-        } catch {
-          
+        } catch(e) {
+          console.log(e.message);
         }
-      }
-    
+    }
+    // Used router link tags instead of href since some links are private routed
     if(login) {
         return (   
                    <div class="topnav">
-                       <a href="./">Dashboard</a>
-                       <a href="./sampletemplates">Sample Templates</a>
-                       <a href="./customtemplates">Custom Templates</a>
-                       <a href="./edittemplatesample">Edit Template Sample</a>
-                       <a href="./edittemplatecustom">Edit Template Custom</a>
-                       <a href="./sendlog"> Send Log</a>
+                       <Link style={{color:'white' }} to="/">Dashboard</Link>
+                       <Link style={{color:'white' }} to="/sampletemplates">Sample Templates</Link>
+                       <Link style={{color:'white' }} to="/customtemplates">Custom Templates</Link>
+                       <Link style={{color:'white' }} to="/edittemplatesample">Edit Template Sample</Link>
+                       <Link style={{color:'white' }} to="/edittemplatecustom">Edit Template Custom</Link>
+                       <Link style={{color:'white' }} to="/sendlog">Send Log</Link>
                        <a href="https://stylemail.app/help" target ="_blank" rel="noopener noreferrer">Help</a>
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
                        <a href="https://stylemail.app/privacy" target ="_blank" rel="noopener noreferrer">Privacy Policy</a>
                        <a href="https://stylemail.app/terms" target ="_blank" rel="noopener noreferrer">Terms of Use</a>
-                       <a style={{color:'white' }}onClick={handleLogout}>Sign Out</a>
+                       <a style={{color:'white' }} onClick={handleLogout}>Sign Out</a>
                    </div>
         )
     }
