@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Footer from "./Footer"
 import { Card, Button, Alert } from "react-bootstrap"
+import firebase from 'firebase/app';
+import "firebase/firestore";
+const db = firebase.firestore();
 
 function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     const mailgun = require("mailgun-js");
-    const DOMAIN = 'mail.stylemail.app';
-    const api_key = '';
+    const DOMAIN = 'mail.alecfarmer.com';
+    const api_key = 'fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
@@ -15,7 +18,7 @@ function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpic
       html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
     };
     mg.messages().send(data, function (error, body) {
-      console.log(body);
+      console.log(error);
     });
   }
   
@@ -29,7 +32,7 @@ function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpic
     wnd.document.write("<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>");
     wnd.print();
   }
-
+  
 class MyForm extends React.Component {
   constructor(props) {
     super(props);
@@ -51,7 +54,6 @@ class MyForm extends React.Component {
 
   formHandler = (event) => {
     event.preventDefault();
-
     let recipient = this.state.recipient;
     let subject = this.state.subject;
     let messagetextarea = this.state.messagetextarea;
@@ -61,11 +63,15 @@ class MyForm extends React.Component {
 
     sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
 
-    window.alert("Email Sent!");
+    // Formatting the date for database entry
+    const months = ["Janurary", "Feburary", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    const date = new Date();
+    const formattedDate = months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear() + " " + date.getHours() +":"+ date.getMinutes();
+    // Database entry
+    var log = db.collection('users').doc(firebase.auth().currentUser.email).collection('sendlog');
+    log.add({timeSent: formattedDate, emailTo: recipient, emailSubject: subject});
 
-    // Code to save date, time, recipient, subject to send log in firebase for the currently logged in user
-    var d = new Date();
-    d.getDate();
+    window.alert("Email Sent!");
   }
 
   previewHandler = (event) => {

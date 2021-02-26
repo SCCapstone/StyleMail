@@ -1,0 +1,21 @@
+h3 {
+    font-size: 35px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+.title {
+    font-weight: bold;
+  }
+
+.listElem {
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0px;
+    padding-bottom: 30px;
+  }
+
+  .cur {
+    cursor: pointer;
+  }

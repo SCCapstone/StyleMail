@@ -1,7 +1,9 @@
+import "./ForgotPassword.css";
 import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import { Form, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link } from "react-router-dom"
+
 
 // Exports function `ForgotPassword` so it can be used elsewhere 
 export default function ForgotPassword() {
@@ -9,7 +11,6 @@ export default function ForgotPassword() {
   const { resetPassword } = useAuth()
   const [error, setError] = useState("")
   const [message, setMessage] = useState("")
-  const [loading, setLoading] = useState(false)
 
   // Calls submit function to handle existing passwords
   async function handleSubmit(e) {
@@ -19,39 +20,30 @@ export default function ForgotPassword() {
     try {
       setMessage("")
       setError("")
-      setLoading(true)
       await resetPassword(emailRef.current.value)
       setMessage("Check your inbox for further instructions")
     } catch {
       setError("Failed to reset password")
     }
-
-    setLoading(false)
   }
   // Displaying bootstrap formating
   return (
     <>
-      <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Password Reset</h2>
+      <div className="wrapper fadeInDown">
+        <div id="formContent">
+          <div className="fadeIn first">
+            <img src="./stylemailicon.png" id="icon" alt="User Icon" />
+          </div>
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control type="email" ref={emailRef} required />
-            </Form.Group>
-            <Button disabled={loading} className="w-100" type="submit">
-              Reset Password
-            </Button>
+            <input type="text" id="login" className="fadeIn second" name="login" placeholder="Email" ref={emailRef} required ></input>
+            <input type="submit" className="fadeIn fourth" id="bottom" value="Reset Password"></input>
           </Form>
-          <div className="w-100 text-center mt-3">
-            <Link to="/login">Login</Link>
+          <div id="formFooter">
+            Already have an account? <Link className="underlineHover" to="/login">Login</Link>
           </div>
-        </Card.Body>
-      </Card>
-      <div className="w-100 text-center mt-2 na">
-        Need an account? <Link to="/signup">Sign Up</Link>
+        </div>
       </div>
     </>
   )
