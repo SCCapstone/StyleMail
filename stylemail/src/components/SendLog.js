@@ -31,6 +31,7 @@ const SendLogs = () => {
             <NavBar />
             <div>
                 <h3>Send Log</h3>
+                <h4 style={{textAlign:"center"}}>Below is a log of your emails sent using StyleMail</h4>
                     <div class="list-group listElem">
                         {entries.map(entry => (
                             // eslint-disable-next-line jsx-a11y/anchor-is-valid

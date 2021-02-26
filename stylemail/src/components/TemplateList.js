@@ -44,7 +44,7 @@ const TemplateList = () => {
           <input
             id="searchbar"
             type='text'
-            placeholder="Search"   
+            placeholder="Type here to search by title"   
             onChange={event =>{setSearchTerm(event.target.value)}}   
           />
           <div>
@@ -64,6 +64,8 @@ const TemplateList = () => {
             return (
             <div className="user" key={key}>
               <div>
+                  Title
+                  <br/>
                   <input 
                     placeholder={val.title}                    
                     onChange={e=> {
@@ -73,26 +75,25 @@ const TemplateList = () => {
                     }  
                   }
                     />
-                                                                  
-                  <input 
-                    placeholder={val.html}
+                         <br/>HTML<br/>                                         
+                  <textarea rows="5" cols="100" placeholder={val.html}
                     onChange={e=> {
                       db.collection('users').doc(currentUser.email).collection('templates').doc(val.id).update( {
                         'html': e.target.value 
                       })
                     }  
-                  }
-                    />                                       
+                  }></textarea>                                    
                 </div>
-                <div
+                <button
+                  class="btn btn-outline-dark"
                   onClick={() => deleteTemplate(val.id)}
-                  style={{ cursor: 'pointer' }} // add
+                  
                 >
                   <i>Delete</i>
-                  </div>
-                  <div id={val.html} onClick={() => {sendTemplate(val.title, val.html)}} style={{ cursor: 'pointer' }}>
+                  </button>
+                  <button class="btn btn-outline-dark" id={val.html} onClick={() => {sendTemplate(val.title, val.html)}}>
                   <i>Send</i>
-                  </div>
+                  </button>
                   <div>
                     <br></br>
                   </div>
