@@ -5,6 +5,12 @@ import "firebase/firestore";
 import './TemplateList.css'
 const db = firebase.firestore();
 
+function sendTemplate(title, html) {
+  localStorage.setItem('templateChoiceCustom', JSON.stringify(title));
+  localStorage.setItem('templateHTMLCustom', JSON.stringify(html));
+  window.location.href='/EditTemplateCustom'
+}
+
 const TemplateList = () => {
   const [templates, setTemplates] = useState([]);
   const { currentUser } = useAuth()
@@ -84,7 +90,7 @@ const TemplateList = () => {
                 >
                   <i>Delete</i>
                   </div>
-                  <div id={val.html} >
+                  <div id={val.html} onClick={() => {sendTemplate(val.title, val.html)}} style={{ cursor: 'pointer' }}>
                   <i>Send</i>
                   </div>
                   <div>

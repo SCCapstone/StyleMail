@@ -8,8 +8,8 @@ const db = firebase.firestore();
 
 function sendEmail(recipient, subject) {
     const mailgun = require("mailgun-js");
-    const DOMAIN = 'mail.alecfarmer.com';
-    const api_key = 'fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58';
+    const DOMAIN = 'MAILGUN_DOMAIN';
+    const api_key = 'MAILGUN_API_KEY';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
@@ -18,6 +18,11 @@ function sendEmail(recipient, subject) {
       html: "<html><head><style>p{color:;font-size:30px;font-family:}#container{background-color:;text-align:center;}</style></head><body><div id=\"container\"><p></p></body></html>",
     };
 
+    if(localStorage && localStorage.getItem('templateHTMLCustom')) {
+      let tempHTML = localStorage.getItem('templateHTMLCustom');
+      data.html = tempHTML;
+    }
+
     mg.messages().send(data, function (error, body) {
       console.log(body);
     });
@@ -25,13 +30,19 @@ function sendEmail(recipient, subject) {
   
   function preview() {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("<html><head><style>p{color:;font-size:30px;font-family:}#container{background-color:;text-align:center;}</style></head><body><div id=\"container\"><p></p></body></html>");
+    if(localStorage && localStorage.getItem('templateHTMLCustom')) {
+      let tempHTML = localStorage.getItem('templateHTMLCustom');
+      wnd.document.write(tempHTML);
+    }
   }
   
   function print() {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("<html><head><style>p{color:;font-size:30px;font-family:}#container{background-color:;text-align:center;}</style></head><body><div id=\"container\"><p></p></body></html>");
-    wnd.print();
+    if(localStorage && localStorage.getItem('templateHTMLCustom')) {
+      let tempHTML = localStorage.getItem('templateHTMLCustom');
+      wnd.document.write(tempHTML);
+      wnd.print();
+    }
   }
 
 class MyForm extends React.Component {
@@ -89,6 +100,10 @@ class MyForm extends React.Component {
           <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Edit Template</h1>
         </Card.Body>
        </Card>
+       <div>
+        <br></br>
+      </div>
+      <h3>Your chosen template is: {localStorage.getItem('templateChoiceCustom')}</h3>
       <div>
         <br></br>
       </div>

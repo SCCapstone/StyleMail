@@ -18,8 +18,8 @@ function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpic
       html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
     };
 
-    if(localStorage && localStorage.getItem('templateChoice')) {
-      let tempChoice = localStorage.getItem('templateChoice');
+    if(localStorage && localStorage.getItem('templateChoiceSample')) {
+      let tempChoice = localStorage.getItem('templateChoiceSample');
 
       switch(tempChoice) {
         case 'Get Well':
