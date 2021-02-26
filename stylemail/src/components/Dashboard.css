@@ -101,3 +101,16 @@ footer {
 .card.Body {
   background-color: #372392;
 }
+
+h2 {
+  text-align: center;
+}
+.text-center {
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+}
+
+#center {
+  text-align: center;
+}
