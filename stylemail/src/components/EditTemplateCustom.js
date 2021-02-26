@@ -123,7 +123,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      <button onClick={event =>  window.location.href='/'}>
+      <button onClick={event =>  window.location.href='/CustomTemplates'}>
         Cancel
       </button>
       <div>
