@@ -16,7 +16,7 @@ ChangeHandler = (event) => {
   this.state.templateName = event.target.id;
 
   localStorage.setItem('templateChoiceSample', this.state.templateName);
-  window.location.href='/EditTemplateSample'
+  window.location.href='/edittemplatesample'
 }
 
 render() {

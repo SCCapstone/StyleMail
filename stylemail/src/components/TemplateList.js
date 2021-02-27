@@ -8,7 +8,7 @@ const db = firebase.firestore();
 function sendTemplate(title, html) {
   localStorage.setItem('templateChoiceCustom', title);
   localStorage.setItem('templateHTMLCustom', html);
-  window.location.href='/EditTemplateCustom'
+  window.location.href='/edittemplatecustom'
 }
 
 const TemplateList = () => {
