@@ -11,11 +11,12 @@ function sendEmail(recipient, subject) {
     const DOMAIN = 'MAILGUN_DOMAIN';
     const api_key = 'MAILGUN_API_KEY';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
+    let tempHTML = localStorage.getItem('templateHTMLCustom');
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
       to: recipient,
       subject: subject,
-      html: "<html><head><style>p{color:;font-size:30px;font-family:}#container{background-color:;text-align:center;}</style></head><body><div id=\"container\"><p></p></body></html>",
+      html: tempHTML,
     };
 
     if(localStorage && localStorage.getItem('templateHTMLCustom')) {
@@ -77,6 +78,8 @@ class MyForm extends React.Component {
     // Database entry
     var log = db.collection('users').doc(firebase.auth().currentUser.email).collection('sendlog');
     log.add({timeSent: formattedDate, emailTo: recipient, emailSubject: subject});
+
+    this.props.history.push('/');
   }
 
   previewHandler = (event) => {

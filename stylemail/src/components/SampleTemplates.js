@@ -59,6 +59,14 @@ render() {
             <div>
               <br></br>
             </div>
+            <button className="btn btn-outline-dark" id="Good Luck" onClick={this.ChangeHandler}>Good Luck</button>
+            <div>
+              <br></br>
+            </div>
+            <button className="btn btn-outline-dark" id="Christmas" onClick={this.ChangeHandler}>Christmas</button>
+            <div>
+              <br></br>
+            </div>
             <Footer></Footer>
         </div>
     );
