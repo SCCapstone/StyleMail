@@ -29,7 +29,13 @@ const TemplateAdd = () => {
   return (
     <div className='section'>
       <div className='container'>
-        <h6>New Template</h6>
+      <div>
+        <br></br>
+      </div>
+      <div>
+        <br></br>
+      </div>
+        <h4>Add New Template</h4>
         <form onSubmit={handleSubmit}>
           <div className='input-field'>
             <input

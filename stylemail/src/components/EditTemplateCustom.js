@@ -8,15 +8,22 @@ const db = firebase.firestore();
 
 function sendEmail(recipient, subject) {
     const mailgun = require("mailgun-js");
-    const DOMAIN = 'mail.stylemail.app';
-    const api_key = '';
+    const DOMAIN = 'MAILGUN_DOMAIN';
+    const api_key = 'MAILGUN_API_KEY';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
+    let tempHTML = localStorage.getItem('templateHTMLCustom');
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
       to: recipient,
       subject: subject,
-      html: "",
+      html: tempHTML,
     };
+
+    if(localStorage && localStorage.getItem('templateHTMLCustom')) {
+      let tempHTML = localStorage.getItem('templateHTMLCustom');
+      data.html = tempHTML;
+    }
+
     mg.messages().send(data, function (error, body) {
       console.log(body);
     });
@@ -24,13 +31,19 @@ function sendEmail(recipient, subject) {
   
   function preview() {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("");
+    if(localStorage && localStorage.getItem('templateHTMLCustom')) {
+      let tempHTML = localStorage.getItem('templateHTMLCustom');
+      wnd.document.write(tempHTML);
+    }
   }
   
   function print() {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("");
-    wnd.print();
+    if(localStorage && localStorage.getItem('templateHTMLCustom')) {
+      let tempHTML = localStorage.getItem('templateHTMLCustom');
+      wnd.document.write(tempHTML);
+      wnd.print();
+    }
   }
 
 class MyForm extends React.Component {
@@ -65,6 +78,8 @@ class MyForm extends React.Component {
     // Database entry
     var log = db.collection('users').doc(firebase.auth().currentUser.email).collection('sendlog');
     log.add({timeSent: formattedDate, emailTo: recipient, emailSubject: subject});
+
+    this.props.history.push('/');
   }
 
   previewHandler = (event) => {
@@ -85,9 +100,13 @@ class MyForm extends React.Component {
       <form onSubmit={this.formHandler}>
       <Card style={{backgroundColor:'#372392'}}>
         <Card.Body>
-          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Edit Template</h1>
+          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Send Template</h1>
         </Card.Body>
        </Card>
+       <div>
+        <br></br>
+      </div>
+      <h3>Your chosen template is: {localStorage.getItem('templateChoiceCustom')}</h3>
       <div>
         <br></br>
       </div>
@@ -107,7 +126,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      <button onClick={event =>  window.location.href='/'}>
+      <button onClick={event =>  window.location.href='/CustomTemplates'}>
         Cancel
       </button>
       <div>

@@ -6,10 +6,10 @@ import firebase from 'firebase/app';
 import "firebase/firestore";
 const db = firebase.firestore();
 
-function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
+function sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     const mailgun = require("mailgun-js");
-    const DOMAIN = 'mail.alecfarmer.com';
-    const api_key = 'fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58';
+    const DOMAIN = 'MAILGUN_DOMAIN';
+    const api_key = 'MAILGUN_API_KEY';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
@@ -17,19 +17,136 @@ function sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpic
       subject: subject,
       html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
     };
+
+    if(localStorage && localStorage.getItem('templateChoiceSample')) {
+      let tempChoice = localStorage.getItem('templateChoiceSample');
+
+      switch(tempChoice) {
+        case 'Get Well':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Teacher Appreciation':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Teacher Appreciation</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Grad Announcement':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Graduation Announcement</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Save The Date':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Thank You':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Valentines':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Happy Birthday':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Business Memo':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Business Memo</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Good Luck':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Christmas':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Merry Christmas</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+    }
+  }
+
     mg.messages().send(data, function (error, body) {
       console.log(error);
     });
+}
+  
+  function preview(sender, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
+    var wnd = window.open("StyleMail", "Stylemail", "_blank");
+
+    if(localStorage && localStorage.getItem('templateChoiceSample')) {
+      let tempChoice = localStorage.getItem('templateChoiceSample');
+
+      let write = '';
+
+      switch(tempChoice) {
+        case 'Get Well':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Teacher Appreciation':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Teacher Appreciation</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Grad Announcement':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Graduation Announcement</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Save The Date':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Thank You':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Valentines':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Happy Birthday':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Business Memo':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Business Memo</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Good Luck':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Christmas':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Merry Christmas</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+      }
+      wnd.document.write(write);
+    }
   }
   
-  function preview(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
+  function print(sender, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>");
-  }
-  
-  function print(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
-    var wnd = window.open("StyleMail", "Stylemail", "_blank");
-    wnd.document.write("<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>");
+
+    let write = '';
+
+    if(localStorage && localStorage.getItem('templateChoiceSample')) {
+      let tempChoice = localStorage.getItem('templateChoiceSample');
+
+      switch(tempChoice) {
+        case 'Get Well':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Teacher Appreciation':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Teacher Appreciation</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Grad Announcement':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Graduation Announcement</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Save The Date':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Thank You':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Valentines':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Happy Birthday':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Business Memo':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Business Memo</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Good Luck':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+        case 'Christmas':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Christmas</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
+          break;
+      }
+    }
+
+    wnd.document.write(write);
     wnd.print();
   }
   
@@ -37,6 +154,7 @@ class MyForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      sender: '',
       recipient: '',
       subject: '',
       messagetextarea: '',
@@ -54,6 +172,7 @@ class MyForm extends React.Component {
 
   formHandler = (event) => {
     event.preventDefault();
+    let sender = this.state.sender;
     let recipient = this.state.recipient;
     let subject = this.state.subject;
     let messagetextarea = this.state.messagetextarea;
@@ -61,7 +180,7 @@ class MyForm extends React.Component {
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
 
-    sendEmail(recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
+    sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
 
     // Formatting the date for database entry
     const months = ["Janurary", "Feburary", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -72,28 +191,32 @@ class MyForm extends React.Component {
     log.add({timeSent: formattedDate, emailTo: recipient, emailSubject: subject});
 
     window.alert("Email Sent!");
+
+    this.props.history.push('/');
   }
 
   previewHandler = (event) => {
     event.preventDefault();
 
+    let sender = this.state.sender;
     let messagetextarea = this.state.messagetextarea;
     let fontselect = this.state.fontselect;
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
     
-    preview(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
+    preview(sender, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
   }
 
   printHandler = (event) => {
     event.preventDefault();
 
+    let sender = this.state.sender;
     let messagetextarea = this.state.messagetextarea;
     let fontselect = this.state.fontselect;
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
     
-    print(messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
+    print(sender, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
   }
 
   render() {
@@ -102,24 +225,21 @@ class MyForm extends React.Component {
       <form onSubmit={this.formHandler}>
       <Card style={{backgroundColor:'#372392'}}>
         <Card.Body>
-          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Edit Template</h1>
+          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Customize and Send Template</h1>
         </Card.Body>
        </Card>
       <div>
         <br></br>
       </div>
-      Choose a Template:
-      <br></br>
-      <select name="chosentemplate" required>
-        <option value="getwell">Get Well</option>
-        <option value="teacherappreciation">Teacher Appreciation</option>
-        <option value="gradannouncement">Graduation Announcement</option>
-        <option value="savethedate">Save The Date</option>
-        <option value="thankyou">Thank You</option>
-        <option value="valentines">Valentines</option>
-        <option value="bday">Happy Birthday</option>
-        <option value="bmemo">Business Memo</option>
-      </select>
+      <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample')}</h3>
+      <div>
+        <br></br>
+      </div>
+      <label>
+          From: 
+          <br></br>
+          <input type="text" name="sender" required onChange={this.ChangeHandler} />
+      </label>
       <div>
         <br></br>
       </div>
@@ -175,7 +295,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      <button onClick={event =>  window.location.href='/'}>
+      <button onClick={event =>  window.location.href='/SampleTemplates'}>
         Cancel
       </button>
       <div>

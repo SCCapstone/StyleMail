@@ -25,8 +25,6 @@ export default function NavBar() {
                        <Link style={{color:'white' }} to="/">Dashboard</Link>
                        <Link style={{color:'white' }} to="/sampletemplates">Sample Templates</Link>
                        <Link style={{color:'white' }} to="/customtemplates">Custom Templates</Link>
-                       <Link style={{color:'white' }} to="/edittemplatesample">Edit Template Sample</Link>
-                       <Link style={{color:'white' }} to="/edittemplatecustom">Edit Template Custom</Link>
                        <Link style={{color:'white' }} to="/sendlog">Send Log</Link>
                        <a href="https://stylemail.app/help" target ="_blank" rel="noopener noreferrer">Help</a>
                        <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>

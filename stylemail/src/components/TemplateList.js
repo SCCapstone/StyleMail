@@ -5,13 +5,16 @@ import "firebase/firestore";
 import './TemplateList.css'
 const db = firebase.firestore();
 
+function sendTemplate(title, html) {
+  localStorage.setItem('templateChoiceCustom', title);
+  localStorage.setItem('templateHTMLCustom', html);
+  window.location.href='/EditTemplateCustom'
+}
 
 const TemplateList = () => {
   const [templates, setTemplates] = useState([]);
   const { currentUser } = useAuth()
   const[searchTerm, setSearchTerm] = useState('')
- 
-
 
   var userTemps = db.collection('users').doc(currentUser.email).collection('templates');
 
@@ -33,17 +36,23 @@ const TemplateList = () => {
     .doc(id)
     .delete();
   };
-
+  
   return (
     <div>
       <div>
-        <h6>Templates</h6>
+        <h4>Custom Templates</h4>
           <input
             id="searchbar"
             type='text'
-            placeholder="Search"   
+            placeholder="Type here to search by title"   
             onChange={event =>{setSearchTerm(event.target.value)}}   
           />
+          <div>
+            <br></br>
+          </div>
+          <div>
+            <br></br>
+          </div>
           {templates.filter((val) => {
           if(searchTerm == "") {
             return val
@@ -55,6 +64,8 @@ const TemplateList = () => {
             return (
             <div className="user" key={key}>
               <div>
+                  Title
+                  <br/>
                   <input 
                     placeholder={val.title}                    
                     onChange={e=> {
@@ -64,23 +75,28 @@ const TemplateList = () => {
                     }  
                   }
                     />
-                                                                  
-                  <input 
-                    placeholder={val.html}
+                         <br/>HTML<br/>                                         
+                  <textarea rows="5" cols="100" placeholder={val.html}
                     onChange={e=> {
                       db.collection('users').doc(currentUser.email).collection('templates').doc(val.id).update( {
                         'html': e.target.value 
                       })
                     }  
-                  }
-                    />                                       
+                  }></textarea>                                    
                 </div>
-                <div
+                <button
+                  class="btn btn-outline-dark"
                   onClick={() => deleteTemplate(val.id)}
-                  style={{ cursor: 'pointer' }} // add
+                  
                 >
                   <i>Delete</i>
-                  </div>                  
+                  </button>
+                  <button class="btn btn-outline-dark" id={val.html} onClick={() => {sendTemplate(val.title, val.html)}}>
+                  <i>Send</i>
+                  </button>
+                  <div>
+                    <br></br>
+                  </div>
           </div>
         );
       })}    
