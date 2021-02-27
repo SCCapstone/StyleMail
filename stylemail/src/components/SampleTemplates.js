@@ -15,7 +15,7 @@ class SampleTemplates extends React.Component {
 ChangeHandler = (event) => {
   this.state.templateName = event.target.id;
 
-  localStorage.setItem('templateChoiceSample', JSON.stringify(this.state.templateName));
+  localStorage.setItem('templateChoiceSample', this.state.templateName);
   window.location.href='/EditTemplateSample'
 }
 
