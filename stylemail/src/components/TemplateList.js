@@ -2,21 +2,28 @@
 /* eslint-disable eqeqeq */
 import React, {useState, useEffect} from 'react'
 import { useAuth } from "../contexts/AuthContext";
+import { useHistory } from "react-router-dom"
 import firebase from 'firebase/app';
 import "firebase/firestore";
 import './TemplateList.css'
 const db = firebase.firestore();
 
-function sendTemplate(title, html) {
-  localStorage.setItem('templateChoiceCustom', title);
-  localStorage.setItem('templateHTMLCustom', html);
-  window.location.href='/edittemplatecustom'
-}
-
-const TemplateList = () => {
+export default function TemplateList() {
   const [templates, setTemplates] = useState([]);
   const { currentUser } = useAuth()
+  const history = useHistory();
   const[searchTerm, setSearchTerm] = useState('')
+
+  async function SendTemplate(title, html) {
+    try {
+      //localStorage.clear();
+      localStorage.setItem('templateChoiceCustom', title);
+      localStorage.setItem('templateHTMLCustom', html);
+      history.push('/edittemplatesample');
+    } catch(e) {
+      console.log(e.message);
+    }
+  }
 
   var userTemps = db.collection('users').doc(currentUser.email).collection('templates');
 
@@ -93,7 +100,7 @@ const TemplateList = () => {
                 >
                   <i>Delete</i>
                   </button>
-                  <button class="btn btn-outline-dark" id={val.html} onClick={() => {sendTemplate(val.title, val.html)}}>
+                  <button class="btn btn-outline-dark" id={val.html} onClick={ () => {SendTemplate(val.title, val.html)}}>
                   <i>Send</i>
                   </button>
                   <div>
@@ -106,4 +113,4 @@ const TemplateList = () => {
     </div>
   );
 }
-export default TemplateList;
+//export default TemplateList;

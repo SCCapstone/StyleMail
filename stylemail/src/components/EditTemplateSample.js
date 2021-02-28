@@ -7,10 +7,9 @@ import "firebase/firestore";
 const db = firebase.firestore();
 
 function sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
-    console.log(process.env.REACT_APP_MAILGUN_API);
     const mailgun = require("mailgun-js");
-    const DOMAIN = process.env.REACT_APP_MAILGUN_DOMAIN;
-    const api_key = process.env.REACT_APP_MAILGUN_API;
+    const DOMAIN = "mail.alecfarmer.com";
+    const api_key = "fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58";
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
@@ -235,7 +234,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample')}</h3>
+      <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample') || localStorage.getItem('templateChoiceCustom')}</h3>
       <div>
         <br></br>
       </div>
@@ -265,7 +264,7 @@ class MyForm extends React.Component {
       </div>
       Message Text:
       <br></br>
-      <textarea name="messagetextarea" rows="5" cols="50" placeholder="Type your message here!" required onChange={this.ChangeHandler}></textarea>
+      <textarea id="textarea" name="messagetextarea" rows="5" cols="50" placeholder="Type your message here!" required onChange={this.ChangeHandler}></textarea>
       <br></br>StyleMail supports emoji! While typing your message, press the Windows key and the period (.) key simultaneously to use emoji in your message.
       <div>
         <br></br>
