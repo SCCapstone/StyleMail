@@ -27,7 +27,7 @@ export default function Dashboard() {
       <Card>
         <Card.Body>
           <div style={{textAlign:"center"}}>
-            <img src="https://raw.githubusercontent.com/SCCapstone/StyleMail/master/StyleMail%20Logo.jpg?token=AEIQZTBUE2LE6M7CHI4VWNTAIKF5E" width="450px" height="286px"/>
+            <img alt="StyleMail Logo" src="https://raw.githubusercontent.com/SCCapstone/StyleMail/master/StyleMail%20Logo.jpg?token=AEIQZTBUE2LE6M7CHI4VWNTAIKF5E" width="450px" height="286px"/>
           </div>
           <div>
             <br></br>

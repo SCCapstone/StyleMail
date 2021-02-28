@@ -1,15 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import Footer from "./Footer"
-import { Card, Button, Alert } from "react-bootstrap"
+import { Card } from "react-bootstrap" //Button, Alert
 import firebase from 'firebase/app';
 import "firebase/firestore";
 const db = firebase.firestore();
 
 function sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
+    console.log(process.env.REACT_APP_MAILGUN_API);
     const mailgun = require("mailgun-js");
-    const DOMAIN = 'MAILGUN_DOMAIN';
-    const api_key = 'MAILGUN_API_KEY';
+    const DOMAIN = process.env.REACT_APP_MAILGUN_DOMAIN;
+    const api_key = process.env.REACT_APP_MAILGUN_API;
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     const data = {
       from: 'StyleMail <mail@stylemail.app>',
@@ -21,6 +22,7 @@ function sendEmail(sender, recipient, subject, messagetextarea, fontselect, font
     if(localStorage && localStorage.getItem('templateChoiceSample')) {
       let tempChoice = localStorage.getItem('templateChoiceSample');
 
+      // eslint-disable-next-line default-case
       switch(tempChoice) {
         case 'Get Well':
           data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
@@ -68,6 +70,7 @@ function sendEmail(sender, recipient, subject, messagetextarea, fontselect, font
 
       let write = '';
 
+      // eslint-disable-next-line default-case
       switch(tempChoice) {
         case 'Get Well':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";
@@ -112,6 +115,7 @@ function sendEmail(sender, recipient, subject, messagetextarea, fontselect, font
     if(localStorage && localStorage.getItem('templateChoiceSample')) {
       let tempChoice = localStorage.getItem('templateChoiceSample');
 
+      // eslint-disable-next-line default-case
       switch(tempChoice) {
         case 'Get Well':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p></div>";

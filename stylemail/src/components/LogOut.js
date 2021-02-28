@@ -1,4 +1,4 @@
-import React,{Component} from "react"
+import React from "react" //,{Component}
 import NavBar from "./NavBar"
 import  "./Dashboard.css"
 

@@ -1,8 +1,7 @@
-import React, { useState } from "react"
+import React from "react" //, { useState }
 import NavBar from "./NavBar"
 import  "./Dashboard.css"
 import Footer from "./Footer"
-import { Link } from "react-router-dom";
 
 class SampleTemplates extends React.Component {
   constructor(props) {
@@ -13,10 +12,12 @@ class SampleTemplates extends React.Component {
   }
 
 ChangeHandler = (event) => {
+  // eslint-disable-next-line react/no-direct-mutation-state
   this.state.templateName = event.target.id;
 
   localStorage.setItem('templateChoiceSample', this.state.templateName);
-  window.location.href='/edittemplatesample'
+  //window.location.href='/edittemplatesample';
+  this.props.history.push('/edittemplatesample');
 }
 
 render() {

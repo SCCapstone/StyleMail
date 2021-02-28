@@ -1,11 +1,11 @@
-import React, { useState } from "react"
-import { Card, Button, Alert } from "react-bootstrap"
-import { useAuth } from "../contexts/AuthContext"
-import { useHistory } from "react-router-dom"
+//import React, { useState } from "react"
+import { Card } from "react-bootstrap" //, Button, Alert
+//import { useAuth } from "../contexts/AuthContext"
+//import { useHistory } from "react-router-dom"
 //import { getUserDocument } from "../firebase"
-import TemplateList from "./TemplateList"
-import TemplateAdd from "./TemplateAdd"
-import NavBar from "./NavBar"
+//import TemplateList from "./TemplateList"
+//import TemplateAdd from "./TemplateAdd"
+//import NavBar from "./NavBar"
 import  "./Dashboard.css"
 
 

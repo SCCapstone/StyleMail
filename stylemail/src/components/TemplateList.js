@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable eqeqeq */
 import React, {useState, useEffect} from 'react'
 import { useAuth } from "../contexts/AuthContext";
 import firebase from 'firebase/app';
@@ -29,7 +31,7 @@ const TemplateList = () => {
     return () => {
       unsub();
     };
-  }, []);
+  },);
 
   const deleteTemplate = id => {
     db.collection('users').doc(currentUser.email).collection('templates')

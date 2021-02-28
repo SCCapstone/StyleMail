@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import Footer from "./Footer"
-import { Card, Button, Alert } from "react-bootstrap"
+import { Card } from "react-bootstrap" //, Button, Alert
 import firebase from 'firebase/app';
 import "firebase/firestore";
 const db = firebase.firestore();

@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import "./Dashboard.css"
 import React from "react"
 import { useAuth } from "../contexts/AuthContext"

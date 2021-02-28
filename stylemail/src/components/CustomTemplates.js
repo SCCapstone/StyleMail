@@ -1,7 +1,7 @@
 import React from "react"
 import NavBar from "./NavBar"
 import  "./Dashboard.css"
-import { Card, Button, Alert } from "react-bootstrap"
+import { Card } from "react-bootstrap" //, Button, Alert
 import TemplateList from "./TemplateList"
 import TemplateAdd from "./TemplateAdd"
 import Footer from "./Footer"
