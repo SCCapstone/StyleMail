@@ -19,7 +19,7 @@ export default function TemplateList() {
       //localStorage.clear();
       localStorage.setItem('templateChoiceCustom', title);
       localStorage.setItem('templateHTMLCustom', html);
-      history.push('/edittemplatesample');
+      history.push('/edittemplatecustom');
     } catch(e) {
       console.log(e.message);
     }
