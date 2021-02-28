@@ -126,7 +126,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      <button onClick={event =>  window.location.href='/CustomTemplates'}>
+      <button onClick={event =>  this.props.history.push('/customtemplates')}>
         Cancel
       </button>
       <div>

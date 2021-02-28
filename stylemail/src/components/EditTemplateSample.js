@@ -298,7 +298,7 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
-      <button onClick={event =>  window.location.href='/SampleTemplates'}>
+      <button onClick={event =>  this.props.history.push('/sampletemplates')}>
         Cancel
       </button>
       <div>
