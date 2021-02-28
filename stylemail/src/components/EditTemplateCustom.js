@@ -8,8 +8,8 @@ const db = firebase.firestore();
 
 function sendEmail(recipient, subject) {
     const mailgun = require("mailgun-js");
-    const DOMAIN = 'MAILGUN_DOMAIN';
-    const api_key = 'MAILGUN_API_KEY';
+    const DOMAIN = 'mail.alecfarmer.com';
+    const api_key = 'fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     let tempHTML = localStorage.getItem('templateHTMLCustom');
     const data = {
@@ -27,7 +27,7 @@ function sendEmail(recipient, subject) {
     mg.messages().send(data, function (error, body) {
       console.log(body);
     });
-  }
+}
   
   function preview() {
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
