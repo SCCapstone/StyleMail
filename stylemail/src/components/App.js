@@ -17,7 +17,10 @@ import SampleTemplates from "./SampleTemplates"
 import SendLog from "./SendLog"
 import EditTemplateSample from "./EditTemplateSample"
 import EditTemplateCustom from "./EditTemplateCustom"
-
+import help from "./help"
+import privacy from "./privacy"
+import terms from "./terms"
+import contact from "./contact"
 
 // Private route is only accessable from authorized users
 
@@ -50,6 +53,10 @@ function App() {
               <PrivateRoute path ="/sampletemplates" component={SampleTemplates} />
               <PrivateRoute path ="/edittemplatesample" component={EditTemplateSample} />
               <PrivateRoute path ="/edittemplatecustom" component={EditTemplateCustom} />
+              <PrivateRoute path ="/help" component={help} />
+              <PrivateRoute path ="/privacy" component={privacy} />
+              <PrivateRoute path ="/terms" component={terms} />
+              <PrivateRoute path ="/contact" component={contact} />
               <PrivateRoute path ="/sendlog" component={SendLog} />
               <PrivateRoute path ="/logout" component={LogOut} />
               <Route path="/signup" component={Signup} />

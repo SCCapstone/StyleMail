@@ -4,6 +4,8 @@ import Footer from "./Footer"
 import { Card } from "react-bootstrap" //Button, Alert
 import firebase from 'firebase/app';
 import "firebase/firestore";
+import NavBar from "./NavBar"
+
 const db = firebase.firestore();
 
 function sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
@@ -225,6 +227,9 @@ class MyForm extends React.Component {
   render() {
     return (
     <div style={{paddingLeft : "25px"}}>
+      <div>
+      <NavBar />
+      </div>
       <form onSubmit={this.formHandler}>
       <Card style={{backgroundColor:'#372392'}}>
         <Card.Body>

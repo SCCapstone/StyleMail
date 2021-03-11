@@ -27,10 +27,10 @@ export default function NavBar() {
                        <Link style={{color:'white' }} to="/sampletemplates">Sample Templates</Link>
                        <Link style={{color:'white' }} to="/customtemplates">Custom Templates</Link>
                        <Link style={{color:'white' }} to="/sendlog">Send Log</Link>
-                       <a href="https://stylemail.app/help" target ="_blank" rel="noopener noreferrer">Help</a>
-                       <a href="https://stylemail.app/contact" target ="_blank" rel="noopener noreferrer">Contact</a>
-                       <a href="https://stylemail.app/privacy" target ="_blank" rel="noopener noreferrer">Privacy Policy</a>
-                       <a href="https://stylemail.app/terms" target ="_blank" rel="noopener noreferrer">Terms of Use</a>
+                       <Link style={{color:'white' }} to="/help">Help</Link>
+                       <Link style={{color:'white' }} to="/contact">Contact</Link>
+                       <Link style={{color:'white' }} to="/privacy">Privacy Policy</Link>
+                       <Link style={{color:'white' }} to="/terms">Terms of Use</Link>
                        <a style={{color:'white' }} onClick={handleLogout}>Sign Out</a>
                    </div>
         )
