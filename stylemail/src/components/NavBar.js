@@ -3,7 +3,10 @@ import "./Dashboard.css"
 import React from "react"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
-
+/**
+ * Public & Private Visability
+ * Provides both user and authenticated user a navigation bar with restricted links
+ */
 export default function NavBar() {
     const { logout } = useAuth()
     const history = useHistory()
@@ -19,25 +22,26 @@ export default function NavBar() {
           console.log(e.message);
         }
     }
-    // Used router link tags instead of href since some links are private routed
+    
     if(login) {
         return (   
-                   <div class="topnav">
-                       <Link style={{color:'white' }} to="/">Dashboard</Link>
-                       <Link style={{color:'white' }} to="/sampletemplates">Sample Templates</Link>
-                       <Link style={{color:'white' }} to="/customtemplates">Custom Templates</Link>
-                       <Link style={{color:'white' }} to="/sendlog">Send Log</Link>
-                       <Link style={{color:'white' }} to="/help">Help</Link>
-                       <Link style={{color:'white' }} to="/contact">Contact</Link>
-                       <Link style={{color:'white' }} to="/privacy">Privacy Policy</Link>
-                       <Link style={{color:'white' }} to="/terms">Terms of Use</Link>
-                       <a style={{color:'white' }} onClick={handleLogout}>Sign Out</a>
+                   <div className="topnav">
+                       <Link className="mobile-link" style={{color:'white'}} to="/">Dashboard</Link>
+                       <Link style={{color:'white'}} to="/sampletemplates">Sample Templates</Link>
+                       <Link style={{color:'white'}} to="/customtemplates">Custom Templates</Link>
+                       <Link style={{color:'white'}} to="/sendlog">Send Log</Link>
+                       <Link style={{color:'white'}} to="/help">Help</Link>
+                       <Link style={{color:'white'}} to="/contact">Contact</Link>
+                       <Link style={{color:'white'}} to="/privacy">Privacy Policy</Link>
+                       <Link style={{color:'white'}} to="/terms">Terms of Use</Link>
+                       <Link style={{color:'white'}} to="/settings">Settings</Link>
+                       <a style={{color:'white'}} onClick={handleLogout}>Sign Out</a>
                    </div>
         )
     }
     else {
         return (
-            <div class="topnav">
+            <div className="topnav">
                 <a href="https://stylemail.app/index">Home</a>
                 <a href="https://run.stylemail.app">Login</a>
                 <a href="https://run.stylemail.app">Signup</a>

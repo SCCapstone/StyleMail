@@ -1,13 +1,12 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import Footer from "./Footer"
-import { Card } from "react-bootstrap" //Button, Alert
-import firebase from 'firebase/app';
-import "firebase/firestore";
 import NavBar from "./NavBar"
-
-const db = firebase.firestore();
-
+import { Card } from "react-bootstrap"
+import { sendLogEntry } from '../api/FireApi';
+/**
+ * Private Visability
+ * Allows authenticated user to send a provided, premade template
+ */
 function sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     const mailgun = require("mailgun-js");
     const DOMAIN = "mail.alecfarmer.com";
@@ -58,8 +57,10 @@ function sendEmail(sender, recipient, subject, messagetextarea, fontselect, font
     }
   }
 
+    sendLogEntry(data.to, data.subject)
+
     mg.messages().send(data, function (error, body) {
-      console.log(error);
+      console.log("MESSAGE ERROR: ", error);
     });
 }
   
@@ -186,14 +187,6 @@ class MyForm extends React.Component {
     let bgcolorpicker = this.state.bgcolorpicker;
 
     sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
-
-    // Formatting the date for database entry
-    const months = ["Janurary", "Feburary", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const date = new Date();
-    const formattedDate = months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear() + " " + date.getHours() +":"+ date.getMinutes();
-    // Database entry
-    var log = db.collection('users').doc(firebase.auth().currentUser.email).collection('sendlog');
-    log.add({timeSent: formattedDate, emailTo: recipient, emailSubject: subject});
 
     window.alert("Email Sent!");
 

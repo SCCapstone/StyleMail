@@ -1,5 +1,3 @@
-//import React, { useRef, useState } from 'react';
-
 import React from "react"
 import Signup from "./Signup"
 import { Container } from "react-bootstrap"
@@ -8,7 +6,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Dashboard from "./Dashboard"
 import Login from "./Login"
 import PrivateRoute from "./PrivateRoute"
-import Profile from "./Profile"
+import Settings from "./Settings"
 import ForgotPassword from "./ForgotPassword"
 import CustomTemplates from "./CustomTemplates"
 import LogOut from "./LogOut"
@@ -17,12 +15,10 @@ import SampleTemplates from "./SampleTemplates"
 import SendLog from "./SendLog"
 import EditTemplateSample from "./EditTemplateSample"
 import EditTemplateCustom from "./EditTemplateCustom"
-import help from "./help"
-import privacy from "./privacy"
-import terms from "./terms"
-import contact from "./contact"
-
-// Private route is only accessable from authorized users
+import Help from "./Help"
+import Privacy from "./Privacy"
+import Terms from "./Terms"
+import Contact from "./Contact"
 
 /*
  * Builds main app functionality
@@ -48,15 +44,15 @@ function App() {
           <AuthProvider>
             <Switch>
               <PrivateRoute exact path="/" component={Dashboard} />
-              <PrivateRoute path ="/profile" component={Profile} />
+              <PrivateRoute path ="/settings" component={Settings} />
               <PrivateRoute path ="/customtemplates" component={CustomTemplates} />
               <PrivateRoute path ="/sampletemplates" component={SampleTemplates} />
               <PrivateRoute path ="/edittemplatesample" component={EditTemplateSample} />
               <PrivateRoute path ="/edittemplatecustom" component={EditTemplateCustom} />
-              <PrivateRoute path ="/help" component={help} />
-              <PrivateRoute path ="/privacy" component={privacy} />
-              <PrivateRoute path ="/terms" component={terms} />
-              <PrivateRoute path ="/contact" component={contact} />
+              <PrivateRoute path ="/help" component={Help} />
+              <PrivateRoute path ="/privacy" component={Privacy} />
+              <PrivateRoute path ="/terms" component={Terms} />
+              <PrivateRoute path ="/contact" component={Contact} />
               <PrivateRoute path ="/sendlog" component={SendLog} />
               <PrivateRoute path ="/logout" component={LogOut} />
               <Route path="/signup" component={Signup} />

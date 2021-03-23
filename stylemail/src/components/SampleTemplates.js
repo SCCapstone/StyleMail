@@ -1,8 +1,11 @@
-import React from "react" //, { useState }
+import React from "react"
 import NavBar from "./NavBar"
 import  "./Dashboard.css"
 import Footer from "./Footer"
-
+/**
+ * Private Visability
+ * Allows authenticated user to pick from premade templates
+ */
 class SampleTemplates extends React.Component {
   constructor(props) {
     super(props);
@@ -11,16 +14,15 @@ class SampleTemplates extends React.Component {
     };
   }
 
-ChangeHandler = (event) => {
-  // eslint-disable-next-line react/no-direct-mutation-state
-  this.state.templateName = event.target.id;
+  ChangeHandler = (event) => {
+    // eslint-disable-next-line react/no-direct-mutation-state
+    this.state.templateName = event.target.id;
 
-  localStorage.setItem('templateChoiceSample', this.state.templateName);
-  //window.location.href='/edittemplatesample';
-  this.props.history.push('/edittemplatesample');
-}
+    localStorage.setItem('templateChoiceSample', this.state.templateName);
+    this.props.history.push('/edittemplatesample');
+  }
 
-render() {
+  render() {
     return (
         <div>
             <NavBar />
@@ -71,7 +73,7 @@ render() {
             <Footer></Footer>
         </div>
     );
-}
+  }
 }
 
 export default SampleTemplates;

@@ -1,6 +1,6 @@
-import React from "react" //,{Component}
-import NavBar from "./NavBar"
 import  "./Dashboard.css"
+import React from "react"
+import NavBar from "./NavBar"
 
 
 export default function LogOut() {
