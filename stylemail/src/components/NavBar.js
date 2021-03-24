@@ -25,22 +25,6 @@ export default function NavBar() {
     }
     
     if(login) {
-        /*
-        return (   
-                   <div className="topnav">
-                       <Link className="mobile-link" style={{color:'white'}} to="/">Dashboard</Link>
-                       <Link style={{color:'white'}} to="/sampletemplates">Sample Templates</Link>
-                       <Link style={{color:'white'}} to="/customtemplates">Custom Templates</Link>
-                       <Link style={{color:'white'}} to="/sendlog">Send Log</Link>
-                       <Link style={{color:'white'}} to="/help">Help</Link>
-                       <Link style={{color:'white'}} to="/contact">Contact</Link>
-                       <Link style={{color:'white'}} to="/privacy">Privacy Policy</Link>
-                       <Link style={{color:'white'}} to="/terms">Terms of Use</Link>
-                       <Link style={{color:'white'}} to="/settings">Settings</Link>
-                       <a style={{color:'white'}} onClick={handleLogout}>Sign Out</a>
-                   </div>
-        )
-        */
        return (
             <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
                 <Navbar.Brand as={Link} to="/"> 
@@ -71,15 +55,22 @@ export default function NavBar() {
     }
     else {
         return (
-            <div className="topnav">
-                <a href="https://stylemail.app/index">Home</a>
-                <a href="https://run.stylemail.app">Login</a>
-                <a href="https://run.stylemail.app">Signup</a>
-                <a href="https://stylemail.app/help">Help</a>
-                <a href="https://stylemail.app/contact">Contact</a>
-                <a href="https://stylemail.app/privacy">Privacy Policy</a>
-                <a href="https://stylemail.app/terms">Terms of Use</a>
-            </div>
+            <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+                <Navbar.Brand as={Link} to="/"> 
+                    <img src="./stylemailicon.png" height="30px" width="30px" alt="User Icon"/>
+                     StyleMail
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="mr-auto">
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/sampletemplates">Sample Templates</Nav.Link>
+                        <Nav.Link as={Link} to="/help">Help</Nav.Link>
+                        <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
+                        <Nav.Link as={Link} to="/Privacy">Privacy</Nav.Link>
+                    </Nav>
+                </Navbar.Collapse>
+            </Navbar>
         )
     }
 }
