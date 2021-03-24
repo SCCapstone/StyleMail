@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.6628d909.chunk.css",
-    "main.js": "/static/js/main.0a30c5c1.chunk.js",
-    "main.js.map": "/static/js/main.0a30c5c1.chunk.js.map",
+    "main.css": "/static/css/main.7717636d.chunk.css",
+    "main.js": "/static/js/main.cf31cac6.chunk.js",
+    "main.js.map": "/static/js/main.cf31cac6.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.18a65449.js",
     "runtime-main.js.map": "/static/js/runtime-main.18a65449.js.map",
     "static/css/2.176e3ba5.chunk.css": "/static/css/2.176e3ba5.chunk.css",
@@ -10,7 +10,7 @@
     "static/js/2.26a56d1d.chunk.js.map": "/static/js/2.26a56d1d.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.176e3ba5.chunk.css.map": "/static/css/2.176e3ba5.chunk.css.map",
-    "static/css/main.6628d909.chunk.css.map": "/static/css/main.6628d909.chunk.css.map",
+    "static/css/main.7717636d.chunk.css.map": "/static/css/main.7717636d.chunk.css.map",
     "static/js/2.26a56d1d.chunk.js.LICENSE.txt": "/static/js/2.26a56d1d.chunk.js.LICENSE.txt",
     "static/media/StyleMailLogo.531fe82a.jpg": "/static/media/StyleMailLogo.531fe82a.jpg"
   },
@@ -18,7 +18,7 @@
     "static/js/runtime-main.18a65449.js",
     "static/css/2.176e3ba5.chunk.css",
     "static/js/2.26a56d1d.chunk.js",
-    "static/css/main.6628d909.chunk.css",
-    "static/js/main.0a30c5c1.chunk.js"
+    "static/css/main.7717636d.chunk.css",
+    "static/js/main.cf31cac6.chunk.js"
   ]
 }
