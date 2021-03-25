@@ -3,10 +3,10 @@ import NavBar from "./NavBar";
 import Footer from "./Footer"
 
 class Help extends React.Component {
-render() {
-    return (
+    render() {
+        return (
         <div>
-          <NavBar /> 
+            <NavBar /> 
           
             <div>
                 <h1 className="w3-center">FAQ - Frequently Asked Questions</h1>
@@ -33,10 +33,10 @@ render() {
                 </p>
             </div>
         
-        <Footer></Footer> 
+            <Footer/>
         </div>
-    );
- }
+        );
+    }
 }
 
 export default Help;
