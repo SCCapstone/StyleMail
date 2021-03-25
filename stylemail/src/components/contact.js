@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from "./NavBar";
 import Footer from "./Footer"
 
-class contact extends React.Component {
+class Contact extends React.Component {
     render() {
         return (
             <div>
@@ -48,4 +48,4 @@ class contact extends React.Component {
      }
     }
     
-    export default contact;
+    export default Contact;

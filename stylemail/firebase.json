@@ -20,7 +20,7 @@
       "port": 9099
     },
     "firestore": {
-      "port": 8088
+      "port": 8089
     },
     "hosting": {
       "port": 5050

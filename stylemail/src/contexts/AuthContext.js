@@ -40,7 +40,7 @@ export function AuthProvider({ children }) {
         email: email,
         created: dateTime(),
         lastlogin: dateTime(),
-        provider: "",
+        provider: "firebase",
         uid: auth.currentUser.uid,
       }).catch(APIerror => {
         setAPIerror('Something went wrong with added user to firestore', APIerror)

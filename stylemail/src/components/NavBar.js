@@ -38,7 +38,6 @@ export default function NavBar() {
                         <Nav.Link as={Link} to="/sampletemplates">Sample Templates</Nav.Link>
                         <Nav.Link as={Link} to="/help">Help</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                        <Nav.Link as={Link} to="/Privacy">Privacy</Nav.Link>
                     </Nav>
                     <Nav>
                         <NavDropdown title="My Account" id="collasible-nav-dropdown">
@@ -64,10 +63,8 @@ export default function NavBar() {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/sampletemplates">Sample Templates</Nav.Link>
                         <Nav.Link as={Link} to="/help">Help</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                        <Nav.Link as={Link} to="/Privacy">Privacy</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

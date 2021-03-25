@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from "./NavBar";
 import Footer from "./Footer"
 
-class help extends React.Component {
+class Help extends React.Component {
 render() {
     return (
         <div>
@@ -39,4 +39,4 @@ render() {
  }
 }
 
-export default help;
+export default Help;

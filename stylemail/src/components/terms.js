@@ -4,7 +4,7 @@ import Footer from "./Footer"
 import { Link } from "react-router-dom"
 
 
-class terms extends React.Component {
+class Terms extends React.Component {
     render() {
         return (
             <div>
@@ -77,4 +77,4 @@ class terms extends React.Component {
      }
     }
     
-    export default terms;
+    export default Terms;

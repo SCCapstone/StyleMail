@@ -4,7 +4,7 @@ import Footer from "./Footer"
 import { Link } from "react-router-dom"
 
 
-class privacy extends React.Component {
+class Privacy extends React.Component {
     render() {
         return (
             <div>
@@ -71,4 +71,4 @@ class privacy extends React.Component {
      }
     }
     
-    export default privacy;
+    export default Privacy;

@@ -4,18 +4,21 @@
 /node_modules
 /.pnp
 .pnp.js
-.vscode
+/.vscode
 
 # testing
 /coverage
-firebase-debug.log*
-firestore-debug.log*
-ui-debug.log*
-hosting.*
+/firestore-debug.log
+/firebase-debug.log
+./firebase-debug.*.log
+/ui-debug.log
+/hosting.*
+*.log
+
 
 # production
 /build
-.vscode
+/.vscode
 settings.json
 
 # misc

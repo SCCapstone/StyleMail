@@ -16,7 +16,7 @@ const fireApp = firebase.initializeApp({
 const db = fireApp.firestore();
 const auth = fireApp.auth();
 
-//db.useEmulator('localhost', 8088);
+db.useEmulator('localhost', 8089);
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
@@ -24,5 +24,5 @@ googleProvider.setCustomParameters({ prompt: 'select_account' });
 const facebookProvider = new firebase.auth.FacebookAuthProvider();
 facebookProvider.setCustomParameters({ prompt: 'select_account' });
 
-export { db, auth, googleProvider, facebookProvider };
+export { db, auth, googleProvider, facebookProvider, firebase };
 export default fireApp;
