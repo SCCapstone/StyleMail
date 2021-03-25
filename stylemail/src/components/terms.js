@@ -4,15 +4,15 @@ import Footer from "./Footer"
 import { Link } from "react-router-dom"
 
 
-class terms extends React.Component {
+class Terms extends React.Component {
     render() {
         return (
             <div>
               <NavBar /> 
               
                 <div>
-                    <h1 class="w3-center">Terms of Use</h1>
-                    <p class="w3-center w3-large"> Thanks for using StyleMail. Please read these Terms carefully. By using StyleMail or signing up for an account, you’re agreeing to these Terms, 
+                    <h1 className="w3-center">Terms of Use</h1>
+                    <p className="w3-center w3-large"> Thanks for using StyleMail. Please read these Terms carefully. By using StyleMail or signing up for an account, you’re agreeing to these Terms, 
                     which will result in a legal agreement between you and StyleMail. We’ll start with the basics, including a few definitions that should help you understand these Terms. StyleMail
                     is an online email template editor offered through the URL StyleMail.email that allows you to, among other things, create, edit, and manage certain email templates and/or order email 
                     templates creation. StyleMail is a South Carolina company whose legal name is StyleMail Inc. StyleMail has employees, independent contractors, and representatives. As a customer of the 
@@ -21,7 +21,7 @@ class terms extends React.Component {
                     <Link style={{color:'black' }} to="/contact" target="_blank"> contact us.</Link>
                     </p>
 
-                    <h2 class="w4-center">Term</h2>
+                    <h2 className="w4-center">Term</h2>
 
                     <p> When you sign up for the Service and agree to these Terms, the Agreement between you and StyleMail is formed, and the term of the Agreement will begin. 
                     The Term will continue for as long as you have a StyleMail account or until you or we terminate the Agreement in accordance with these Terms, whichever happens first. 
@@ -30,7 +30,7 @@ class terms extends React.Component {
                     these Terms and enter into the Agreement on its behalf.
                     </p>
 
-                    <h2 class="w4-center">Closing your Account</h2>
+                    <h2 className="w4-center">Closing your Account</h2>
 
                     <p> You or StyleMail may terminate the Agreement at any time and for any reason by terminating your Stripo account or giving notice to the other party. We may suspend the 
                     Service to you at any time, with or without cause. We won’t refund or reimburse you in any other situation, including if your account is suspended or terminated for cause,
@@ -39,14 +39,14 @@ class terms extends React.Component {
                     terminated, the email address will no longer be available for use on any future accounts and cannot be reclaimed.
                     </p>
 
-                    <h2 class="w4-center">Changes</h2>
+                    <h2 className="w4-center">Changes</h2>
 
                     <p> We may change any of the Terms by posting revised Terms of Use on our Website and/or by notifying you of the new Terms by sending an email to the last email address you gave us or displaying 
                       prominent notice within the Service. Unless you terminate your account within 10 days, the new Terms will be effective immediately and apply to any continued or new use of the Service. We may 
                       change the Website, the Service, or any features of the Service at any time, and we may discontinue the Website, the Service, or any features of the Service at any time
                     </p>
 
-                    <h2 class="w4-center">Account and Password</h2>
+                    <h2 className="w4-center">Account and Password</h2>
 
                     <p> You’re responsible for keeping your account email address and password confidential. You’re also responsible for any account that you have access to and any activity occurring in such account 
                       (other than activity that StyleMail is directly responsible for that isn’t performed in accordance with your instructions), whether or not you authorized that activity. You’ll immediately notify 
@@ -55,7 +55,7 @@ class terms extends React.Component {
                       for billing purposes. In addition, you represent and warrant that all information you provide to us when you establish an account, and when you access and use the Service, is and will remain complete and accurate.
                     </p>
 
-                    <h2 class="w4-center">Account Disputes</h2>
+                    <h2 className="w4-center">Account Disputes</h2>
 
                     <p> We don’t know the inner workings of your organization or the nature of your personal relationships. You won’t request access to or information about an account that’s not yours, and you’ll resolve any account-related 
                     disputes directly with the other party. We decide who owns an account based on the content in that account, and if multiple people or entities are identified in the content, then we’ll rely on the contact and profile information 
@@ -63,7 +63,7 @@ class terms extends React.Component {
                     When a dispute is identified, we may suspend any account associated with the dispute, including disabling login capabilities, to protect the security and privacy of the data held within the account.
                     </p>
 
-                    <h2 class="w4-center">Privacy Policy</h2>
+                    <h2 className="w4-center">Privacy Policy</h2>
                 <p>
                 Your privacy is important to us. Please read our  <Link style={{color:'black' }} to="/privacy" target="_blank">Privacy Policy </Link>
                  for information regarding how we collect, use, and disclose your Content and personal information and protect your privacy when you use the Service.
@@ -77,4 +77,4 @@ class terms extends React.Component {
      }
     }
     
-    export default terms;
+    export default Terms;

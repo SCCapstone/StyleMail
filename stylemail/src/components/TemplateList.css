@@ -1,18 +1,55 @@
-.deleteBtn {  
-    border: none;
-    background: none;
-}
-
-.editBtn {
-   
-    border: none;
-    background: none;   
-}
-
-  li, ul {
+/*
+ * TemplateList CSS
+ */
+li, ul {
     text-decoration: none;
     list-style-type: none;
-  }
+}
+
+.extra-btn {
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+}
+
+.app {
+  text-align: center;
+  background-color: #2a2a2ab5;
+  height: 100vh;
+}
+.app .rich-editor {
+  padding: 10rem;
+}
+
+.rich-editor .rdw-editor-main {
+  background-color: #fff;
+}
+
+.rich-editor .DraftEditor-editorContainer {
+  padding: 1rem;
+}
+
+.draft-editor-wrapper {
+  border: 1px solid #ccc;
+}
+
+.html-view {
+  background-color: #fff;
+  color: #000;
+  margin: auto;
+  width: 70%;
+  margin-bottom: 2rem;
+}
+
+.DraftEditor-root {
+  margin-left: 4px;
+  margin-right: 4px;
+}
 
 
 

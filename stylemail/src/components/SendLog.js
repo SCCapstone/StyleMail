@@ -1,47 +1,36 @@
-import "./SendLog.css"
 import NavBar from "./NavBar"
 import Footer from "./Footer"
-import React, { useState, useEffect } from 'react';
-import { useAuth } from "../contexts/AuthContext";
-import firebase from 'firebase/app';
-import "firebase/firestore";
-const db = firebase.firestore();
-
+import React from "react"
+import { GetLogs } from "../api/FireApi"
+/**
+ * Private Visability
+ * Allows listing of authenticated user's sent email logs
+ */
 const SendLogs = () => {
-    const [entries, setEntry] = useState([]);
-    const { currentUser } = useAuth()
+    // Calls 'GetLogs' function to query user's sent email logs
+    let entries = GetLogs()
 
-    var userLogs = db.collection('users').doc(currentUser.email).collection('sendlog');
-  
-    useEffect(() => {
-      const unsub = userLogs.onSnapshot(snapshot => {
-        const allEntries = snapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data()
-        }));
-        setEntry(allEntries);
-      });
-      return () => {
-        unsub();
-      };
-    },);
-  
     return (
         <div>
             <NavBar />
             <div>
-                <h3>Send Log</h3>
+                <h3 style={{fontSize: '35px', textAlign: 'center', paddingTop: '10px', paddingBottom: '10px'}}>Send Log</h3>
                 <h4 style={{textAlign:"center"}}>Below is a log of your emails sent using StyleMail</h4>
-                    <div class="list-group listElem">
-                        {entries.map(entry => (
-                            // eslint-disable-next-line jsx-a11y/anchor-is-valid
-                            <a class="list-group-item list-group-item-action list-group-item-secondary cur">
-                                <span class="title">Sent: </span>{entry.timeSent}<br></br>
-                                <span class="title">To: </span>{entry.emailTo}<br></br>
-                                <span class="title">Subject </span>{entry.emailSubject}
-                            </a>
-                        ))}
-                    </div>
+                  <div>
+                    <ul style={{marginRight:"5%", marginLeft:"5%"}} className="list-group">
+                      {entries.map(val => (
+                        <li key={val.id} className="list-group-item list-group-item-action list-group-item-secondary d-flex">
+                          <p className="p-0 m-0 flex-grow-1">
+                            <strong>Time Sent:</strong> {val.timeSent}<br />
+                            <strong>To:</strong> {val.emailTo}<br />
+                            <strong>Subject:</strong> {val.emailSubject}
+                            {console.log("Loaded:", entries.length, "entries")}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                    <br/>
+                  </div>  
                 </div>
                 <Footer></Footer>
         </div>
