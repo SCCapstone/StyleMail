@@ -14,7 +14,7 @@ export default function Dashboard() {
   const handleST = () => history.push('/sampletemplates');
   const handleCT = () => history.push('/customtemplates');
 
-
+   //Need to fix the logo
 
   return (
     <> 
@@ -23,25 +23,27 @@ export default function Dashboard() {
         <NavBar />
       </Card> 
 
-      
+   
       <Card>
         <Card.Body>
           <div style={{textAlign:"center"}}>
-            <img alt="StyleMail Logo" src="https://raw.githubusercontent.com/SCCapstone/StyleMail/master/StyleMail%20Logo.jpg?token=AEIQZTBUE2LE6M7CHI4VWNTAIKF5E" width="450px" height="286px"/>
+            <img alt="StyleMail Logo" src="..components/Images/stylemaillogowhite.png" width="450px" height="286px"/>
           </div>
           <div>
             <br></br>
           </div>
           <h1 id="center">Welcome back to StyleMail, {currentUser.email}!</h1>
-          <h3>What would you like to do?</h3>
+          <h3>What would you like to do today?</h3>
+          <div className = "options">
           <div>
             <br></br>
           </div>
-          <button className="btn btn-outline-dark" onClick={handleST}>Quickly send an email using one of our ready-to-go sample templates (Recommended)</button>
+          <button className="btn-outline-dark" onClick={handleST}>Ready-to-Go Using Email Templates (Recommended)</button>
           <div>
             <br></br>
           </div>
-          <button className="btn btn-outline-dark" onClick={handleCT}>Create your own custom email templates using HTML and CSS</button>
+          <button className="btn-outline-dark" onClick={handleCT}>Custom Correspondence using HTML and CSS</button>
+          </div>
         </Card.Body>       
        </Card>
 

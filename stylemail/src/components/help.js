@@ -22,7 +22,7 @@ render() {
                     StyleMail is a free web application, we still ask all users' to create an account. This helps us to keep track of any StyleMail traffic to help
                     bring the best resources to you (our customers)! Through creating an account, you are also able to keep all of your created templates in one locaiton
                     and have them easy accessible. If you have any questions referring to what information is being used from you, please refer to our <a href="https://stylemail.app/terms">Terms</a> and 
-                    <a href="https://stylemail.app/privacy">Privacy</a> policies. 
+                    <a href="https://stylemail.app/privacy"> Privacy</a> policies. 
                 </p>
 
                 <h2 class="w4-center"> Why is StyleMail free? </h2>

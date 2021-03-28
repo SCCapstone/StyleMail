@@ -46,7 +46,13 @@ body {
   position: absolute;
   right: 400px;
 }
-
+.options{
+  display:flex;
+  padding: 20px;
+}
+.btn-outline-dark:hover{
+  color:#a2a2e6
+}
 #sign-btns {
   display: flex;
   justify-content: space-evenly;
@@ -113,4 +119,12 @@ h2 {
 
 #center {
   text-align: center;
+}
+header{
+  color: white;
+}
+footer{
+  color:white;
+  padding: 5px;
+  margin: 10px;
 }

@@ -46,12 +46,14 @@ export default function Signup() {
   }
   
   // Bootstrap formatting calling functions above
+  //Need to fix the logo
   return (
     <>
       <div className="wrapper fadeInDown">
         <div id="formContent">
           <div className="fadeIn first">
-            <img src="./stylemailicon.png" id="icon" alt="User Icon" />
+            <h1>Welcome to StyleMail!</h1>
+            <img src=".\Images\stylemaillogowhite.png" id="icon" alt="User Icon" />
           </div>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>

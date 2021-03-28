@@ -246,6 +246,10 @@ class MyForm extends React.Component {
       <label>
           From: 
           <br></br>
+          <select name="fontselect" required onChange={this.ChangeHandler}>
+             <option value="Arial">Anonymous</option>
+              <option value="Helvetica"></option>
+            </select>
           <input type="text" name="sender" required onChange={this.ChangeHandler} />
       </label>
       <div>
