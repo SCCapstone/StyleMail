@@ -1,11 +1,11 @@
 import React from 'react';
-//import ReactDOM from 'react-dom';
 import Footer from "./Footer"
-import { Card } from "react-bootstrap" //, Button, Alert
-import firebase from 'firebase/app';
-import "firebase/firestore";
-const db = firebase.firestore();
-
+import { Card } from "react-bootstrap"
+import { sendLogEntry } from "../api/FireApi"
+/**
+ * Private Visability
+ * Allows authenticated user to send their custom made template
+ */
 function sendEmail(recipient, subject) {
     const mailgun = require("mailgun-js");
     const DOMAIN = 'mail.alecfarmer.com';
@@ -23,6 +23,8 @@ function sendEmail(recipient, subject) {
       let tempHTML = localStorage.getItem('templateHTMLCustom');
       data.html = tempHTML;
     }
+
+    sendLogEntry(data.to, data.subject)
 
     mg.messages().send(data, function (error, body) {
       console.log(body);
@@ -70,14 +72,6 @@ class MyForm extends React.Component {
     sendEmail(recipient, subject);
 
     window.alert("Email Sent!");
-
-    // Code to save date, time, recipient, subject to send log in firebase for the currently logged in user
-    const months = ["Janurary", "Feburary", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
-    const date = new Date();
-    const formattedDate = months[date.getMonth()] + " " + date.getDay() + ", " + date.getFullYear() + " " + date.getHours() +":"+ date.getMinutes();
-    // Database entry
-    var log = db.collection('users').doc(firebase.auth().currentUser.email).collection('sendlog');
-    log.add({timeSent: formattedDate, emailTo: recipient, emailSubject: subject});
 
     this.props.history.push('/');
   }

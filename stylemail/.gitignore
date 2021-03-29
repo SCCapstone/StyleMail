@@ -4,12 +4,22 @@
 /node_modules
 /.pnp
 .pnp.js
+/.vscode
 
 # testing
 /coverage
+/firestore-debug.log
+/firebase-debug.log
+./firebase-debug.*.log
+/ui-debug.log
+/hosting.*
+*.log
+
 
 # production
 /build
+/.vscode
+settings.json
 
 # misc
 .DS_Store

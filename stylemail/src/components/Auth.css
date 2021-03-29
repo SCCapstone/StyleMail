@@ -1,36 +1,6 @@
-
-  /* BASIC */
-
-html {
-  background-color: #56baed;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  height: 100vh;
-}
-
-a {
-  color: #92badd;
-  display:inline-block;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-h2 {
-  text-align: center;
-  font-size: 16px;
-  font-weight: 600;
-  text-transform: uppercase;
-  display:inline-block;
-  margin: 40px 8px 10px 8px; 
-  color: #cccccc;
-}
-
-
-
-/* STRUCTURE */
-
+/*
+ * Login, Signup, Forget Password CSS
+ */
 .wrapper {
   display: flex;
   align-items: center;
@@ -47,7 +17,7 @@ h2 {
   background: #fff;
   padding: 30px;
   width: 90%;
-  max-width: 450px;
+  max-width: 420px;
   position: relative;
   padding: 0px;
   -webkit-box-shadow: 0 30px 60px 0 rgba(0,0,0,0.3);
@@ -64,24 +34,10 @@ h2 {
   border-radius: 0 0 10px 10px;
 }
 
-
-
-/* TABS */
-
-h2.inactive {
-  color: #cccccc;
-}
-
-h2.active {
-  color: #0d0d0d;
-  border-bottom: 2px solid #5fbae9;
-}
-
-
-
-/* FORM TYPOGRAPHY*/
-
-input[type=button], input[type=submit], input[type=reset]  {
+/*
+  AUTH FORM INPUTS
+*/
+.auth-input-btn, .auth-input-submit, .auth-input-reset  {
   background-color: #56baed;
   border: none;
   color: white;
@@ -103,11 +59,11 @@ input[type=button], input[type=submit], input[type=reset]  {
   transition: all 0.3s ease-in-out;
 }
 
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+.auth-input-btn:hover, .auth-input-submit:hover, .auth-input-reset:hover  {
   background-color: #39ace7;
 }
 
-input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+.auth-input-btn:active, .auth-input-submit:active, .auth-input-reset:active  {
   -moz-transform: scale(0.95);
   -webkit-transform: scale(0.95);
   -o-transform: scale(0.95);
@@ -115,7 +71,7 @@ input[type=button]:active, input[type=submit]:active, input[type=reset]:active  
   transform: scale(0.95);
 }
 
-input[type=text], input[type=password] {
+.auth-input-text, .auth-input-password {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -136,20 +92,18 @@ input[type=text], input[type=password] {
   border-radius: 5px 5px 5px 5px;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.auth-input-text:focus, .auth-input-password:focus {
   background-color: #fff;
   border-bottom: 2px solid #5fbae9;
 }
 
-input[type=text]:placeholder, input[type=password]:placeholder {
+.auth-input-text:placeholder, .auth-input-password:placeholder {
   color: #cccccc;
 }
 
-
-
-/* ANIMATIONS */
-
-/* Simple CSS3 Fade-in-down Animation */
+/*
+  AUTH FORM ANIMATIONS
+*/
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
@@ -185,77 +139,62 @@ input[type=text]:placeholder, input[type=password]:placeholder {
   }
 }
 
-/* Simple CSS3 Fade-in Animation */
 @-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
 @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-
+  
 .fadeIn {
   opacity:0;
   -webkit-animation:fadeIn ease-in 1;
   -moz-animation:fadeIn ease-in 1;
   animation:fadeIn ease-in 1;
-
+  
   -webkit-animation-fill-mode:forwards;
   -moz-animation-fill-mode:forwards;
   animation-fill-mode:forwards;
-
+  
   -webkit-animation-duration:1s;
   -moz-animation-duration:1s;
   animation-duration:1s;
 }
-
+  
 .fadeIn.first {
   -webkit-animation-delay: 0.4s;
   -moz-animation-delay: 0.4s;
   animation-delay: 0.4s;
 }
-
+  
 .fadeIn.second {
   -webkit-animation-delay: 0.6s;
   -moz-animation-delay: 0.6s;
   animation-delay: 0.6s;
 }
-
+  
 .fadeIn.third {
   -webkit-animation-delay: 0.8s;
   -moz-animation-delay: 0.8s;
   animation-delay: 0.8s;
 }
-
+  
 .fadeIn.fourth {
   -webkit-animation-delay: 1s;
   -moz-animation-delay: 1s;
   animation-delay: 1s;
 }
 
-/* Simple CSS3 Fade-in Animation */
-.underlineHover:after {
-  display: block;
-  left: 0;
-  bottom: -10px;
-  width: 0;
-  height: 2px;
-  background-color: #56baed;
-  content: "";
-  transition: width 0.2s;
+/*
+  AUTH FORM EXTRAS
+*/
+.font {
+  font-size: medium;
 }
 
-.underlineHover:hover {
-  color: #0d0d0d;
+.auth-link {
+  color: #2d90e7;
+  display:inline-block;
+  text-decoration: none;
+  font-weight: 400;
 }
-
-.underlineHover:hover:after{
-  width: 100%;
-}
-
-
-
-/* OTHERS */
-
-*:focus {
-    outline: none;
-} 
 
 #icon {
   width:15%;
@@ -265,34 +204,11 @@ input[type=text]:placeholder, input[type=password]:placeholder {
 
 #bottom {
   margin-top: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 #bottomSU {
   margin-bottom: 20px;
-}
-
-#formOr {
-  padding: 5px;
-  text-align: center;
-  -webkit-border-radius: 0 0 10px 10px;
-  border-radius: 0 0 10px 10px;
-}
-
-#or {
-  color: #000000;
-  display:inline-block;
-  text-decoration: none;
-  font-weight: 400;
-  cursor: default;
-}
-
-body {
-  background:#3B2E9A;
-}
-
-.na {
-  color: white;
 }
 
 .or-container {
@@ -302,10 +218,18 @@ body {
   margin: 25px 0
 }
 
-.line-separator {
+.line-separator-left {
   background-color: #ccc;
   flex-grow: 5;
-  height: 1px
+  height: 1px;
+  margin-left: 15px;
+}
+
+.line-separator-right {
+  background-color: #ccc;
+  flex-grow: 5;
+  height: 1px;
+  margin-right: 15px;
 }
 
 .or-label {
@@ -314,46 +238,3 @@ body {
   text-align: center
 }
 
-.loginBtn {
-  box-sizing: border-box;
-  position: relative;
-  /* width: 13em;  - apply for fixed size */
-  margin: 0.2em;
-  padding: 0 15px 0 46px;
-  border: none;
-  text-align: left;
-  line-height: 34px;
-  white-space: nowrap;
-  border-radius: 0.2em;
-  font-size: 16px;
-  color: #FFF;
-}
-.loginBtn:before {
-  content: "";
-  box-sizing: border-box;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 34px;
-  height: 100%;
-}
-.loginBtn:focus {
-  outline: none;
-}
-.loginBtn:active {
-  box-shadow: inset 0 0 0 32px rgba(0,0,0,0.1);
-}
-
-/* Google */
-.loginBtn--google {
-  /*font-family: "Roboto", Roboto, arial, sans-serif;*/
-  background: #DD4B39;
-}
-.loginBtn--google:before {
-  border-right: #BB3F30 1px solid;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/14082/icon_google.png') 6px 6px no-repeat;
-}
-.loginBtn--google:hover,
-.loginBtn--google:focus {
-  background: #E74B37;
-}

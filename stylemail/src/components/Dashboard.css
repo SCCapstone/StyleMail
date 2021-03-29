@@ -8,17 +8,21 @@ body {
   left:0;
   background: #382492;
 }
+
 .reviews {
   background: #a2a2e6;
   padding: 10px;
 }
+
 #main-content {
   display: flex;
   padding: 20px;
 }
+
 #mid-section {
   justify-content: space-around;
 }
+
 #column {
   float: left;
   width: 100%;
@@ -29,12 +33,14 @@ body {
   align-items: center;
   margin: auto;
 }
+
 #banner {
   justify-content: center;
   align-content: center;
   display: block;
   height: 1500px;
 }
+
 .logo {
   width: 60%;
   height: 35%;
@@ -52,6 +58,7 @@ body {
   justify-content: space-evenly;
   margin: 30px;
 }
+
 footer {
   background: #a2a2e6;
   height: 100px;
@@ -60,6 +67,7 @@ footer {
   justify-content: center;
   content: "\A";
 }
+
 .linking-btns {
   padding: 20px;
   height: 20px;
@@ -105,6 +113,7 @@ footer {
 h2 {
   text-align: center;
 }
+
 .text-center {
   text-align: center;
   font-size: 2rem;
@@ -115,4 +124,34 @@ h2 {
   text-align: center;
 }
 
+@media only screen and (max-width: 768px) {
+  .mobile-img {
+    width: 300px;
+    height: 188px;
+  }
 
+  .mobile-size-h1 {
+    font-size: 25px;
+  }
+
+  .mobile-size-h3 {
+    font-size: 15px;
+  }
+
+  .mobile-footer {
+    font-size: medium;
+  }
+
+  .topnav {
+    display: flex;
+    height: 70px;
+    line-height: auto;
+    width: 100%;
+    overflow-x: scroll;
+  }
+
+  .topnav a {
+    max-width: 100%;
+    width: 100%;
+  }
+}

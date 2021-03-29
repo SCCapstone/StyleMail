@@ -1,21 +1,20 @@
-//import React, { useState } from "react"
-import { Card } from "react-bootstrap" //, Button, Alert
-//import { useAuth } from "../contexts/AuthContext"
-//import { useHistory } from "react-router-dom"
-//import { getUserDocument } from "../firebase"
-//import TemplateList from "./TemplateList"
-//import TemplateAdd from "./TemplateAdd"
-//import NavBar from "./NavBar"
 import  "./Dashboard.css"
-
-
-
+import { Card } from "react-bootstrap"
+import { Link } from "react-router-dom"
+/**
+ * Public and Private Visability
+ * Provides global footer
+ */
 export default function Footer() {
   return (
     <> 
       <Card style={{backgroundColor:'#372392'}}>
         <Card.Body>
-          <h4 className="text-center mb-4" style={{color:'#ffffff'}}>Copyright © 2021 StyleMail. All rights reserved.</h4>
+          <div style={{textAlign: 'center', paddingBottom: '10px', paddingTop: '10px'}}>
+            <Link style={{paddingRight: '10px', textDecoration: 'none', color: 'white'}} to="/terms">Terms</Link>
+            <Link style={{paddingRight: '10px', textDecoration: 'none', color: 'white'}} to="/privacy">Privacy</Link>
+          </div>
+          <h4 className="text-center mb-4 mobile-footer" style={{color:'#ffffff'}}>Copyright © 2021 StyleMail. All rights reserved.</h4>
         </Card.Body>       
        </Card>
     </>
