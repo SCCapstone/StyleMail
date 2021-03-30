@@ -7,17 +7,28 @@ import { sendLogEntry } from '../api/FireApi';
  * Private Visability
  * Allows authenticated user to send a provided, premade template
  */
-function sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
+function sendEmail(sender, recipient, senderEmail, anonymous, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker) {
     const mailgun = require("mailgun-js");
     const DOMAIN = "mail.alecfarmer.com";
     const api_key = "fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58";
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
-    const data = {
-      from: 'StyleMail <mail@stylemail.app>',
-      to: recipient,
-      subject: subject,
-      html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
-    };
+    let data = {from: "", to: "", subject: "", html: ""};
+    if(anonymous == "false") {
+      data = {
+        from: senderEmail,
+        to: recipient,
+        subject: subject,
+        html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
+      };
+    }
+    else {
+      data = {
+        from: 'StyleMail <mail@stylemail.app>',
+        to: recipient,
+        subject: subject,
+        html: "<html><head><style>p{color:" + fontcolorpicker + ";font-size:30px;font-family:\"" + fontselect + "\"}#container{background-color:" + bgcolorpicker + ";text-align:center;}</style></head><body><div id=\"container\"><p>" + messagetextarea + "</p></body></html>",
+      };
+    }
 
     if(localStorage && localStorage.getItem('templateChoiceSample')) {
       let tempChoice = localStorage.getItem('templateChoiceSample');
@@ -162,6 +173,8 @@ class MyForm extends React.Component {
     this.state = {
       sender: '',
       recipient: '',
+      senderEmail: '',
+      anonymous: 'false',
       subject: '',
       messagetextarea: '',
       fontselect: '',
@@ -180,13 +193,15 @@ class MyForm extends React.Component {
     event.preventDefault();
     let sender = this.state.sender;
     let recipient = this.state.recipient;
+    let senderEmail = this.state.senderEmail;
+    let anonymous = this.state.anonymous;
     let subject = this.state.subject;
     let messagetextarea = this.state.messagetextarea;
     let fontselect = this.state.fontselect;
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
 
-    sendEmail(sender, recipient, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
+    sendEmail(sender, recipient, senderEmail, anonymous, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
 
     window.alert("Email Sent!");
 
@@ -249,6 +264,18 @@ class MyForm extends React.Component {
           <br></br>
           <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
           <br></br>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"
+      </label>
+      <div>
+        <br></br>
+      </div>
+      <label>
+          Your Email:
+          <br></br>
+          <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
+      </label>
+      <label>
+      <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
+          Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
       </label>
       <div>
         <br></br>

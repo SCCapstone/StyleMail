@@ -7,18 +7,29 @@ import { sendLogEntry } from "../api/FireApi"
  * Private Visability
  * Allows authenticated user to send their custom made template
  */
-function sendEmail(recipient, subject) {
+function sendEmail(recipient, senderEmail, anonymous, subject) {
     const mailgun = require("mailgun-js");
     const DOMAIN = 'mail.alecfarmer.com';
     const api_key = 'fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     let tempHTML = localStorage.getItem('templateHTMLCustom');
-    const data = {
-      from: 'StyleMail <mail@stylemail.app>',
-      to: recipient,
-      subject: subject,
-      html: tempHTML,
-    };
+    let data = {from: "", to: "", subject: "", html: ""};
+    if(anonymous == "false") {
+      data = {
+        from: senderEmail,
+        to: recipient,
+        subject: subject,
+        html: tempHTML,
+      };
+    }
+    else {
+      data = {
+        from: 'StyleMail <mail@stylemail.app>',
+        to: recipient,
+        subject: subject,
+        html: tempHTML,
+      };
+    }
 
     if(localStorage && localStorage.getItem('templateHTMLCustom')) {
       let tempHTML = localStorage.getItem('templateHTMLCustom');
@@ -54,6 +65,8 @@ class MyForm extends React.Component {
     super(props);
     this.state = {
       recipient: '',
+      senderEmail: '',
+      anonymous: 'false',
       subject: '',
     };
   }
@@ -68,9 +81,11 @@ class MyForm extends React.Component {
     event.preventDefault();
 
     let recipient = this.state.recipient;
+    let senderEmail = this.state.senderEmail;
+    let anonymous = this.state.anonymous;
     let subject = this.state.subject;
 
-    sendEmail(recipient, subject);
+    sendEmail(recipient, senderEmail, anonymous, subject);
 
     window.alert("Email Sent!");
 
@@ -113,6 +128,18 @@ class MyForm extends React.Component {
           <br></br>
           <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
           <br></br>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"
+      </label>
+      <div>
+        <br></br>
+      </div>
+      <label>
+          Your Email:
+          <br></br>
+          <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
+      </label>
+      <label>
+      <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
+          Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
       </label>
       <div>
         <br></br>
