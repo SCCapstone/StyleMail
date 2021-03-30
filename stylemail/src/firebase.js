@@ -16,7 +16,7 @@ const fireApp = firebase.initializeApp({
 const db = fireApp.firestore();
 const auth = fireApp.auth();
 
-db.useEmulator('localhost', 8089);
+//db.useEmulator('localhost', 8089);
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });

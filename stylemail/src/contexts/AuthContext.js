@@ -158,14 +158,19 @@ export function AuthProvider({ children }) {
 
   function updateEmail(email) {
     return currentUser.updateEmail(email)
+    .catch(APIerror => {
+      setAPIerror("This email already exists.")
+    })
     .then(() => {
       db.collection('users').doc(auth.currentUser.uid)
       .update({
         'email': email,
-      }).catch(APIerror => {
+      })
+      .catch(APIerror => {
         setAPIerror('Error updating user email', APIerror)
       })
-    }).catch(APIerror => {
+    })
+    .catch(APIerror => {
       setAPIerror('Something went wrong with email update', APIerror)
     })
   }

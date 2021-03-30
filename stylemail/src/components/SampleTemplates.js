@@ -38,9 +38,9 @@ class SampleTemplates extends React.Component {
     return (
         <div>
             <NavBar />
-            <h1>Pick a Template</h1>
-            
+            <h1 className="text-center">Pick a Template</h1>
               <br></br>
+              <div className="d-flex flex-wrap justify-content-center">
               <img 
               src={getWEll}
               width = '300'
@@ -48,6 +48,7 @@ class SampleTemplates extends React.Component {
               className="btn btn-outline-dark" 
               id="Get Well" 
               onClick={this.ChangeHandler}
+              alt="Get Well Template"
               />         
              <br></br>
             
@@ -59,6 +60,7 @@ class SampleTemplates extends React.Component {
               className="btn btn-outline-dark" 
               id="Teacher Appreciation" 
               onClick={this.ChangeHandler}
+              alt="Teacher Template"
               />         
              <br></br>
 
@@ -69,6 +71,7 @@ class SampleTemplates extends React.Component {
               className="btn btn-outline-dark" 
               id="Grad Announcement" 
               onClick={this.ChangeHandler}
+              alt="Grad Template"
               />         
              <br></br>
              <img 
@@ -78,6 +81,7 @@ class SampleTemplates extends React.Component {
               className="btn btn-outline-dark" 
               id="Save The Date" 
               onClick={this.ChangeHandler}
+              alt="Save the Date Template"
               />         
              <br></br>
              <img 
@@ -87,6 +91,7 @@ class SampleTemplates extends React.Component {
               className="btn btn-outline-dark" 
               id="Thank You" 
               onClick={this.ChangeHandler}
+              alt="Thank you Template"
               />         
              <br></br>
 
@@ -98,39 +103,40 @@ class SampleTemplates extends React.Component {
               className="btn btn-outline-dark" 
               id="Valentines" 
               onClick={this.ChangeHandler}
+              alt="Valentines Template"
               />         
              <br></br>
 
              <img 
               src={hb}
               width = '300'
-              height = '150'             
-              
+              height = '150'
               className="btn btn-outline-dark" 
               id="Happy Birthday" 
               onClick={this.ChangeHandler}
+              alt="Happy Birthday Template"
               />         
              <br></br>
 
              <img 
               src={memo}
               width = '300'
-              height = '150'             
-              
+              height = '150'
               className="btn btn-outline-dark" 
               id="Business Memo" 
               onClick={this.ChangeHandler}
+              alt="Memo Template"
               />         
              <br></br>
 
              <img 
               src={luck}
               width = '300'
-              height = '150'             
-              
+              height = '150'
               className="btn btn-outline-dark" 
               id="Good Luck" 
               onClick={this.ChangeHandler}
+              alt="Good Luck Template"
               />         
              <br></br>
 
@@ -141,9 +147,10 @@ class SampleTemplates extends React.Component {
               className="btn btn-outline-dark" 
               id="Christmas" 
               onClick={this.ChangeHandler}
-              />         
+              alt="Christmas Template"
+              />
+              </div>  
              <br></br>
-
             <Footer></Footer>
         </div>
     );
