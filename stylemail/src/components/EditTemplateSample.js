@@ -245,7 +245,7 @@ class MyForm extends React.Component {
         <br></br>
       </div>
       <label>
-          Recipient Email Address: 
+          Recipient Email Address(es):  
           <br></br>
           <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
           <br></br>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"

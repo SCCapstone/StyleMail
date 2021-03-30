@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from "./Footer"
+import NavBar from "./NavBar"
 import { Card } from "react-bootstrap"
 import { sendLogEntry } from "../api/FireApi"
 /**
@@ -91,6 +92,9 @@ class MyForm extends React.Component {
   render() {
     return (
     <div style={{paddingLeft : "25px"}}>
+      <div>
+      <NavBar />
+      </div>
       <form onSubmit={this.formHandler}>
       <Card style={{backgroundColor:'#372392'}}>
         <Card.Body>
@@ -105,7 +109,7 @@ class MyForm extends React.Component {
         <br></br>
       </div>
       <label>
-          Recipient Email Address: 
+          Recipient Email Address(es): 
           <br></br>
           <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
           <br></br>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"
