@@ -152,6 +152,12 @@ class MyForm extends React.Component {
       <div>
         <br></br>
       </div>
+      <label>
+        <strong>Note: Not all HTML components and CSS styles may be supported by every email client (Outlook, Gmail, Yahoo!, AOL, etc.) Therefore emails may look different in varying email clients.</strong>
+      </label>
+      <div>
+        <br></br>
+      </div>
       <button onClick={event =>  this.props.history.push('/customtemplates')}>
         Cancel
       </button>

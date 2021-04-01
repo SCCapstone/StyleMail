@@ -36,34 +36,34 @@ function sendEmail(recipient, senderEmail, anonymous, subject, messagetextarea, 
       // eslint-disable-next-line default-case
       switch(tempChoice) {
         case 'Get Well':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Get Well Soon!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/getwell1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Teacher Appreciation':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Teacher Appreciation</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">I appreciate you!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/teachapp1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Grad Announcement':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Graduation Announcement</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Save The Date':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Always & Forever</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Thank You':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You!</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Valentines':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Happy Birthday':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/hbday1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Business Memo':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Business Memo</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Memo:</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Good Luck':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/gluck1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Christmas':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Merry Christmas</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Merry Christmas!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/mchristmas1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
     }
   }
@@ -86,34 +86,34 @@ function sendEmail(recipient, senderEmail, anonymous, subject, messagetextarea, 
       // eslint-disable-next-line default-case
       switch(tempChoice) {
         case 'Get Well':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Get Well Soon!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/getwell1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Teacher Appreciation':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Teacher Appreciation</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">I appreciate you!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/teachapp1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Grad Announcement':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Graduation Announcement</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Save The Date':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Always & Forever</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Thank You':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You!</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Valentines':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Happy Birthday':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/hbday1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Business Memo':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Business Memo</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Memo:</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Good Luck':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/gluck1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Christmas':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Merry Christmas</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Merry Christmas!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/mchristmas1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
       }
       wnd.document.write(write);
@@ -131,34 +131,34 @@ function sendEmail(recipient, senderEmail, anonymous, subject, messagetextarea, 
       // eslint-disable-next-line default-case
       switch(tempChoice) {
         case 'Get Well':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Get Well</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Get Well Soon!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/getwell1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Teacher Appreciation':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Teacher Appreciation</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">I appreciate you!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/teachapp1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Grad Announcement':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Graduation Announcement</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Save The Date':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Always & Forever</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Thank You':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Thank You!</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Valentines':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Happy Birthday':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/hbday1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Business Memo':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Business Memo</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Memo:</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
           break;
         case 'Good Luck':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Good Luck!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/gluck1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Christmas':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><h1 style=\"color:" + fontcolorpicker + ";\">Christmas</h1><p style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</p><p style=\"color:#382492;\">Sent with <a href=\"https://stylemail.app\" target=\"_blank\">StyleMail</a></p></div>";
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Merry Christmas!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/mchristmas1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
       }
     }
@@ -287,7 +287,12 @@ class MyForm extends React.Component {
       <br></br>
       <select name="fontselect" required onChange={this.ChangeHandler}>
         <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
         <option value="Helvetica">Helvetica</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Trebuchet MS">Trebuchet</option>
+        <option value="Times New Roman">Times New Roman</option>
+        <option value="Georgia">Georgia</option>
         <option value="Garamond">Garamond</option>
         <option value="Courier New">Courier New</option>
         <option value="Brush Script MT">Brush Script</option>
@@ -308,6 +313,12 @@ class MyForm extends React.Component {
           Background Color:
           <br></br>
           <input type="color" name="bgcolorpicker" required onChange={this.ChangeHandler} />
+      </label>
+      <div>
+        <br></br>
+      </div>
+      <label>
+          <strong>Note: Although StyleMail attempts to use the most safest, commonly supported styles, not all style configurations may be supported by every email client (Outlook, Gmail, Yahoo!, AOL, etc.) Therefore emails may look different in varying email clients.</strong>
       </label>
       <div>
         <br></br>
