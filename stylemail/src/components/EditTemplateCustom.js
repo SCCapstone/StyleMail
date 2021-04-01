@@ -14,7 +14,7 @@ function sendEmail(recipient, senderEmail, anonymous, subject) {
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     let tempHTML = localStorage.getItem('templateHTMLCustom');
     let data = {from: "", to: "", subject: "", html: ""};
-    if(anonymous == "false") {
+    if(anonymous === "false") {
       data = {
         from: senderEmail,
         to: recipient,

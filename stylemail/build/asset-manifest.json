@@ -1,24 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.7717636d.chunk.css",
-    "main.js": "/static/js/main.9034a012.chunk.js",
-    "main.js.map": "/static/js/main.9034a012.chunk.js.map",
+    "main.css": "/static/css/main.9706ccca.chunk.css",
+    "main.js": "/static/js/main.3d222b71.chunk.js",
+    "main.js.map": "/static/js/main.3d222b71.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.18a65449.js",
     "runtime-main.js.map": "/static/js/runtime-main.18a65449.js.map",
     "static/css/2.176e3ba5.chunk.css": "/static/css/2.176e3ba5.chunk.css",
-    "static/js/2.67e0ed35.chunk.js": "/static/js/2.67e0ed35.chunk.js",
-    "static/js/2.67e0ed35.chunk.js.map": "/static/js/2.67e0ed35.chunk.js.map",
+    "static/js/2.c6c10aa9.chunk.js": "/static/js/2.c6c10aa9.chunk.js",
+    "static/js/2.c6c10aa9.chunk.js.map": "/static/js/2.c6c10aa9.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.176e3ba5.chunk.css.map": "/static/css/2.176e3ba5.chunk.css.map",
-    "static/css/main.7717636d.chunk.css.map": "/static/css/main.7717636d.chunk.css.map",
-    "static/js/2.67e0ed35.chunk.js.LICENSE.txt": "/static/js/2.67e0ed35.chunk.js.LICENSE.txt",
-    "static/media/StyleMailLogo.531fe82a.jpg": "/static/media/StyleMailLogo.531fe82a.jpg"
+    "static/css/main.9706ccca.chunk.css.map": "/static/css/main.9706ccca.chunk.css.map",
+    "static/js/2.c6c10aa9.chunk.js.LICENSE.txt": "/static/js/2.c6c10aa9.chunk.js.LICENSE.txt",
+    "static/media/StyleMailLogo.531fe82a.jpg": "/static/media/StyleMailLogo.531fe82a.jpg",
+    "static/media/Val.e7080167.JPG": "/static/media/Val.e7080167.JPG",
+    "static/media/christmas.fd2bc9ad.JPG": "/static/media/christmas.fd2bc9ad.JPG",
+    "static/media/getwell.18119289.JPG": "/static/media/getwell.18119289.JPG",
+    "static/media/gradpic.0f6e417e.JPG": "/static/media/gradpic.0f6e417e.JPG",
+    "static/media/hb.9d86ad5b.JPG": "/static/media/hb.9d86ad5b.JPG",
+    "static/media/luck.207076f5.JPG": "/static/media/luck.207076f5.JPG",
+    "static/media/memo.b3b1649f.JPG": "/static/media/memo.b3b1649f.JPG",
+    "static/media/savedate.f657507c.JPG": "/static/media/savedate.f657507c.JPG",
+    "static/media/teacher.a6fa2f14.JPG": "/static/media/teacher.a6fa2f14.JPG",
+    "static/media/thankyou.ec5095d9.JPG": "/static/media/thankyou.ec5095d9.JPG"
   },
   "entrypoints": [
     "static/js/runtime-main.18a65449.js",
     "static/css/2.176e3ba5.chunk.css",
-    "static/js/2.67e0ed35.chunk.js",
-    "static/css/main.7717636d.chunk.css",
-    "static/js/main.9034a012.chunk.js"
+    "static/js/2.c6c10aa9.chunk.js",
+    "static/css/main.9706ccca.chunk.css",
+    "static/js/main.3d222b71.chunk.js"
   ]
 }

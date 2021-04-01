@@ -13,7 +13,7 @@ import { Link, useHistory } from "react-router-dom"
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login, googleSignIn, facebookSignIn, error } = useAuth()
+  const { login, googleSignIn, facebookSignIn, APIError } = useAuth()
   const history = useHistory()
 
   async function handleSubmit(e) {
@@ -38,8 +38,8 @@ export default function Login() {
           <div className="fadeIn first">
             <img src="./stylemailicon.png" id="icon" alt="User Icon" />
           </div>
-          {error && <Alert variant="danger">{error}</Alert>}
-          <Form onSubmit={handleSubmit}>
+          {(APIError) && <Alert variant="danger">{APIError}</Alert>}
+          <Form>
             <input type="text" id="login" className="fadeIn second auth-input-text" name="login" placeholder="Email" ref={emailRef} required ></input>
             <input type="password" id="password" className="fadeIn third auth-input-password" name="login" placeholder="Password" ref={passwordRef} required ></input>
             <input type="button" onClick={handleSubmit} className="fadeIn fourth auth-input-btn auth-input-submit" id="bottom" value="Log In"></input>
@@ -51,7 +51,7 @@ export default function Login() {
           </div>
           <div className="row fadeIn fourth" style={{marginLeft: '30px', marginRight: '30px'}}>
             <GoogleLoginButton onClick={handleGoogle}/>
-            <FacebookLoginButton onClick={handleFacebook} />
+            <FacebookLoginButton onClick={handleFacebook}/>
           </div><br/>
           <div id="formFooter">
             <Link className="auth-link fadeIn fourth" to="/signup"> Sign Up</Link><br></br>

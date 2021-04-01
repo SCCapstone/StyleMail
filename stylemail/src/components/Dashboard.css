@@ -8,37 +8,30 @@ body {
   left:0;
   background: #382492;
 }
-
 .reviews {
   background: #a2a2e6;
   padding: 10px;
 }
 
-#main-content {
+
+#options{
   display: flex;
-  padding: 20px;
+ 
 }
-
-#mid-section {
-  justify-content: space-around;
-}
-
-#column {
-  float: left;
-  width: 100%;
-  text-align: center;
-  padding: 20px 0px 20px 0px;
-  font-size: xx-large;
+#buttons{
+  display:flex;
   justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#btn-outline-dark{
   align-items: center;
-  margin: auto;
+  margin: 5px;
+  
 }
-
-#banner {
-  justify-content: center;
-  align-content: center;
-  display: block;
-  height: 1500px;
+#btn-outline-dark:hover{
+color: #b14f82;
+  
 }
 
 .logo {

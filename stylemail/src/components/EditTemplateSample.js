@@ -13,7 +13,7 @@ function sendEmail(recipient, senderEmail, anonymous, subject, messagetextarea, 
     const api_key = "fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58";
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     let data = {from: "", to: "", subject: "", html: ""};
-    if(anonymous == "false") {
+    if(anonymous === "false") {
       data = {
         from: senderEmail,
         to: recipient,
