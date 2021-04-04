@@ -48,8 +48,8 @@ function sendEmail(sender, recipient, senderEmail, anonymous, subject, messagete
         case 'Teacher Appreciation':
           data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">I appreciate you!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/teachapp1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
           break;
-        case 'Grad Announcement':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
+        case 'Graduation Announcement':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Save The Date':
           data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/stdate1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
@@ -57,8 +57,8 @@ function sendEmail(sender, recipient, senderEmail, anonymous, subject, messagete
         case 'Thank You':
           data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Thank You!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/tyou1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
           break;
-        case 'Valentines':
-          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
+        case 'Valentines Day':
+          data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Happy Birthday':
           data.html = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/hbday1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
@@ -102,7 +102,7 @@ function sendEmail(sender, recipient, senderEmail, anonymous, subject, messagete
         case 'Teacher Appreciation':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">I appreciate you!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/teachapp1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
           break;
-        case 'Grad Announcement':
+        case 'Graduation Announcement':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
           break;
         case 'Save The Date':
@@ -111,8 +111,9 @@ function sendEmail(sender, recipient, senderEmail, anonymous, subject, messagete
         case 'Thank You':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Thank You!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/tyou1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
           break;
-        case 'Valentines':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
+
+        case 'Valentines Day':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Happy Birthday':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/hbday1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
@@ -153,8 +154,8 @@ function sendEmail(sender, recipient, senderEmail, anonymous, subject, messagete
         case 'Teacher Appreciation':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">I appreciate you!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/teachapp1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
           break;
-        case 'Grad Announcement':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
+        case 'Graduation Announcement':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Join us in celebrating a graduation!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/graduationfinal.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Save The Date':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Save the Date!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/stdate1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
@@ -162,8 +163,8 @@ function sendEmail(sender, recipient, senderEmail, anonymous, subject, messagete
         case 'Thank You':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Thank You!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/tyou1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
           break;
-        case 'Valentines':
-          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
+        case 'Valentines Day':
+          write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Be My Valentine!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/valentines1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with StyleMail</p><br></div>";
           break;
         case 'Happy Birthday':
           write = "<div style=\"background-color:" + bgcolorpicker + ";font-family:" + fontselect + ";text-align:center;\"><br><h1 style=\"color:" + fontcolorpicker + ";\">Happy Birthday!</h1></br><img src=\"https://raw.githubusercontent.com/gwerven/stylemailfiles/master/hbday1.png\" width=\"50%\"><br><h2 style=\"color:" + fontcolorpicker + ";\">" + messagetextarea + "</h2></br><p style=\"color:" + fontcolorpicker + ";\">Sent with <a href=\"https://run.stylemail.app\" target=\"_blank\">StyleMail</a> by " + sender + "</p><br></div>";
@@ -273,43 +274,56 @@ class MyForm extends React.Component {
   // Render the user interface of the web app (the React form for the user to input values to customize the sample templates)
   render() {
     return (
+    <div style={{paddingLeft : "25px"}}>
       <div>
-        <NavBar/>
-          <div style={{backgroundColor: 'white'}}>
-            <h1 className="text-center" style={{textDecoration: 'underline'}}>Customize and Send Template</h1>
-            <div style={{paddingLeft: '25px'}}>
-              <Form onSubmit={this.formHandler}>
-                <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample') || localStorage.getItem('templateChoiceCustom')}</h3>
-                <label>
-                  Recipient Email Address(es):  
-                  <br/>
-                  <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
-                  <br/>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"
-                  </label>
-                  <br/>
-                  <br/>
-                  <label>
-                    Your Email:
-                    <br/>
-                    <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
-                  </label>
-                    <label>
-                    <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
-                      Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
-                </label>
-                <br/>
-                <br/>
-                <label>
-                  Email Subject:
-                  <br/>
-                  <input type="text" name="subject" required onChange={this.ChangeHandler} />
-                </label>
-                <br/>
-                <br/>
-                <span>Message Text:</span>
-                  <br/>
-                  <textarea id="textarea" name="messagetextarea" rows="5" cols="50" placeholder="Type your message here!" required onChange={this.ChangeHandler}></textarea>
-                <br/>StyleMail supports emoji! While typing your message, press the Windows key and the period (.) key simultaneously to use emoji in your message.
+      <NavBar />
+      </div>
+      <form onSubmit={this.formHandler}>
+      <Card style={{backgroundColor:'#372392'}}>
+        <Card.Body>
+          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Customize and Send Template</h1>
+        </Card.Body>
+       </Card>
+      <div>
+        <br></br>
+      </div>
+      <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample') || localStorage.getItem('templateChoiceCustom')}</h3>
+      <div>
+        <br></br>
+      </div>
+      <label>
+          Recipient Email Address(es):  
+          <br></br>
+          <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
+          <br></br><b>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"</b>
+      </label>
+      <div>
+        <br></br>
+      </div>
+      <label>
+          Your Email:
+          <br></br>
+          <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
+      </label>
+      <label>
+      <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
+          Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
+      </label>
+      <div>
+        <br></br>
+      </div>
+      <label>
+          Email Subject:
+          <br></br>
+          <input type="text" name="subject" required onChange={this.ChangeHandler} />
+      </label>
+      <div>
+        <br></br>
+      </div>
+      Message Text:
+      <br></br>
+      <textarea id="textarea" name="messagetextarea" rows="5" cols="50" placeholder="Type your message here!" required onChange={this.ChangeHandler}></textarea>
+      <br></br>StyleMail supports emoji! While typing your message, press the Windows key and the period (.) key simultaneously to use emoji in your message.
                 <br/>
                 <br/>
                 <span>Font:</span>
