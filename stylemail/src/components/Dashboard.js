@@ -1,7 +1,7 @@
 import "./Dashboard.css"
 import Footer from "./Footer"
 import NavBar from "./NavBar"
-import Logo from "./Images/StyleMailLogoWhite.png"
+import Logo from "./Images/StyleMailLogoWhite1.png"
 import React from "react"
 import { Card } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
