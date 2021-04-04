@@ -7,13 +7,18 @@ import { sendLogEntry } from "../api/FireApi"
  * Private Visability
  * Allows authenticated user to send their custom made template
  */
+
+// Sends en email using MailGun API
 function sendEmail(recipient, senderEmail, anonymous, subject) {
+    // MailGun API credentials
     const mailgun = require("mailgun-js");
     const DOMAIN = 'mail.alecfarmer.com';
     const api_key = 'fe5c4c3437d840ae313922b5325fa63b-6e0fd3a4-ab857c58';
     const mg = mailgun({apiKey: api_key, domain: DOMAIN});
     let tempHTML = localStorage.getItem('templateHTMLCustom');
     let data = {from: "", to: "", subject: "", html: ""};
+
+    // If the user wants their email to be sent anonymously, send it from the address mail@stylemail.app, otherwise send it from their input email
     if(anonymous === "false") {
       data = {
         from: senderEmail,
@@ -31,31 +36,47 @@ function sendEmail(recipient, senderEmail, anonymous, subject) {
       };
     }
 
+    // Retrieve and set the HTML code of the email
     if(localStorage && localStorage.getItem('templateHTMLCustom')) {
       let tempHTML = localStorage.getItem('templateHTMLCustom');
       data.html = tempHTML;
     }
 
+    // Add the email, recipient, and date/time to the user's send log to keep record of which emails they sent using stylemail
     sendLogEntry(data.to, data.subject)
 
     mg.messages().send(data, function (error, body) {
       console.log(body);
     });
 }
-  
+  // Opens the HTML of the email in a new browser window for the user to preview their email before sending
   function preview() {
+    // Create the window
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
+
+    // Retrieve and set the HTML code of the preview window
     if(localStorage && localStorage.getItem('templateHTMLCustom')) {
       let tempHTML = localStorage.getItem('templateHTMLCustom');
+
+      // Write the HTML to the window
       wnd.document.write(tempHTML);
     }
   }
   
+  // Opens a dialog box for the user to either send their creation to a printer for printing or to save as a PDF (using print to PDF feature by Microsoft)
   function print() {
+
+    // Create the window
     var wnd = window.open("StyleMail", "Stylemail", "_blank");
+
+    // Retrieve and set the HTML code of the preview window
     if(localStorage && localStorage.getItem('templateHTMLCustom')) {
       let tempHTML = localStorage.getItem('templateHTMLCustom');
+
+      // Write the HTML to the window
       wnd.document.write(tempHTML);
+
+      // Allow 400 ms of load time to load image assets in the window, then prompt the print dialog
       setTimeout(function()
       {
         wnd.print();
@@ -65,9 +86,11 @@ function sendEmail(recipient, senderEmail, anonymous, subject) {
       }
   }
 
+  // Constructor for custom template edit page
 class MyForm extends React.Component {
   constructor(props) {
     super(props);
+    // Declare and initialize the properties before using
     this.state = {
       recipient: '',
       senderEmail: '',
@@ -76,39 +99,50 @@ class MyForm extends React.Component {
     };
   }
 
+  // Change handler to adjust the properties as the user inputs information into the React form
   ChangeHandler = (event) => {
     let nam = event.target.name;
     let val = event.target.value;
     this.setState({[nam]: val});
   }
 
+  // Runs when the user submits the React form
   formHandler = (event) => {
     event.preventDefault();
 
+    // Set the final values of the properties because the user is done editing
     let recipient = this.state.recipient;
     let senderEmail = this.state.senderEmail;
     let anonymous = this.state.anonymous;
     let subject = this.state.subject;
 
+    // Send the email with the input properties
     sendEmail(recipient, senderEmail, anonymous, subject);
 
+    // Trigger a small alert window to notify the user that the email has been successfully sent
     window.alert("Email Sent!");
 
+    // Return to the user's dashboard
     this.props.history.push('/');
   }
 
+  // Runs when the user's clicks on the preview button
   previewHandler = (event) => {
     event.preventDefault();
     
+    // Trigger the preview window
     preview();
   }
 
+  // Runs when the user clicks on the print/save as PDF button
   printHandler = (event) => {
     event.preventDefault();
     
+    // Trigger the print/save as PDF window
     print();
   }
 
+  // Render the user interface of the web app (the React form for customization)
   render() {
     return (
     <div style={{paddingLeft : "25px"}}>
