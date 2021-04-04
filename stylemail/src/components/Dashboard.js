@@ -34,13 +34,14 @@ export default function Dashboard() {
             <br></br>
           </div>
           <div className="options">
-          <div className="buttons">
-          <button className="btn-outline-dark" onClick={handleST}>Send emails using ready-to-go sample templates (Recommended)</button>
-          
+            <div className="btn">
+            <button className="btn-outline-dark" onClick={handleST}>Send emails using ready-to-go sample templates (Recommended)</button>
             <br></br>
-         
-          <button className="btn-outline-dark" onClick={handleCT}>Create custom email templates using HTML and CSS</button>
-          </div>
+            </div>
+
+            <div className="btn">
+            <button className="btn-outline-dark" onClick={handleCT}>Create custom email templates using HTML and CSS</button>
+            </div>
           </div>
         </Card.Body>       
        </Card>

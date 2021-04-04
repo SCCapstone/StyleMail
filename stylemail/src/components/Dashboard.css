@@ -13,27 +13,38 @@ body {
   padding: 10px;
 }
 
-
+/*styling for the buttons*/
 #options{
   display: flex;
- 
 }
-#buttons{
-  display:flex;
+#btn{
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: center;
 }
 #btn-outline-dark{
   align-items: center;
   margin: 5px;
   
 }
-#btn-outline-dark:hover{
-color: #b14f82;
-  
+button {
+  color: white;
+  background-color:#a2a2e6;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+.button:hover{
+  background-color: #372392;
+  color:white;
 }
 
+/*Other Styling*/
 .logo {
   width: 60%;
   height: 35%;
