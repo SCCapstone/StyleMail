@@ -13,6 +13,7 @@ export default function NavBar() {
     const history = useHistory()
     var login = useAuth();
 
+    // Checks if user is logged-in or not
     async function handleLogout() {
     
         try {

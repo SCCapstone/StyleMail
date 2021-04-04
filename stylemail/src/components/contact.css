@@ -1,158 +1,47 @@
-body {
-    height: 100%;
-    line-height: 1.8;
-    position: absolute;
-    top:0; 
-    bottom:0; 
-    right:0; 
-    left:0;
-    background: white;
-  }
-  
-  .reviews {
-    background: #a2a2e6;
-    padding: 10px;
-  }
-  
-  #main-content {
-    display: flex;
-    padding: 20px;
-  }
-  
-  #mid-section {
-    justify-content: space-around;
-  }
-  
-  #column {
-    float: left;
-    width: 100%;
-    text-align: center;
-    padding: 20px 0px 20px 0px;
-    font-size: xx-large;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  }
-  
-  #banner {
-    justify-content: center;
-    align-content: center;
-    display: block;
-    height: 1500px;
-  }
-  
-  .logo {
-    width: 60%;
-    height: 35%;
-    align-content: center;
-    margin: auto;
-  }
-  
-  .transition {
-    position: absolute;
-    right: 400px;
-  }
-  
-  #sign-btns {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 30px;
-  }
-  
-  footer {
-    background: #a2a2e6;
-    height: 100px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    content: "\A";
-  }
-  
-  .linking-btns {
-    padding: 20px;
-    height: 20px;
-  }
-  
-  .w3-bar .w3-button {
-    padding: 16px;
-  }
-  
-  /* Add a black background color to the top navigation */
-  .topnav {
-    background-color: #372392;
-    overflow: hidden;
-    margin: 0;
-  }
-  
-  /* Style the links inside the navigation bar */
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  
-  /* Change the color of links on hover */
-  .topnav a:hover {
-    background-color:#b14f82;
-    color: black;
-  }
-  
-  /* Add a color to the active/current link */
-  .topnav a.active {
-    background-color: #b14f82;
-    color: white;
-  }
-  
-  .card.Body {
-    background-color: #372392;
-  }
-  
-  h2 {
-    text-align: center;
-  }
-  
-  .text-center {
-    text-align: center;
-    font-size: 2rem;
-    color: black;
-  }
-  
-  #center {
-    text-align: center;
-  }
-  
-  @media only screen and (max-width: 768px) {
-    .mobile-img {
-      width: 300px;
-      height: 188px;
-    }
-  
-    .mobile-size-h1 {
-      font-size: 25px;
-    }
-  
-    .mobile-size-h3 {
-      font-size: 15px;
-    }
-  
-    .mobile-footer {
-      font-size: medium;
-    }
-  
-    .topnav {
-      display: flex;
-      height: 70px;
-      line-height: auto;
-      width: 100%;
-      overflow-x: scroll;
-    }
-  
-    .topnav a {
-      max-width: 100%;
-      width: 100%;
-    }
-  }
-  
+/**
+  * Contact CSS
+  */
+.contact-content {
+  background-color: white;
+}
+
+.contact-text-div {
+  margin: 25px 25px 25px 25px;
+}
+
+.contact-title {
+  font-size: 30px;
+  margin: 5px 0px 10px 0px;
+  text-decoration: underline;
+}
+
+.contact-sub-text {
+  font-size: 25px;
+}
+
+#contact-email-form {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: 0px 10% 0px 10%;
+}
+
+#contact-form {
+  padding: 10px;
+}
+
+#contact-submit-btn {
+  padding: 10px;
+}
+
+/*
+.contact-title::after {
+  content: "";
+  background: #4128a0;
+  width: 65px;
+  height: 7px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+*/

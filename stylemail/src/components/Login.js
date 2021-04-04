@@ -16,16 +16,17 @@ export default function Login() {
   const { login, googleSignIn, facebookSignIn, APIError } = useAuth()
   const history = useHistory()
 
+  // Handles regular email and password signup
   async function handleSubmit(e) {
     await login(emailRef.current.value, passwordRef.current.value)
     history.push("/")
   }
-
+  // Handles Google signin
   async function handleGoogle(e) {
     await googleSignIn()
     history.push("/")
   }
-
+  // Handles Facebook signin
   async function handleFacebook(e) {
     await facebookSignIn()
     history.push("/")

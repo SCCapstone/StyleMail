@@ -1,3 +1,11 @@
+/**
+  * Dashboard CSS
+  */
+
+#root {
+  background: radial-gradient(circle, rgba(186,88,143,1) 28%, rgba(65,40,160,1) 100%);
+}
+
 body {
   height: 100%;
   line-height: 1.8;
@@ -8,27 +16,26 @@ body {
   left:0;
   background: #382492;
 }
-.reviews {
-  background: #a2a2e6;
-  padding: 10px;
-}
 
 /*styling for the buttons*/
-#options{
+#options {
   display: flex;
 }
-#btn{
+
+#btn {
   justify-content: center;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
 }
-#btn-outline-dark{
+
+#btn-outline-dark {
   align-items: center;
   margin: 5px;
   
 }
-button {
+
+.dash-button {
   color: white;
   background-color:#a2a2e6;
   border: none;
@@ -39,7 +46,8 @@ button {
   font-size: 16px;
   transition-duration: 0.4s;
 }
-.button:hover{
+
+.dash-button:hover {
   background-color: #372392;
   color:white;
 }
@@ -81,35 +89,6 @@ footer {
   padding: 16px;
 }
 
-/* Add a black background color to the top navigation */
-.topnav {
-  background-color: #372392;
-  overflow: hidden;
-  margin: 0;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color:#b14f82;
-  color: black;
-}
-
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #b14f82;
-  color: white;
-}
-
 .card.Body {
   background-color: #372392;
 }
@@ -128,9 +107,47 @@ h2 {
   text-align: center;
 }
 
+/*
+.dash-user-email { 
+  text-decoration: underline;
+}
+
+.dash-buttons { 
+  display:flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.dash-btns {
+  color: white;
+  background-color:#a2a2e6;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  transition-duration: 0.4s;
+}
+
+.dash-btns:hover {
+  background-color: #372392;
+  color:white;
+}
+
+.btn-outline-dark { 
+  align-items: center;
+  margin: 5px;
+}
+
+.btn-outline-dark:hover { 
+  color: #ba588f;
+}
+
 @media only screen and (max-width: 768px) {
   .mobile-img {
-    width: 300px;
+    width: 200px;
     height: 188px;
   }
 
@@ -145,17 +162,5 @@ h2 {
   .mobile-footer {
     font-size: medium;
   }
-
-  .topnav {
-    display: flex;
-    height: 70px;
-    line-height: auto;
-    width: 100%;
-    overflow-x: scroll;
-  }
-
-  .topnav a {
-    max-width: 100%;
-    width: 100%;
-  }
 }
+*/

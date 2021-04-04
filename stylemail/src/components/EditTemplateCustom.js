@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from "./Footer"
 import NavBar from "./NavBar"
-import { Card } from "react-bootstrap"
+import { Form } from "react-bootstrap"
 import { sendLogEntry } from "../api/FireApi"
 /**
  * Private Visability
@@ -145,82 +145,66 @@ class MyForm extends React.Component {
   // Render the user interface of the web app (the React form for customization)
   render() {
     return (
-    <div style={{paddingLeft : "25px"}}>
       <div>
-      <NavBar />
-      </div>
-      <form onSubmit={this.formHandler}>
-      <Card style={{backgroundColor:'#372392'}}>
-        <Card.Body>
-          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Send Template</h1>
-        </Card.Body>
-       </Card>
-       <div>
-        <br></br>
-      </div>
-      <h3>Your chosen template is: {localStorage.getItem('templateChoiceCustom')}</h3>
-      <div>
-        <br></br>
-      </div>
-      <label>
-          Recipient Email Address(es): 
-          <br></br>
-          <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
-          <br></br>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"
-      </label>
-      <div>
-        <br></br>
-      </div>
-      <label>
-          Your Email:
-          <br></br>
-          <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
-      </label>
-      <label>
-      <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
-          Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
-      </label>
-      <div>
-        <br></br>
-      </div>
-      <label>
-          Email Subject:
-          <br></br>
-          <input type="text" name="subject" required onChange={this.ChangeHandler} />
-      </label>
-      <div>
-        <br></br>
-      </div>
-      <label>
-        <strong>Note: Not all HTML components and CSS styles may be supported by every email client (Outlook, Gmail, Yahoo!, AOL, etc.) Therefore emails may look different in varying email clients.</strong>
-      </label>
-      <div>
-        <br></br>
-      </div>
-      <button onClick={event =>  this.props.history.push('/customtemplates')}>
-        Cancel
-      </button>
-      <div>
-        <br></br>
-      </div>
-      <button onClick={this.previewHandler}>
-        Preview (Opens in new browser window) 
-      </button>
-      <div>
-        <br></br>
-      </div>
-      <button onClick={this.printHandler}>
-        Print/Save as PDF
-      </button>
-      <div>
-        <br></br>
-      </div>
-      <input type="submit" value="Send Email" />
-      </form>
-      <div>
-        <br></br>
-      </div>
-      <Footer></Footer>
+        <NavBar/>
+          <div style={{backgroundColor: 'white'}}>
+            <h1 className="text-center mb-4" style={{textDecoration: 'underline'}}>Send Template</h1>
+              <div style={{paddingLeft: '25px'}}>
+                <Form onSubmit={this.formHandler}>
+                  <div>
+                    <h3>Your chosen template is: {localStorage.getItem('templateChoiceCustom')}</h3>
+                    <br/>
+                    <label>
+                      Recipient Email Address(es): 
+                      <br/>
+                      <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
+                      <br/>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com, ben@email.com"
+                    </label>
+                    <br/>
+                    <br/>
+                    <label>
+                      Your Email:
+                      <br/>
+                      <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
+                    </label>
+                    <label>
+                      <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
+                      Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
+                    </label>
+                    <br/>
+                    <br/>
+                    <label>
+                      Email Subject:
+                      <br/>
+                      <input type="text" name="subject" required onChange={this.ChangeHandler}/>
+                    </label>
+                    <label>
+                      <strong>Note: Not all HTML components and CSS styles may be supported by every email client (Outlook, Gmail, Yahoo!, AOL, etc.) Therefore emails may look different in varying email clients.</strong>
+                    </label>
+                    <br/>
+                    <br/>
+                    <button className="btn btn-danger" onClick={event =>  this.props.history.push('/customtemplates')}>
+                      Cancel
+                    </button>
+                    <br/>
+                    <br/>
+                    <button className="btn btn-secondary" onClick={this.previewHandler}>Preview (Opens in new browser window)</button>
+                    <br/>
+                    <br/>
+                    <button className="btn btn-secondary" onClick={this.printHandler}>Print</button>
+                    <br/>
+                    <br/>
+                    <button className="btn btn-secondary" onClick={this.printHandler}>Save as PDF</button>
+                    <br/>
+                    <br/>
+                    <button className="btn btn-primary" type="submit">Send Email</button>
+                    <br/>
+                    <br/>
+                  </div>
+                </Form>
+              </div>
+          </div>
+        <Footer/>
       </div>
     );
   }

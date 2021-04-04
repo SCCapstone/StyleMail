@@ -1,25 +1,33 @@
 import React, { useContext, useState, useEffect } from "react"
 import { googleProvider, facebookProvider, auth, db } from "../firebase"
+/**
+ * Handles all authentication throughout app
+ * Functions are exported using useAuth hook
+ */
 
+// A simple formatted date converter
 function dateTime() {
   const date = new Date()
   const formattedDT = date.toLocaleString([], {month: 'long', day: '2-digit', year: 'numeric',
     hour: 'numeric', minute: 'numeric', second: 'numeric'})
   return formattedDT
 }
-
+// Creates a React context state
 const AuthContext = React.createContext()
 
+// Exports the useAuth hook
 export function useAuth() {
   return useContext(AuthContext)
 }
 
+// Main function
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState()
   const [loading, setLoading] = useState(true)
   const [APIerror, setAPIerror] = useState()
   const [providerName, setProviderName] = useState("")
 
+  // Collects a users provider information (Google or Facebook)
   function getProviderInfo() {
     const user = db.collection('users').doc(auth.currentUser.uid)
 
@@ -32,6 +40,7 @@ export function AuthProvider({ children }) {
     return providerName
   }
 
+  // Signup function called when a new user signs up
   function signup(email, password) {
     return auth.createUserWithEmailAndPassword(email, password)
     .then(() => {
@@ -50,6 +59,7 @@ export function AuthProvider({ children }) {
     })
   }
 
+  // Login function called when a user logs in
   async function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password)
     .then(() => {
@@ -64,6 +74,8 @@ export function AuthProvider({ children }) {
     })
   }
 
+  // Google sign up function // Will convert or replace existing 
+  // account with google login if email already exists
   function googleSignIn() {
     return auth.signInWithPopup(googleProvider)
     .then(result => {
@@ -103,6 +115,8 @@ export function AuthProvider({ children }) {
     });
   }
 
+  // Facebook sign up function // Will convert or replace existing 
+  // account with google login if email already exists
   function facebookSignIn() {
     return auth.signInWithPopup(facebookProvider)
     .then(result => {
@@ -142,6 +156,7 @@ export function AuthProvider({ children }) {
     });
   }  
 
+  // Logout function called for all user logouts
   function logout() {
     return auth.signOut()
     .catch(APIerror => {
@@ -149,6 +164,7 @@ export function AuthProvider({ children }) {
     })
   }
 
+  // Called when user resets password
   function resetPassword(email) {
     return auth.sendPasswordResetEmail(email)
     .catch(APIerror => {
@@ -156,6 +172,7 @@ export function AuthProvider({ children }) {
     })
   }
 
+  // Called when user updates email from 'Settings' page
   function updateEmail(email) {
     return currentUser.updateEmail(email)
     .catch(APIerror => {
@@ -175,6 +192,7 @@ export function AuthProvider({ children }) {
     })
   }
 
+  // Called when user updates password from 'Settings' page
   function updatePassword(password) {
     return currentUser.updatePassword(password)
     .catch(APIerror => {

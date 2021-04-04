@@ -28,7 +28,7 @@ export function GetLogs() {
   return entries
 }
 // Query of all created templates from authenticated user
-export function GetTemplates(title, desc) {
+export function GetTemplates() {
     const [templates, setTemplates] = useState([])
     useEffect(() => {
         const userTemps = db.collection('users').doc(auth.currentUser.uid).collection('templates')
@@ -42,7 +42,7 @@ export function GetTemplates(title, desc) {
         return () => {
           unsub()
         };
-    }, [title, desc])
+    }, [])
   return templates
 }
 // Adds a created template from authenticated user
@@ -79,4 +79,4 @@ export function sendLogEntry(to, subject) {
     }).catch((error) => {
       console.log("Error saving Send Log entry", error)
     })
-  }
+}

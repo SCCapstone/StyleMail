@@ -1,4 +1,5 @@
 import NavBar from "./NavBar"
+import Footer from "./Footer"
 import React, { useRef, useState, useEffect } from "react"
 import { Form, Alert, Card, Button } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
@@ -37,6 +38,7 @@ export default function Settings() {
       setError(e)
     }
   },[getProviderInfo])
+
   // Verifies provided password strength then calls 'updateEmail' or 'updatePassword'
   function handleSubmit(e) {
     e.preventDefault()
@@ -55,6 +57,7 @@ export default function Settings() {
       promises.push(updatePassword(passwordRef.current.value))
     }
 
+    // Checks if all if statements are true before the use is redirected
     Promise.all(promises)
       .then(() => {
         history.push("/")
@@ -101,13 +104,14 @@ export default function Settings() {
             />
           </Form.Group>
           <div style={{textAlign: 'center'}} >
-            <Button className="w-50 disabled" disabled = {disableBtn} type="submit">
+            <Button className="w-50 disabled" disabled={disableBtn} type="submit">
               Update
             </Button>
           </div>
         </Form>
       </Card.Body>
     </Card>
+    <Footer/>
     </>
   )
 }

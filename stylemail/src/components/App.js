@@ -9,7 +9,6 @@ import PrivateRoute from "./PrivateRoute"
 import Settings from "./Settings"
 import ForgotPassword from "./ForgotPassword"
 import CustomTemplates from "./CustomTemplates"
-import LogOut from "./LogOut"
 import NavBar from "./NavBar"
 import SampleTemplates from "./SampleTemplates"
 import SendLog from "./SendLog"
@@ -28,12 +27,12 @@ import Contact from "./contact"
 
 function App() {
 
-   <NavBar />
+   <NavBar/>
 
   return (
     <Container
       className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
+      style={{ minHeight: "100vh"}}
     >
 
       <div className="w-100" style={{ maxWidth: "3000px" }}>
@@ -54,7 +53,6 @@ function App() {
               <PrivateRoute path ="/terms" component={Terms} />
               <PrivateRoute path ="/contact" component={Contact} />
               <PrivateRoute path ="/sendlog" component={SendLog} />
-              <PrivateRoute path ="/logout" component={LogOut} />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />   
