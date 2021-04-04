@@ -56,8 +56,13 @@ function sendEmail(recipient, senderEmail, anonymous, subject) {
     if(localStorage && localStorage.getItem('templateHTMLCustom')) {
       let tempHTML = localStorage.getItem('templateHTMLCustom');
       wnd.document.write(tempHTML);
-      wnd.print();
-    }
+      setTimeout(function()
+      {
+        wnd.print();
+        wnd.close();
+      }, 400);
+        
+      }
   }
 
 class MyForm extends React.Component {
@@ -171,13 +176,7 @@ class MyForm extends React.Component {
         <br></br>
       </div>
       <button onClick={this.printHandler}>
-        Print
-      </button>
-      <div>
-        <br></br>
-      </div>
-      <button onClick={this.printHandler}>
-        Save as PDF
+        Print/Save as PDF
       </button>
       <div>
         <br></br>

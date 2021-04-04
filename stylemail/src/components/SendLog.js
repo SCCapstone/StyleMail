@@ -16,6 +16,7 @@ const SendLogs = () => {
             <div>
                 <h3 style={{fontSize: '35px', textAlign: 'center', paddingTop: '10px', paddingBottom: '10px'}}>Send Log</h3>
                 <h4 style={{textAlign:"center"}}>Below is a log of your emails sent using StyleMail</h4>
+                <br></br>
                   <div>
                     <ul style={{marginRight:"5%", marginLeft:"5%"}} className="list-group">
                       {entries.map(val => (
@@ -32,6 +33,7 @@ const SendLogs = () => {
                     <br/>
                   </div>  
                 </div>
+                <br></br>
                 <Footer></Footer>
         </div>
     )

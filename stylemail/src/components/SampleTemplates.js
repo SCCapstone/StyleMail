@@ -38,6 +38,7 @@ class SampleTemplates extends React.Component {
     return (
         <div>
             <NavBar />
+            <br></br>
             <h1 className="text-center">Pick a Template</h1>
               <br></br>
               <div className="d-flex flex-wrap justify-content-center">
@@ -150,6 +151,7 @@ class SampleTemplates extends React.Component {
               alt="Christmas Template"
               />
               </div>  
+             <br></br>
              <br></br>
             <Footer></Footer>
         </div>
