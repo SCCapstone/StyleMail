@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
-import { googleProvider, facebookProvider, auth, db } from "../firebase"
+import { googleProvider, twitterProvider, auth, db } from "../firebase"
 /**
  * Handles all authentication throughout app
  * Functions are exported using useAuth hook
@@ -115,10 +115,10 @@ export function AuthProvider({ children }) {
     });
   }
 
-  // Facebook sign up function // Will convert or replace existing 
+  // Twitter sign up function // Will convert or replace existing 
   // account with google login if email already exists
-  function facebookSignIn() {
-    return auth.signInWithPopup(facebookProvider)
+  function twitterSignIn() {
+    return auth.signInWithPopup(twitterProvider)
     .then(result => {
       db.collection('users').doc(auth.currentUser.uid)
       .set({
@@ -216,7 +216,7 @@ export function AuthProvider({ children }) {
     login,
     signup,
     googleSignIn,
-    facebookSignIn,
+    twitterSignIn,
     logout,
     resetPassword,
     updateEmail,

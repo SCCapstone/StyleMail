@@ -103,7 +103,7 @@ function CustomTemplates() {
                 onChange={event => {setSearchTerm(event.target.value)}}
               />
               <InputGroup.Append>
-                <Button type="button" variant="outline-primary" onClick={() => {handleAddShow(); console.log("click")}}>Add Template</Button>
+                <Button type="button" variant="outline-primary" onClick={() => {handleAddShow()}}>Add Template</Button>
               </InputGroup.Append>
             </InputGroup>
           </div>
@@ -183,7 +183,7 @@ function CustomTemplates() {
                       type='text'
                       id='title'
                       name='title'
-                      defaultvalue={addTemplate.title}
+                      defaultValue={addTemplate.title}
                       onChange={handleAddChange}
                       className='form-control validate'
                       required

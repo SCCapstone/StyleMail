@@ -21,8 +21,8 @@ db.useEmulator('localhost', 8070);
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 googleProvider.setCustomParameters({ prompt: 'select_account' });
 
-const facebookProvider = new firebase.auth.FacebookAuthProvider();
-facebookProvider.setCustomParameters({ prompt: 'select_account' });
+const twitterProvider = new firebase.auth.TwitterAuthProvider();
+twitterProvider.setCustomParameters({ prompt: 'select_account' });
 
-export { db, auth, googleProvider, facebookProvider, firebase };
+export { db, auth, googleProvider, twitterProvider, firebase };
 export default fireApp;

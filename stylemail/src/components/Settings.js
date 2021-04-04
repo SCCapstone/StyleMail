@@ -27,8 +27,8 @@ export default function Settings() {
       if (getProviderInfo().toString() === "google.com") {
         setError("You have logged in with an external provider (Google). Please update your information through their website.")
         setDisableBtn("disabled")
-      } else if (getProviderInfo().toString() === "facebook.com") {
-        setError("You have logged in with an external provider (Facebook). Please update your information through their website.")
+      } else if (getProviderInfo().toString() === "twitter.com") {
+        setError("You have logged in with an external provider (Twitter). Please update your information through their website.")
         setDisableBtn("disabled")
       } else {
         setError("")
