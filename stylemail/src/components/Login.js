@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import "./Auth.css";
 import React, { useRef } from "react"
-import { GoogleLoginButton, FacebookLoginButton } from "react-social-login-buttons";
+import { GoogleLoginButton, TwitterLoginButton } from "react-social-login-buttons";
 import { Form, Alert } from "react-bootstrap"
 import { useAuth } from "../contexts/AuthContext"
 import { Link, useHistory } from "react-router-dom"
@@ -13,21 +13,22 @@ import { Link, useHistory } from "react-router-dom"
 export default function Login() {
   const emailRef = useRef()
   const passwordRef = useRef()
-  const { login, googleSignIn, facebookSignIn, APIError } = useAuth()
+  const { login, googleSignIn, twitterSignIn, APIError } = useAuth()
   const history = useHistory()
 
+  // Handles regular email and password signup
   async function handleSubmit(e) {
     await login(emailRef.current.value, passwordRef.current.value)
     history.push("/")
   }
-
+  // Handles Google signin
   async function handleGoogle(e) {
     await googleSignIn()
     history.push("/")
   }
-
-  async function handleFacebook(e) {
-    await facebookSignIn()
+  // Handles Twitter signin
+  async function handleTwitter(e) {
+    await twitterSignIn()
     history.push("/")
   }
   
@@ -51,7 +52,7 @@ export default function Login() {
           </div>
           <div className="row fadeIn fourth" style={{marginLeft: '30px', marginRight: '30px'}}>
             <GoogleLoginButton onClick={handleGoogle}/>
-            <FacebookLoginButton onClick={handleFacebook}/>
+            <TwitterLoginButton onClick={handleTwitter}/>
           </div><br/>
           <div id="formFooter">
             <Link className="auth-link fadeIn fourth" to="/signup"> Sign Up</Link><br></br>

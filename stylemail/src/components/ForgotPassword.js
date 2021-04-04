@@ -13,6 +13,7 @@ export default function ForgotPassword() {
   const [error, setError] = useState("")
   const [message, setMessage] = useState("")
 
+  // Handles sending reset password email to user
   async function handleSubmit(e) {
     e.preventDefault()
     try {

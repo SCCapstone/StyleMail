@@ -19,13 +19,13 @@ export default function Dashboard() {
   return (
     <> 
       <Card>
-        <NavBar />
+        <NavBar/>
       </Card> 
 
       <Card>
         <Card.Body>
           <div style={{textAlign:"center"}}>
-            <img alt="StyleMail Logo" className="mobile-img" src={Logo} width="450px" height="286px"/>
+            <img alt="StyleMail Logo" className="mobile-img" src={Logo} width="300px" height="286px"/>
           </div>
           
           <div>
@@ -35,12 +35,12 @@ export default function Dashboard() {
           </div>
           <div className="options">
             <div className="btn">
-            <button className="btn-outline-dark" onClick={handleST}>Send emails using ready-to-go sample templates (Recommended)</button>
+            <button className="btn-outline-dark dash-button" onClick={handleST}>Send emails using ready-to-go sample templates (Recommended)</button>
             <br></br>
             </div>
 
             <div className="btn">
-            <button className="btn-outline-dark" onClick={handleCT}>Create custom email templates using HTML and CSS</button>
+            <button className="btn-outline-dark dash-button" onClick={handleCT}>Create custom email templates using HTML and CSS</button>
             </div>
           </div>
         </Card.Body>       

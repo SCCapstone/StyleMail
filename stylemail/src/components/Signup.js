@@ -16,6 +16,7 @@ export default function Signup() {
   const [error, setError] = useState("")
   const history = useHistory()
   const regex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/;
+  
   // Verifies password strength, confirms password, then calls 'signup' with provided user values
   async function handleSubmit(e) {
     if (passwordRef.current.value !== passwordConfirmRef.current.value) {

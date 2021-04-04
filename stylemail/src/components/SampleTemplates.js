@@ -1,8 +1,7 @@
 import React from "react"
 import NavBar from "./NavBar"
-import  "./Dashboard.css"
 import Footer from "./Footer"
-
+/* Importing thumbnails */
 import getWEll from './Images/getwell.JPG'
 import grad from './Images/gradpic.JPG'
 import teacher from './Images/teacher.JPG'
@@ -26,6 +25,7 @@ class SampleTemplates extends React.Component {
     };
   }
 
+  // Handles collecting and sending the selected template to send page
   ChangeHandler = (event) => {
     // eslint-disable-next-line react/no-direct-mutation-state
     this.state.templateName = event.target.id;
@@ -36,10 +36,10 @@ class SampleTemplates extends React.Component {
 
   render() {
     return (
-        <div>
-            <NavBar />
+        <div style={{backgroundColor: 'white'}}>
+          <NavBar />
             <h1 className="text-center">Pick a Template</h1>
-              <br></br>
+              
               <div className="d-flex flex-wrap justify-content-center">
               <img 
               src={getWEll}
@@ -49,9 +49,7 @@ class SampleTemplates extends React.Component {
               id="Get Well" 
               onClick={this.ChangeHandler}
               alt="Get Well Template"
-              />         
-             <br></br>
-            
+              />
 
              <img 
               src={teacher}
