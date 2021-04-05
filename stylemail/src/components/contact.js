@@ -15,11 +15,11 @@ class Contact extends React.Component {
                 <div class="form-row">
                   <div class="form-group col">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Your Email" required/>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required/>
                   </div>
                   <div class="form-group col-md-4">
                     <label for="subject">Inquiry Type</label>
-                    <select id="subject" class="form-control" required>
+                    <select name="subject" id="subject"class="form-control" required>
                       <option value="" selected>Choose one..</option>
                       <option value="Help">Help</option>
                       <option value="Questions">Questions</option>
@@ -30,7 +30,7 @@ class Contact extends React.Component {
                 </div>
                 <div class="form-group">
                   <label for="message">Message</label>
-                  <textarea class="form-control" id="message" rows="3" placeholder="Your message.." required></textarea>
+                  <textarea class="form-control" name="message" id="message" rows="3" placeholder="Your message.." required></textarea>
                 </div>
                 <div className="text-center">
                   <button id="contact-submit-btn" type="submit" class="btn btn-primary">Send Message</button>

@@ -68,7 +68,7 @@ class SampleTemplates extends React.Component {
               width = '300'
               height = '150'            
               className="btn btn-outline-dark" 
-              id="Grad Announcement" 
+              id="Graduation Announcement" 
               onClick={this.ChangeHandler}
               alt="Grad Template"
               />         
@@ -100,7 +100,7 @@ class SampleTemplates extends React.Component {
               height = '150'             
               
               className="btn btn-outline-dark" 
-              id="Valentines" 
+              id="Valentines Day" 
               onClick={this.ChangeHandler}
               alt="Valentines Template"
               />         
