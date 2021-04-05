@@ -20,7 +20,7 @@ export default function Dashboard() {
     <> 
       <Card>
         <NavBar/>
-      </Card> 
+      </Card>
 
       <Card>
         <Card.Body>

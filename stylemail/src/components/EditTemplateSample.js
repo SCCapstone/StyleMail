@@ -274,116 +274,107 @@ class MyForm extends React.Component {
   // Render the user interface of the web app (the React form for the user to input values to customize the sample templates)
   render() {
     return (
-    <div style={{paddingLeft : "25px"}}>
       <div>
-      <NavBar />
-      </div>
-      <form onSubmit={this.formHandler}>
-      <Card style={{backgroundColor:'#372392'}}>
-        <Card.Body>
-          <h1 className="text-center mb-4" style={{color:'#ffffff'}}>Customize and Send Template</h1>
-        </Card.Body>
-       </Card>
-      <div>
-        <br></br>
-      </div>
-      <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample') || localStorage.getItem('templateChoiceCustom')}</h3>
-      <div>
-        <br></br>
-      </div>
-      <label>
-          Recipient Email Address(es):  
-          <br></br>
-          <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
-          <br></br><b>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"</b>
-      </label>
-      <div>
-        <br></br>
-      </div>
-      <label>
-          Your Email:
-          <br></br>
-          <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
-      </label>
-      <label>
-      <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
-          Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
-      </label>
-      <div>
-        <br></br>
-      </div>
-      <label>
-          Email Subject:
-          <br></br>
-          <input type="text" name="subject" required onChange={this.ChangeHandler} />
-      </label>
-      <div>
-        <br></br>
-      </div>
-      Message Text:
-      <br></br>
-      <textarea id="textarea" name="messagetextarea" rows="5" cols="50" placeholder="Type your message here!" required onChange={this.ChangeHandler}></textarea>
-      <br></br>StyleMail supports emoji! While typing your message, press the Windows key and the period (.) key simultaneously to use emoji in your message.
+      <NavBar/>
+        <div style={{backgroundColor: 'white'}}>
+          <h1 className="text-center" style={{textDecoration: 'underline'}}>Customize and Send Template</h1>
+          <div style={{paddingLeft: '25px'}}>
+            <Form onSubmit={this.formHandler}>
+              <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample') || localStorage.getItem('templateChoiceCustom')}</h3>
+              <label>
+                Recipient Email Address(es):  
+                <br/>
+                <input type="email" name="recipient" multiple required onChange={this.ChangeHandler} />
+                <br/>To send to multiple recipients, separate emails with commas (no spaces). Example: "alex@email.com,ben@email.com"
+              </label>
                 <br/>
                 <br/>
-                <span>Font:</span>
+              <label>
+                Your First Name:
                 <br/>
-                <select name="fontselect" required onChange={this.ChangeHandler}>
-                  <option value="Arial">Arial</option>
-                  <option value="Verdana">Verdana</option>
-                  <option value="Helvetica">Helvetica</option>
-                  <option value="Tahoma">Tahoma</option>
-                  <option value="Trebuchet MS">Trebuchet</option>
-                  <option value="Times New Roman">Times New Roman</option>
-                  <option value="Georgia">Georgia</option>
-                  <option value="Garamond">Garamond</option>
-                  <option value="Courier New">Courier New</option>
-                  <option value="Brush Script MT">Brush Script</option>
-                  <option value="Impact">Impact</option>
-                </select>
+                <input type="text" name="sender" required onChange={this.ChangeHandler}/>
+              </label>
                 <br/>
                 <br/>
-                <label>
-                  <span>Font Color:</span>
-                  <br/>
-                  <input type="color" name="fontcolorpicker" required onChange={this.ChangeHandler} />
-                </label>
+              <label>
+                Your Email:
                 <br/>
+                <input type="text" name="senderEmail" required onChange={this.ChangeHandler} />
+              </label>
+              <label>
+                <input type="checkbox" name="anonymous" value="true" onChange={this.ChangeHandler} /><span>   </span>
+                  Check this box if you want your email(s) to be sent anonymously. If the box is checked, emails will be marked as sent from mail@stylemail.app. If the box is unchecked, the emails will be marked as sent from your email above.
+              </label>
+              <br/>
+              <br/>
+              <label>
+                Email Subject:
                 <br/>
-                <label>
-                  <span>Background Color:</span>
-                  <br/>
-                  <input type="color" name="bgcolorpicker" required onChange={this.ChangeHandler} />
-                </label>
+                <input type="text" name="subject" required onChange={this.ChangeHandler} />
+              </label>
+              <br/>
+              <br/>
+              <span>Message Text:</span>
                 <br/>
+                <textarea id="textarea" name="messagetextarea" rows="5" cols="50" placeholder="Type your message here!" required onChange={this.ChangeHandler}></textarea>
+              <br/>StyleMail supports emoji! While typing your message, press the Windows key and the period (.) key simultaneously to use emoji in your message.
+              <br/>
+              <br/>
+              <span>Font:</span>
+              <br/>
+              <select name="fontselect" required onChange={this.ChangeHandler}>
+                <option value="Arial">Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Tahoma">Tahoma</option>
+                <option value="Trebuchet MS">Trebuchet</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Georgia">Georgia</option>
+                <option value="Garamond">Garamond</option>
+                <option value="Courier New">Courier New</option>
+                <option value="Brush Script MT">Brush Script</option>
+                <option value="Impact">Impact</option>
+              </select>
+              <br/>
+              <br/>
+              <label>
+                <span>Font Color:</span>
                 <br/>
-                <label>
-                  <strong>Note: Although StyleMail attempts to use the most safest, commonly supported styles, not all style configurations may be supported by every email client (Outlook, Gmail, Yahoo!, AOL, etc.) Therefore emails may look different in varying email clients.</strong>
-                </label>
+                <input type="color" name="fontcolorpicker" required onChange={this.ChangeHandler} />
+              </label>
+              <br/>
+              <br/>
+              <label>
+                <span>Background Color:</span>
                 <br/>
-                <br/>
-                <Button className="btn btn-danger" onClick={event =>  this.props.history.push('/sampletemplates')}>
-                  Cancel
-                </Button>
-                <br/>
-                <br/>
-                <Button className="btn btn-secondary" onClick={this.previewHandler}>Preview (Opens in new browser window)</Button>
-                <br/>
-                <br/>
-                <Button className="btn btn-secondary" onClick={this.printHandler}>Print</Button>
-                <br/>
-                <br/>
-                <Button className="btn btn-secondary" onClick={this.printHandler}>Save as PDF</Button>
-                <br/>
-                <br/>
-                <Button className="btn btn-success" type="submit">Send Email</Button>
-                <br/>
-                <br/>
-              </Form>
-            </div>
+                <input type="color" name="bgcolorpicker" required onChange={this.ChangeHandler} />
+              </label>
+              <br/>
+              <br/>
+              <label>
+                <strong>Note: Although StyleMail attempts to use the most safest, commonly supported styles, not all style configurations may be supported by every email client (Outlook, Gmail, Yahoo!, AOL, etc.) Therefore emails may look different in varying email clients.</strong>
+              </label>
+              <br/>
+              <br/>
+              <Button className="btn btn-danger" onClick={event =>  this.props.history.push('/sampletemplates')}>
+                Cancel
+              </Button>
+              <br/>
+              <br/>
+              <Button className="btn btn-secondary" onClick={this.previewHandler}>Preview (Opens in new browser window)</Button>
+              <br/>
+              <br/>
+              <Button className="btn btn-secondary" onClick={this.printHandler}>Print / Save as PDF</Button>
+              <br/>
+              <br/>
+              <Button className="btn btn-primary" type="submit">Send Email</Button>
+              <br/>
+              <br/>
+            </Form>
           </div>
-        <Footer/>
-      </div>
+        </div>
+      <Footer/>
+    </div>
     );
   }
 }

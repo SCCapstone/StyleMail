@@ -1,7 +1,7 @@
 import React from 'react';
 import Footer from "./Footer"
 import NavBar from "./NavBar"
-import { Form } from "react-bootstrap"
+import { Form, Button } from "react-bootstrap"
 import { sendLogEntry } from "../api/FireApi"
 /**
  * Private Visability
@@ -60,6 +60,11 @@ function sendEmail(recipient, senderEmail, anonymous, subject) {
 
       // Write the HTML to the window
       wnd.document.write(tempHTML);
+      setTimeout(function()
+      {
+        wnd.print();
+        wnd.close();
+      }, 400);
     }
   }
   
@@ -183,21 +188,18 @@ class MyForm extends React.Component {
                     </label>
                     <br/>
                     <br/>
-                    <button className="btn btn-danger" onClick={event =>  this.props.history.push('/customtemplates')}>
+                    <Button className="btn btn-danger" onClick={event =>  this.props.history.push('/customtemplates')}>
                       Cancel
-                    </button>
+                    </Button>
                     <br/>
                     <br/>
-                    <button className="btn btn-secondary" onClick={this.previewHandler}>Preview (Opens in new browser window)</button>
+                    <Button className="btn btn-secondary" onClick={this.previewHandler}>Preview (Opens in new browser window)</Button>
                     <br/>
                     <br/>
-                    <button className="btn btn-secondary" onClick={this.printHandler}>Print</button>
+                    <Button className="btn btn-secondary" onClick={this.printHandler}>Print / Save as PDF</Button>
                     <br/>
                     <br/>
-                    <button className="btn btn-secondary" onClick={this.printHandler}>Save as PDF</button>
-                    <br/>
-                    <br/>
-                    <button className="btn btn-primary" type="submit">Send Email</button>
+                    <Button className="btn btn-primary" type="submit">Send Email</Button>
                     <br/>
                     <br/>
                   </div>

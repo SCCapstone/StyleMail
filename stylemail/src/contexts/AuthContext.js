@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from "react"
-import { googleProvider, twitterProvider, auth, db } from "../firebase"
+import { googleProvider, auth, db } from "../firebase"
 /**
  * Handles all authentication throughout app
  * Functions are exported using useAuth hook
@@ -115,47 +115,6 @@ export function AuthProvider({ children }) {
     });
   }
 
-  // Twitter sign up function // Will convert or replace existing 
-  // account with google login if email already exists
-  function twitterSignIn() {
-    return auth.signInWithPopup(twitterProvider)
-    .then(result => {
-      db.collection('users').doc(auth.currentUser.uid)
-      .set({
-        email: result.user.email,
-        provider: result.credential.providerId,
-        created: dateTime(),
-        lastlogin: dateTime(),
-        uid: auth.currentUser.uid,
-      })
-      .catch(APIerror => {
-        setAPIerror("Something went wrong adding the user to database", APIerror)
-      })
-    }).catch(function(APIerror) {
-      if (APIerror.code === 'auth/account-exists-with-different-credential') {
-        var pendingCred = APIerror.credential;
-        var email = APIerror.email;
-        auth.fetchSignInMethodsForEmail(email).then(function(methods) {
-          if (methods[0] === 'password') {
-            var password = auth.promptUserForPassword();
-            auth.signInWithEmailAndPassword(email, password).then(function(result) {
-              return result.user.linkWithCredential(pendingCred);
-            })
-            return;
-          }
-          var provider = auth.getProviderForProviderId(methods[0]);
-          auth.signInWithPopup(provider).then(function(result) {
-            result.user.linkAndRetrieveDataWithCredential(pendingCred).then(function(usercred) {
-              return;
-            });
-          });
-        });
-      } else {
-        setAPIerror("Account already exists. Try loging in with", APIerror)
-      }
-    });
-  }  
-
   // Logout function called for all user logouts
   function logout() {
     return auth.signOut()
@@ -216,7 +175,6 @@ export function AuthProvider({ children }) {
     login,
     signup,
     googleSignIn,
-    twitterSignIn,
     logout,
     resetPassword,
     updateEmail,
