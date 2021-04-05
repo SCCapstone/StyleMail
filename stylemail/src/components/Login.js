@@ -46,7 +46,9 @@ export default function Login() {
             <div className="line-separator-right fadeIn fourth"></div>
           </div>
           <div className="row fadeIn fourth" style={{marginLeft: '30px', marginRight: '30px'}}>
-            <GoogleLoginButton onClick={handleGoogle}/>
+            <GoogleLoginButton onClick={handleGoogle}>
+              <span>Log In with Google</span>
+            </GoogleLoginButton>
           </div><br/>
           <div id="formFooter">
             <Link className="auth-link fadeIn fourth" to="/signup"> Sign Up</Link><br></br>
