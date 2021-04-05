@@ -60,11 +60,6 @@ function sendEmail(recipient, senderEmail, anonymous, subject) {
 
       // Write the HTML to the window
       wnd.document.write(tempHTML);
-      setTimeout(function()
-      {
-        wnd.print();
-        wnd.close();
-      }, 400);
     }
   }
   

@@ -25,7 +25,7 @@ export default function Dashboard() {
       <Card>
         <Card.Body>
           <div style={{textAlign:"center"}}>
-            <img alt="StyleMail Logo" className="mobile-img" src={Logo} width="300px" height="286px"/>
+            <img alt="StyleMail Logo" className="mobile-img" src={Logo} width="40%"/>
           </div>
           
           <div>
