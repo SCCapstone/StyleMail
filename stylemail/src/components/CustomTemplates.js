@@ -6,6 +6,7 @@ import Footer from "./Footer"
 import NavBar from "./NavBar"
 import React, { useState, useRef } from 'react'
 import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
+import { convertToHTML } from 'draft-convert'
 import { Editor } from 'react-draft-wysiwyg';
 import { stateToHTML } from 'draft-js-export-html'
 import { Modal, Form, InputGroup, FormControl, Button } from 'react-bootstrap';
@@ -46,7 +47,117 @@ function CustomTemplates() {
       dateCreated: '',
       rawHTML: convertToRaw(description.getCurrentContent()),
     });
-    addTemplate(newTemplate, stateToHTML(description.getCurrentContent()), convertToRaw(description.getCurrentContent()))
+    const html = convertToHTML({
+      styleToHTML: (style) => {
+        switch (style) {
+          case 'color-rgb(26,188,156)':
+            return <span style={{color: 'rgb(26,188,156)'}} />;
+          case 'color-rgb(84,172,210)':
+            return <span style={{color: 'rgb(84,172,210)'}} />;
+          case 'color-rgb(204,204,204)':
+            return <span style={{color: 'rgb(204,204,204)'}} />;
+          case 'color-rgb(61,142,185)':
+            return <span style={{color: 'rgb(61,142,185)'}} />;
+          case 'color-rgb(65,168,95)':
+            return <span style={{color: 'rgb(65,168,95)'}} />;
+          case 'color-rgb(0,168,133)':
+            return <span style={{color: 'rgb(0,168,133)'}} />;
+          case 'color-rgb(97,189,109)':
+            return <span style={{color: 'rgb(97,189,109)'}} />;
+          case 'color-rgb(71,85,119)':
+            return <span style={{color: 'rgb(71,85,119)'}} />;
+          case 'color-rgb(147,101,184)':
+            return <span style={{color: 'rgb(147,101,184)'}} />;
+          case 'color-rgb(41,105,176)':
+            return <span style={{color: 'rgb(41,105,176)'}} />;
+          case 'color-rgb(44,130,201)':
+            return <span style={{color: 'rgb(44,130,201)'}} />;
+          case 'color-rgb(85,57,130)':
+            return <span style={{color: 'rgb(85,57,130)'}} />;
+          case 'color-rgb(243,121,52)':
+            return <span style={{color: 'rgb(243,121,52)'}} />;
+          case 'color-rgb(251,160,38)':
+            return <span style={{color: 'rgb(251,160,38)'}} />;
+          case 'color-rgb(209,213,216)':
+            return <span style={{color: 'rgb(209,213,216)'}} />;
+          case 'color-rgb(40,50,78)':
+            return <span style={{color: 'rgb(40,50,78)'}} />;
+          case 'color-rgb(250,197,28)':
+            return <span style={{color: 'rgb(250,197,28)'}} />;
+          case 'color-rgb(184,49,47)':
+            return <span style={{color: 'rgb(184,49,47)'}} />;
+          case 'color-rgb(247,218,100)':
+            return <span style={{color: 'rgb(247,218,100)'}} />;
+          case 'color-rgb(124,112,107)':
+            return <span style={{color: 'rgb(124,112,107)'}} />;
+          case 'color-rgb(209,72,65)':
+            return <span style={{color: 'rgb(209,72,65)'}} />;
+          case 'color-rgb(255,255,255)':
+            return <span style={{color: 'rgb(255,255,255)'}} />;
+          case 'color-rgb(226,80,65)':
+            return <span style={{color: 'rgb(226,80,65)'}} />;
+          case 'color-rgb(0,0,0)':
+            return <span style={{color: 'rgb(0,0,0)'}} />;
+          case 'color-rgb(163,143,132)':
+            return <span style={{color: 'rgb(163,143,132)'}} />;
+          case 'color-rgb(235,107,86)':
+            return <span style={{color: 'rgb(235,107,86)'}} />;
+          case 'color-rgb(239,239,239)':
+            return <span style={{color: 'rgb(239,239,239)'}} />;
+          case 'fontsize-8':
+            return <span style={{fontSize: '8x'}} />;
+          case 'fontsize-9':
+            return <span style={{fontSize: '9x'}} />;
+          case 'fontsize-10':
+            return <span style={{fontSize: '10x'}} />;
+          case 'fontsize-11':
+            return <span style={{fontSize: '11x'}} />;
+          case 'fontsize-12':
+            return <span style={{fontSize: '12x'}} />;
+          case 'fontsize-14':
+            return <span style={{fontSize: '14x'}} />;
+          case 'fontsize-16':
+            return <span style={{fontSize: '16x'}} />;
+          case 'fontsize-18':
+            return <span style={{fontSize: '18x'}} />;
+          case 'fontsize-24':
+            return <span style={{fontSize: '24x'}} />;
+          case 'fontsize-30':
+            return <span style={{fontSize: '30x'}} />;
+          case 'fontsize-36':
+            return <span style={{fontSize: '36x'}} />;
+          case 'fontsize-48':
+            return <span style={{fontSize: '48x'}} />;
+          case 'fontsize-60':
+            return <span style={{fontSize: '60x'}} />;
+          case 'fontsize-72':
+            return <span style={{fontSize: '72x'}} />;
+          case 'fontsize-96':
+            return <span style={{fontSize: '96x'}} />;
+          case 'fontfamily-Arial':
+            return <span style={{fontFamily: 'Arial'}} />;
+          case 'fontfamily-Georgia':
+            return <span style={{fontFamily: 'Georgia'}} />;
+          case 'fontfamily-Impact':
+            return <span style={{fontFamily: 'Impact'}} />;
+          case 'fontfamily-Tahoma':
+            return <span style={{fontFamily: 'Tahoma'}} />;
+          case 'fontfamily-Times New Roman':
+            return <span style={{fontFamily: 'Times New Roman'}} />;
+          case 'fontfamily-Verdana':
+            return <span style={{fontFamily: 'Verdana'}} />;
+          default:
+            return null;
+        }
+      },
+      entityToHTML: (entity, originalText) => {
+        if (entity.type === 'LINK') {
+          return <a href={entity.data.url}>{originalText}</a>;
+        }
+        return originalText;
+      }
+    })(description.getCurrentContent());
+    addTemplate(newTemplate, html, convertToRaw(description.getCurrentContent()))
     setDescription(EditorState.createEmpty())
     handleAddClose()
   };
@@ -67,11 +178,127 @@ function CustomTemplates() {
   }
   
   // Calls 'updateTemplate' function to update user's template values
-  const handleModelSubmit = e => {
+  const handleEditSubmit = e => {
     e.preventDefault()
     const raw = convertToRaw(description.getCurrentContent())
-    const editedHTML = stateToHTML(description.getCurrentContent())
+    //const editedHTML = stateToHTML(description.getCurrentContent())
+    const editedHTML = convertToHTML({
+      styleToHTML: (style) => {
+        switch (style) {
+          case 'color-rgb(26,188,156)':
+            return <span style={{color: 'rgb(26,188,156)'}} />;
+          case 'color-rgb(84,172,210)':
+            return <span style={{color: 'rgb(84,172,210)'}} />;
+          case 'color-rgb(204,204,204)':
+            return <span style={{color: 'rgb(204,204,204)'}} />;
+          case 'color-rgb(61,142,185)':
+            return <span style={{color: 'rgb(61,142,185)'}} />;
+          case 'color-rgb(65,168,95)':
+            return <span style={{color: 'rgb(65,168,95)'}} />;
+          case 'color-rgb(0,168,133)':
+            return <span style={{color: 'rgb(0,168,133)'}} />;
+          case 'color-rgb(97,189,109)':
+            return <span style={{color: 'rgb(97,189,109)'}} />;
+          case 'color-rgb(71,85,119)':
+            return <span style={{color: 'rgb(71,85,119)'}} />;
+          case 'color-rgb(147,101,184)':
+            return <span style={{color: 'rgb(147,101,184)'}} />;
+          case 'color-rgb(41,105,176)':
+            return <span style={{color: 'rgb(41,105,176)'}} />;
+          case 'color-rgb(44,130,201)':
+            return <span style={{color: 'rgb(44,130,201)'}} />;
+          case 'color-rgb(85,57,130)':
+            return <span style={{color: 'rgb(85,57,130)'}} />;
+          case 'color-rgb(243,121,52)':
+            return <span style={{color: 'rgb(243,121,52)'}} />;
+          case 'color-rgb(251,160,38)':
+            return <span style={{color: 'rgb(251,160,38)'}} />;
+          case 'color-rgb(209,213,216)':
+            return <span style={{color: 'rgb(209,213,216)'}} />;
+          case 'color-rgb(40,50,78)':
+            return <span style={{color: 'rgb(40,50,78)'}} />;
+          case 'color-rgb(250,197,28)':
+            return <span style={{color: 'rgb(250,197,28)'}} />;
+          case 'color-rgb(184,49,47)':
+            return <span style={{color: 'rgb(184,49,47)'}} />;
+          case 'color-rgb(247,218,100)':
+            return <span style={{color: 'rgb(247,218,100)'}} />;
+          case 'color-rgb(124,112,107)':
+            return <span style={{color: 'rgb(124,112,107)'}} />;
+          case 'color-rgb(209,72,65)':
+            return <span style={{color: 'rgb(209,72,65)'}} />;
+          case 'color-rgb(255,255,255)':
+            return <span style={{color: 'rgb(255,255,255)'}} />;
+          case 'color-rgb(226,80,65)':
+            return <span style={{color: 'rgb(226,80,65)'}} />;
+          case 'color-rgb(0,0,0)':
+            return <span style={{color: 'rgb(0,0,0)'}} />;
+          case 'color-rgb(163,143,132)':
+            return <span style={{color: 'rgb(163,143,132)'}} />;
+          case 'color-rgb(235,107,86)':
+            return <span style={{color: 'rgb(235,107,86)'}} />;
+          case 'color-rgb(239,239,239)':
+            return <span style={{color: 'rgb(239,239,239)'}} />;
+          case 'fontsize-8':
+            return <span style={{fontSize: '8x'}} />;
+          case 'fontsize-9':
+            return <span style={{fontSize: '9x'}} />;
+          case 'fontsize-10':
+            return <span style={{fontSize: '10x'}} />;
+          case 'fontsize-11':
+            return <span style={{fontSize: '11x'}} />;
+          case 'fontsize-12':
+            return <span style={{fontSize: '12x'}} />;
+          case 'fontsize-14':
+            return <span style={{fontSize: '14x'}} />;
+          case 'fontsize-16':
+            return <span style={{fontSize: '16x'}} />;
+          case 'fontsize-18':
+            return <span style={{fontSize: '18x'}} />;
+          case 'fontsize-24':
+            return <span style={{fontSize: '24x'}} />;
+          case 'fontsize-30':
+            return <span style={{fontSize: '30x'}} />;
+          case 'fontsize-36':
+            return <span style={{fontSize: '36x'}} />;
+          case 'fontsize-48':
+            return <span style={{fontSize: '48x'}} />;
+          case 'fontsize-60':
+            return <span style={{fontSize: '60x'}} />;
+          case 'fontsize-72':
+            return <span style={{fontSize: '72x'}} />;
+          case 'fontsize-96':
+            return <span style={{fontSize: '96x'}} />;
+          case 'fontfamily-Arial':
+            return <span style={{fontFamily: 'Arial'}} />;
+          case 'fontfamily-Georgia':
+            return <span style={{fontFamily: 'Georgia'}} />;
+          case 'fontfamily-Impact':
+            return <span style={{fontFamily: 'Impact'}} />;
+          case 'fontfamily-Tahoma':
+            return <span style={{fontFamily: 'Tahoma'}} />;
+          case 'fontfamily-Times New Roman':
+            return <span style={{fontFamily: 'Times New Roman'}} />;
+          case 'fontfamily-Verdana':
+            return <span style={{fontFamily: 'Verdana'}} />;
+          default:
+            return null;
+        }
+      },
+      blockToHTML: (blocks) => {
+        if (blocks.type.data === 'center') {
+          return <span style={{textAlign: 'center'}} />;
+        }
+      },
+      entityToHTML: (entity, originalText) => {
+        if (entity.type === 'LINK') {
+          return <a href={entity.data.url}>{originalText}</a>;
+        }
+        return originalText;
+      }
+    })(description.getCurrentContent());
     updateTemplate(valID, titleRef.current.value, editedHTML, raw) //eTitle
+    setDescription(EditorState.createEmpty())
     handleEditClose()
   }
   
@@ -97,7 +324,7 @@ function CustomTemplates() {
         <div style={{backgroundColor: 'white'}}>
           <div style={{margin: '0px 60px 0px 60px'}}>
           <div className="text-center">
-            <h4 style={{padding: '10px 0px 0px 0px', textDecoration: 'underline'}}>Custom Templates</h4>
+            <h4 style={{padding: '10px 0px 10px 0px', textDecoration: 'underline'}}>Custom Templates</h4>
             <InputGroup style={{textAlign: 'center'}}>
               <FormControl
                 id="searchbar"
@@ -118,17 +345,19 @@ function CustomTemplates() {
               else if (val.dateCreated.includes(searchTerm)) {return val}})
               .map(val => (
               <li key={val.id} className="list-group-item list-group-item-secondary d-flex">
-                <p className="p-0 m-0 flex-grow-1">
+                <p className="p-0 m-0 flex-grow-1" style={{width: '650px'}}>
                   <strong>Title:</strong> {val.title}<br />
                   <strong>Created:</strong> {val.dateCreated}<br />
                   <strong>HTML:</strong> {val.html}
-                </p> 
-                <button style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}}  className="btn btn-primary" 
-                  onClick={() => {SendTemplate(val.title, val.html)}}>Send</button>
-                <button type="button" style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}} className="btn btn-secondary" 
-                  onClick={() => {handleEditShow(); getValID(val.id); getValTitle(val.title); loadHTML(val.rawHTML);}} >Edit</button>
-                <button style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}}  className="btn btn-danger" 
-                  onClick={() => {getValID(val.id); handleDeleteShow()}}>Delete</button>
+                </p>
+                <div>
+                  <button style={{margin: '20px 10px 20px 5px', width: '72px', height: '38px'}}  className="btn btn-primary" 
+                    onClick={() => {SendTemplate(val.title, val.html)}}>Send</button>
+                  <button type="button" style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}} className="btn btn-secondary" 
+                    onClick={() => {handleEditShow(); getValID(val.id); getValTitle(val.title); loadHTML(val.rawHTML);}} >Edit</button>
+                  <button style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}}  className="btn btn-danger" 
+                    onClick={() => {getValID(val.id); handleDeleteShow()}}>Delete</button>
+                </div>
               </li>
             ))}
           </ul>
@@ -149,7 +378,7 @@ function CustomTemplates() {
           <Modal show={editShow} onHide={handleEditClose} backdrop="static" keyboard={false} size="lg" centered>
             <Modal.Header style={{justifyContent: 'center', fontSize: '20px'}}>Edit Template</Modal.Header>
             <Modal.Body>
-              <Form onSubmit={handleModelSubmit}>
+              <Form onSubmit={handleEditSubmit}>
                 <InputGroup style={{width: '100%'}}>
                   <InputGroup.Prepend>
                     <InputGroup.Text>Title</InputGroup.Text>
