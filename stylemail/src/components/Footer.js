@@ -14,7 +14,7 @@ export default function Footer() {
             <Link style={{paddingRight: '10px', textDecoration: 'none', color: 'white'}} to="/terms">Terms</Link>
             <Link style={{paddingRight: '10px', textDecoration: 'none', color: 'white'}} to="/privacy">Privacy</Link>
           </div>
-          <h4 className="text-center mb-4 mobile-footer" style={{color:'#ffffff'}}>Copyright © 2021 StyleMail. All rights reserved.</h4>
+          <h4 className="text-center mobile-footer" style={{color:'#ffffff', fontSize: '20px'}}>Copyright © 2021 StyleMail. All rights reserved.</h4>
         </Card.Body>       
        </Card>
     </>

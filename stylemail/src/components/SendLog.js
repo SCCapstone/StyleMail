@@ -14,7 +14,8 @@ const SendLogs = () => {
       <div>
         <NavBar />
           <div style={{backgroundColor: 'white'}}>
-            <h3 style={{fontSize: '35px', textAlign: 'center', paddingTop: '10px', paddingBottom: '10px'}}>Send Log</h3>
+            <h3 style={{fontSize: '35px', textAlign: 'center', paddingTop: '10px', 
+            paddingBottom: '10px', textDecoration: 'underline'}}>Send Log</h3>
             <h4 style={{textAlign:"center"}}>Below is a log of your emails sent using StyleMail</h4>
               <br/>
               <div>

@@ -72,7 +72,7 @@ export default function Settings() {
     <NavBar/>
     <Card>
       <Card.Body>
-        <h2 className="text-center mb-4">Settings</h2>
+        <h2 className="text-center mb-4" style={{textDecoration: 'underline'}}>Settings</h2>
         {error && <Alert style={{textAlign: 'center'}} variant="danger">{error}</Alert>}
         <Form onSubmit={handleSubmit}>
           <Form.Group id="email">

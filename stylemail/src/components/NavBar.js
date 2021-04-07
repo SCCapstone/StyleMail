@@ -37,13 +37,13 @@ export default function NavBar() {
                     <Nav className="mr-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/sampletemplates">Sample Templates</Nav.Link>
+                        <Nav.Link as={Link} to="/customtemplates">Custom Templates</Nav.Link>
                         <Nav.Link as={Link} to="/help">Help</Nav.Link>
                         <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                     </Nav>
                     <Nav>
                         <NavDropdown title="My Account" id="collasible-nav-dropdown">
                             <NavDropdown.Item as={Link} to="/settings">Settings</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/customtemplates">My Templates</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/sendlog">Send Log</NavDropdown.Item>
                             <NavDropdown.Divider />
                             <NavDropdown.Item onClick={handleLogout}>Logout</NavDropdown.Item>

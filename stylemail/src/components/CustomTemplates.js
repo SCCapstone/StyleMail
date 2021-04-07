@@ -19,6 +19,7 @@ function CustomTemplates() {
   const history = useHistory()
   const [editShow, setEditShow] = useState(false)
   const [addShow, setAddShow] = useState(false)
+  const [deleteShow, setDeleteShow] = useState(false)
   const [searchTerm, setSearchTerm] = useState("")
   const [valID, getValID] = useState('')
   const [title, getValTitle] = useState('')
@@ -28,6 +29,8 @@ function CustomTemplates() {
   const handleEditShow = () => setEditShow(true);
   const handleAddShow = () => setAddShow(true);
   const handleAddClose = () => setAddShow(false);
+  const handleDeleteClose = () => setDeleteShow(false)
+  const handleDeleteShow = () => setDeleteShow(true)
   const [newTemplate, setNewTemplate] = useState({
     title: '',
     html: '',
@@ -120,15 +123,29 @@ function CustomTemplates() {
                   <strong>Created:</strong> {val.dateCreated}<br />
                   <strong>HTML:</strong> {val.html}
                 </p> 
-                <button style={{margin: '20px 10px 20px 0px'}}  className="btn btn-primary" 
+                <button style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}}  className="btn btn-primary" 
                   onClick={() => {SendTemplate(val.title, val.html)}}>Send</button>
-                <button type="button" style={{margin: '20px 10px 20px 0px'}} className="btn btn-secondary" 
+                <button type="button" style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}} className="btn btn-secondary" 
                   onClick={() => {handleEditShow(); getValID(val.id); getValTitle(val.title); loadHTML(val.rawHTML);}} >Edit</button>
-                <button style={{margin: '20px 10px 20px 0px'}}  className="btn btn-danger" 
-                  onClick={() => deleteTemplate(val.id)}>Delete</button>
+                <button style={{margin: '20px 10px 20px 0px', width: '72px', height: '38px'}}  className="btn btn-danger" 
+                  onClick={() => {getValID(val.id); handleDeleteShow()}}>Delete</button>
               </li>
             ))}
           </ul>
+          <Modal show={deleteShow} onHide={handleDeleteClose} backdrop="static" keyboard={false} centered>
+            <Modal.Header style={{justifyContent: 'center', fontSize: '20px'}}>Are you sure?</Modal.Header>
+            <Modal.Body style={{textAlign: 'center'}}>
+              <span>Deleting this template will remove it forever!</span>
+            </Modal.Body>
+            <Modal.Footer>
+              <button className="btn btn-secondary" onClick={() => {handleDeleteClose()}}>
+                Close
+              </button>
+              <button className="btn btn-danger" onClick={() => {deleteTemplate(valID); handleDeleteClose()}}>
+                Delete
+              </button>
+            </Modal.Footer>
+          </Modal>
           <Modal show={editShow} onHide={handleEditClose} backdrop="static" keyboard={false} size="lg" centered>
             <Modal.Header style={{justifyContent: 'center', fontSize: '20px'}}>Edit Template</Modal.Header>
             <Modal.Body>
