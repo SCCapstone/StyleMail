@@ -22,7 +22,7 @@ class Help extends React.Component {
                 <h2 className="text-center help-sub-text"> Why do I need to make an account? </h2>
                 <p className=""> We understand that you may not want to have to keep track of another username and password. However, even though
                     StyleMail is a free web application, we still ask all users' to create an account. This helps us to keep track of any StyleMail traffic to help
-                    bring the best resources to you (our customers)! Through creating an account, you are also able to keep all of your created templates in one locaiton
+                    bring the best resources to you (our customers)! Through creating an account, you are also able to keep all of your created templates in one location
                     and have them easy accessible. If you have any questions referring to what information is being used from you, please refer to our 
                     <span> <Link style={{color:'#ba588f' }} to="/terms" target="_blank">Terms</Link> </span> and  
                     <span> <Link style={{color:'#ba588f'}} to="/privacy" target="_blank">Privacy</Link> </span> policies. 

@@ -44,7 +44,7 @@ class Privacy extends React.Component {
             
               <p> <b>Opt-Outs.</b> We may provide you with the opportunity to «opt-out» of having your personal information used for certain purposes when we ask for this information. If you decide to opt-out, we may not be able to provide certain features of the StyleMail to you. <br/>
             
-              <b>Communication Preferences.</b> If you no longer wish to receive our newsletter and promotional communications, you may opt-out of receiving them by following the instructions included шn such communications. Please note, however, that you may be unable to opt-out of certain service-related communications. <br/>
+              <b>Communication Preferences.</b> If you no longer wish to receive our newsletter and promotional communications, you may opt-out of receiving them by following the instructions included for these communications. Please note, however, that you may be unable to opt-out of certain service-related communications. <br/>
             
               <b>Blocking Cookies.</b> You can remove or block certain cookies using the settings in your browser but the StyleMail may cease to function properly if you do so. <br/>
             
