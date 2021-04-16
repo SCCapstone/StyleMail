@@ -25,20 +25,20 @@ export default function Signup() {
     } else if (!passwordRef.current.value.match(regex)) {
       setError('Your password must have 1 uppercase letter, 1 number, and be more than 7 characters')
     }
-
     checkSubmit()
     await signup(emailRef.current.value, passwordRef.current.value)
     history.push("/")
   }
 
+  // Checking if the user has accepted ToS
   function checkSubmit() {
-
     if (document.getElementById('agree').checked === false) {
-     alert ("You didn't agree to the terms and privacy policy.");
-     return false;
-    } else {}
-     return true;
+      alert("You didn't agree to the terms and privacy policy.");
+      return false;
+    } else {
+      return true;
     }
+  }
     
 
   // Handles Google signin

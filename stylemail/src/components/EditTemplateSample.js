@@ -230,6 +230,12 @@ class MyForm extends React.Component {
     let fontcolorpicker = this.state.fontcolorpicker;
     let bgcolorpicker = this.state.bgcolorpicker;
 
+    // Verifies if the submitted emails are actually an emails
+    const emailRegex = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
+    if(!senderEmail.match(emailRegex) || sender.match(emailRegex)) {
+      return;
+    }
+
     // Send the email with the input properties
     sendEmail(sender, recipient, senderEmail, anonymous, subject, messagetextarea, fontselect, fontcolorpicker, bgcolorpicker);
 
@@ -276,10 +282,10 @@ class MyForm extends React.Component {
       <div>
       <NavBar/>
         <div style={{backgroundColor: 'white'}}>
-          <h1 className="text-center" style={{textDecoration: 'underline'}}>Customize and Send Template</h1>
+          <h1 className="text-center">Customize and Send Template</h1>
           <div style={{paddingLeft: '25px'}}>
             <Form onSubmit={this.formHandler}>
-              <h3>Your chosen template is: {localStorage.getItem('templateChoiceSample') || localStorage.getItem('templateChoiceCustom')}</h3>
+              <h4>Your chosen template is: {localStorage.getItem('templateChoiceSample') || localStorage.getItem('templateChoiceCustom')}</h4>
               <label>
                 Recipient Email Address(es):  
                 <br/>

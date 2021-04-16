@@ -39,7 +39,7 @@ class SampleTemplates extends React.Component {
         <div style={{backgroundColor: 'white'}}>
           <NavBar />
           <br/>
-            <h1 className="text-center" style={{textDecoration: 'underline'}}>Pick a Template</h1>
+            <h1 className="text-center">Pick a Template</h1>
               
               <div className="d-flex flex-wrap justify-content-center">
               <img 

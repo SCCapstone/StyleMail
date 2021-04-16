@@ -324,7 +324,7 @@ function CustomTemplates() {
         <div style={{backgroundColor: 'white'}}>
           <div style={{margin: '0px 60px 0px 60px'}}>
           <div className="text-center">
-            <h4 style={{padding: '10px 0px 10px 0px', textDecoration: 'underline'}}>Custom Templates</h4>
+            <h4 style={{padding: '10px 0px 10px 0px'}}>Custom Templates</h4>
             <InputGroup style={{textAlign: 'center'}}>
               <FormControl
                 id="searchbar"

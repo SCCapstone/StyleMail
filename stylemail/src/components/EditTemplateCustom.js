@@ -98,7 +98,6 @@ class MyForm extends React.Component {
       subject: '',
     };
   }
-
   // Change handler to adjust the properties as the user inputs information into the React form
   ChangeHandler = (event) => {
     let nam = event.target.name;
@@ -115,6 +114,12 @@ class MyForm extends React.Component {
     let senderEmail = this.state.senderEmail;
     let anonymous = this.state.anonymous;
     let subject = this.state.subject;
+
+    // Verifies if the submitted email is actually an email
+    const emailRegex = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
+    if(!senderEmail.match(emailRegex)) {
+      return;
+    }
 
     // Send the email with the input properties
     sendEmail(recipient, senderEmail, anonymous, subject);
@@ -148,11 +153,11 @@ class MyForm extends React.Component {
       <div>
         <NavBar/>
           <div style={{backgroundColor: 'white'}}>
-            <h1 className="text-center mb-4" style={{textDecoration: 'underline'}}>Send Template</h1>
+            <h1 className="text-center mb-4">Send Template</h1>
               <div style={{paddingLeft: '25px'}}>
                 <Form onSubmit={this.formHandler}>
                   <div>
-                    <h3>Your chosen template is: {localStorage.getItem('templateChoiceCustom')}</h3>
+                    <h4>Your chosen template is: {localStorage.getItem('templateChoiceCustom')}</h4>
                     <br/>
                     <label>
                       Recipient Email Address(es): 
