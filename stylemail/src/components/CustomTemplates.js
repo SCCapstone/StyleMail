@@ -9,9 +9,9 @@ import { EditorState, convertToRaw, convertFromRaw } from 'draft-js';
 import { convertToHTML } from 'draft-convert'
 import { Editor } from 'react-draft-wysiwyg';
 import { stateToHTML } from 'draft-js-export-html'
-import { Modal, Form, InputGroup, FormControl, Button } from 'react-bootstrap';
+import { Modal, Form, InputGroup, FormControl, Button, Alert } from 'react-bootstrap';
 import { useHistory } from "react-router-dom"
-import { GetTemplates, addTemplate, updateTemplate, removeTemplate } from "../api/FireApi"
+import { GetTemplates, GetTemplateNum, addTemplate, updateTemplate, removeTemplate } from "../api/FireApi"
 /**
  * Private Visability
  * Allows listing and adding of templates
@@ -25,18 +25,18 @@ function CustomTemplates() {
   const [valID, getValID] = useState('')
   const [title, getValTitle] = useState('')
   const titleRef = useRef()
-  const [description, setDescription] = useState(() => EditorState.createEmpty());
-  const handleEditClose = () => setEditShow(false);
-  const handleEditShow = () => setEditShow(true);
-  const handleAddShow = () => setAddShow(true);
-  const handleAddClose = () => setAddShow(false);
+  const [description, setDescription] = useState(() => EditorState.createEmpty())
+  const handleEditClose = () => setEditShow(false)
+  const handleEditShow = () => setEditShow(true)
+  const handleAddShow = () => setAddShow(true)
+  const handleAddClose = () => setAddShow(false)
   const handleDeleteClose = () => setDeleteShow(false)
   const handleDeleteShow = () => setDeleteShow(true)
   const [newTemplate, setNewTemplate] = useState({
     title: '',
     html: '',
     dateCreated: '',
-  });
+  })
 
   // Calls 'addTemplate' function to create a new template in user's sub-collection
   const handleAddSubmit = e => {
@@ -169,6 +169,10 @@ function CustomTemplates() {
   
   // Calls 'GetTemplates' function to query usre's created templates
   let templates = GetTemplates()
+
+  // Calls 'GetTemplateNum' funciton to check the number of templates present
+  // returns true or false
+  let noTemps = GetTemplateNum();
 
   // Loads HTML for in-text editor inside Modal
   function loadHTML(htmlInput) {
@@ -338,9 +342,12 @@ function CustomTemplates() {
             </InputGroup>
           </div>
           <br/>
+          <Alert show={noTemps} style={{textAlign: 'center'}}>
+              No Templates
+          </Alert>
           <ul className="list-group" style={{padding: '0px 20px 20px 20px'}}>
             {templates.filter((val) => {
-              if (searchTerm === "") {return val} 
+              if (searchTerm === "") {return val}
               else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {return val}
               else if (val.dateCreated.includes(searchTerm)) {return val}})
               .map(val => (

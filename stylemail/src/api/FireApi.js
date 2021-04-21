@@ -45,6 +45,28 @@ export function GetTemplates() {
     }, [])
   return templates
 }
+// Gets the number of templates in a user's collection
+export function GetTemplateNum() {
+  const [tempNum, setTempNum] = useState(false)
+  useEffect(() => {
+    const userTemps = db.collection('users').doc(auth.currentUser.uid).collection('templates')
+    const unsub = userTemps.onSnapshot(snapshot => {
+        const allTemplates = snapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        if (allTemplates.length === 0) {
+          setTempNum(true)
+        } else {
+          setTempNum(false)
+        }
+      });
+    return () => {
+      unsub()
+    };
+  }, [])
+  return tempNum
+}
 // Adds a created template from authenticated user
 export function addTemplate(template, html, rawHTML) {
     db.collection('users').doc(auth.currentUser.uid).collection('templates')
