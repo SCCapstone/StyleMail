@@ -40,7 +40,7 @@ export default function Dashboard() {
             </div>
 
             <div className="btn">
-            <button className="btn-outline-dark dash-button" onClick={handleCT}>Create custom email templates using HTML and CSS</button>
+            <button className="btn-outline-dark dash-button" onClick={handleCT}>Create custom email templates using a fully-featured text editor</button>
             </div>
           </div>
         </Card.Body>       
