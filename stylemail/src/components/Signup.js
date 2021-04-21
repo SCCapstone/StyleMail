@@ -17,29 +17,22 @@ export default function Signup() {
   const [error, setError] = useState("")
   const history = useHistory()
   const regex =  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,20}$/;
+  const emailRegex = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
   
   // Verifies password strength, confirms password, then calls 'signup' with provided user values
   async function handleSubmit(e) {
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+    if (!emailRef.current.value.match(emailRegex)) {
+      return setError("Please enter a valid email")
+    } else if (passwordRef.current.value !== passwordConfirmRef.current.value) {
       return setError("Passwords do not match. Try again!")
     } else if (!passwordRef.current.value.match(regex)) {
-      setError('Your password must have 1 uppercase letter, 1 number, and be more than 7 characters')
+      return setError('Your password must have 1 uppercase letter, 1 number, and be more than 7 characters')
+    } else if (document.getElementById('agree').checked === false) {
+      return setError("Please agree to our ToS")
     }
-    checkSubmit()
     await signup(emailRef.current.value, passwordRef.current.value)
     history.push("/")
   }
-
-  // Checking if the user has accepted ToS
-  function checkSubmit() {
-    if (document.getElementById('agree').checked === false) {
-      alert("You didn't agree to the terms and privacy policy.");
-      return false;
-    } else {
-      return true;
-    }
-  }
-    
 
   // Handles Google signin
   async function handleGoogle(e) {
@@ -59,9 +52,9 @@ export default function Signup() {
           <Form onSubmit={handleSubmit}>
             <input type="text" id="login" className="fadeIn second auth-input-text" placeholder="Email" ref={emailRef} required ></input>
             <input type="password" id="password" className="fadeIn third auth-input-password" placeholder="Password" ref={passwordRef} required ></input>
-            <input type="password" id="password" className="fadeIn third auth-input-password" placeholder="Confirm Password" ref={passwordConfirmRef} required ></input> <br></br>
-            <input type="checkbox" name="checkbox" value="check" id="agree" className="fadeIn fourth"  required ></input>
-            <label for="agree" className="fadeIn fouth"> I have read and agree to the <a href="https://stylemail.app/terms" target="_blank" rel="noreferrer">Terms</a> and <a href="https://stylemail.app/privacy" target="_blank" rel="noreferrer">Privacy Policy.</a> <br></br></label>
+            <input type="password" id="confirmpassword" className="fadeIn third auth-input-password" placeholder="Confirm Password" ref={passwordConfirmRef} required ></input> <br></br>
+            <input type="checkbox" name="checkbox" value="check" id="agree" className="fadeIn fourth" placeholder="test"  required ></input>
+            <label for="agree" className="fadeIn fouth">I have read and agree to the <a href="https://stylemail.app/terms" target="_blank" rel="noreferrer">Terms</a> and <a href="https://stylemail.app/privacy" target="_blank" rel="noreferrer">Privacy Policy</a>. <br></br></label>
             <input type="button" onClick={handleSubmit} className="fadeIn fourth auth-input-btn auth-input-submit" id="bottomSU" value="Sign Up"></input>
           </Form>
           <div className="or-container fadeIn fourth">
