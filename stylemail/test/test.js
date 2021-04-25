@@ -4,8 +4,8 @@ const fs = require("fs");
 // Variables
 const MY_PROJECT_ID = "stylemail-edf5f"
 const myId = "something";
-const theirId = "some";
-const myEmail = "test@stylemail.com"
+//const theirId = "some";
+//const myEmail = "test@stylemail.com"
 const myAuth = {uid:myId};
 
 function getFirestore(auth) {
