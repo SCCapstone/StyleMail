@@ -15,7 +15,7 @@ function getFirestore(auth) {
     const rules = fs.readFileSync("../firestore.rules", "utf8");
     firebase.loadFirestoreRules({ projectId: MY_PROJECT_ID, rules });
 
-// Basic functionality Unit tests
+// Unit tests
 describe("StyleMail App Basic Functions", () => {
     
     it("A test to test the tests", () => {
