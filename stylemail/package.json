@@ -16,7 +16,7 @@
     "draft-js-export-html": "^1.4.1",
     "draftjs-to-html": "^0.9.1",
     "firebase": "^8.0.2",
-    "firebase-tools": "^9.7.0",
+    "firebase-tools": "^9.10.0",
     "mailgun-js": "^0.22.0",
     "mdreact": "^0.1.5",
     "react": "^17.0.1",
