@@ -34,6 +34,11 @@ class Help extends React.Component {
                     make your own customers, friends, family, or businesses more effective. We are satisfied through helping you reach your own! If you are interested in becoming a sponsor, 
                     please feel free to <Link style={{color:'#ba588f' }} to="/contact" target="_blank">contact us</Link>.
                 </p>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
             </div>
         
             <Footer/>

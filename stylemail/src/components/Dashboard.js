@@ -42,6 +42,15 @@ export default function Dashboard() {
             <div className="btn">
             <button className="btn-outline-dark dash-button" onClick={handleCT}>Create custom templates using a fully-featured text editor</button>
             </div>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
           </div>
         </Card.Body>       
        </Card>

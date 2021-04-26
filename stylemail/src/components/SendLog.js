@@ -31,6 +31,25 @@ const SendLogs = () => {
                   ))}
                 </ul>
                 <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                
               </div>  
             </div>
           <Footer/>

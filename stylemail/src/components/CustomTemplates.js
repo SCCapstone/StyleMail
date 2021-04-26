@@ -340,11 +340,12 @@ function CustomTemplates() {
                 <Button type="button" variant="outline-primary" onClick={() => {handleAddShow()}}>Add Template</Button>
               </InputGroup.Append>
             </InputGroup>
-          </div>
-          <br/>
-          <Alert show={noTemps} style={{textAlign: 'center'}}>
+            <Alert show={noTemps} style={{textAlign: 'center'}}>
               No Templates
           </Alert>
+          </div>
+          <br></br>
+          <br></br>
           <ul className="list-group" style={{padding: '0px 20px 20px 20px'}}>
             {templates.filter((val) => {
               if (searchTerm === "") {return val}
@@ -473,6 +474,22 @@ function CustomTemplates() {
               </Modal.Body>
             </Modal>
           </div>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
         </div>
       <Footer/>
     </div>

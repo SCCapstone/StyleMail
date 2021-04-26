@@ -107,10 +107,23 @@ export default function Settings() {
             <Button className="w-50 disabled" disabled={disableBtn} type="submit">
               Update
             </Button>
+          <br></br>
+          <br></br>
+          <br></br>
           </div>
         </Form>
       </Card.Body>
+      <br></br>
+    <br></br>
+    <br></br> 
+    <br></br>
+    <br></br>
+    <br></br> 
+    <br></br>
+    <br></br>
+    <br></br>
     </Card>
+   
     <Footer/>
     </>
   )
