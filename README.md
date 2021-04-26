@@ -66,10 +66,9 @@ Mocha: https://mochajs.org/ - The tests check if an authenticated user is able t
 To run the tests, you must install Mocha. You can install Mocha globally by using the command: $ npm install --global mocha  
 
 Behavioral Test  
-WebDriverIO: https://webdriver.io/ - The test nagivates to the login page, uses test login credentials to login as if it were a user, and then verifies that it has been successfully directed to the template list page after logging in.  
+Selinium: https://www.selenium.dev/ 
+See below for details on how to run the tests. 
 
-To run the tests, you must install WebDriverIO. You can install the WebDriverIO CLI by using the command: $ npm i --save-dev @wdio/cli  
-Google Chrome: https://www.google.com/chrome/ is required for this test to run properly!
 
 ## Running Tests
 
@@ -78,17 +77,19 @@ How to run unit test:
 * After the dependencies finish installing, run the command "npm test" (to run the test)  
 
 How to run behavioral test:  
-* You must setup the configuration file for the test runner. To do this, open a new terminal window (don't cd into anything) and run the command "npx wdio config -y"  
-* The previous command creates a directory C:\Users\<USERNAME>\test\specs (with your username of course). You must copy and paste the file StyleMail/stylemail/test/specs/TestLogin.js from our repo into that directory  
-* After copying and pasting the file, open a new terminal window (don't cd into anything) and run the command "npx wdio wdio.conf.js"  
-* The test will open a new Google Chrome window, run, and then exit the window upon completion.  
+1. Ensure you have the latest Java SDK: https://www.oracle.com/java/technologies/javase-jdk16-downloads.html
+2. Ensure you have the latest version of google chrome: https://www.google.com/chrome/update/
+3. Ensure you have the latest version of the google chrome web driver: https://chromedriver.chromium.org/downloads
+4. After this, simply double click on the jar files located in StyleMail/stylemail/test/BehaviorTests/ or run "java -jar **filename.jar** " in the respective directory
+5. Selinium will then open the respective test in a new chrome window 
 
 
 ## Test Locations 
 
 Unit Tests can be found in StyleMail/stylemail/test/test.js  
 
-Behavioral tests can be found in StyleMail/stylemail/test/specs/  
+Behavioral tests (runable Jar files) can be found in StyleMail/stylemail/test/BehaviorTests/ 
+Behavioral tests src files can be found in StyleMail/stylemail/test/BehaviorTestFiles
 
 
 # Authors
