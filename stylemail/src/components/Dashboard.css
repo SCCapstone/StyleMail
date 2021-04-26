@@ -5,18 +5,16 @@
 #root {
   background: radial-gradient(circle, rgba(186,88,143,1) 28%, rgba(65,40,160,1) 100%);
 }
-
+/*
 body {
   height: 100%;
-  line-height: 1.8;
-  position: absolute;
   top:0; 
   bottom:0; 
   right:0; 
   left:0;
   background: #382492;
 }
-
+*/
 /*styling for the buttons*/
 #options {
   display: flex;
