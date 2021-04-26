@@ -9,9 +9,21 @@ class Contact extends React.Component {
         <NavBar/>
           <div className="contact-text-div">
             <h1 className="text-center contact-title">Spill the Beans... </h1>
+            <br/>
             <h2 className="text-center contact-sub-text">We want to hear from you! How can we serve you better? </h2>
+            <br/>
 
             <form id="contact-form" action="https://formspree.io/f/xnqobnbp" method="POST">
+                <div class="form-row">
+                  <div class="form-group col-md-7">
+                    <label for="email">Name</label>
+                    <input type="text" class="form-control" name="email" id="name" placeholder="Name" required/>
+                  </div>
+                  <div class="form-group col-md-5">
+                    <label for="subject">Phone Number</label>
+                    <input type="tel" class="form-control" name="pnumber" id="pnumber" placeholder="012-345-6789"/>
+                  </div>
+                </div>
                 <div class="form-row">
                   <div class="form-group col">
                     <label for="email">Email</label>
@@ -37,14 +49,6 @@ class Contact extends React.Component {
                 </div>
               </form>
           </div>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
         <Footer/>
       </div>
     );

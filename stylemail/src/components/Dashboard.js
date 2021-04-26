@@ -27,29 +27,22 @@ export default function Dashboard() {
           <div style={{textAlign:"center"}}>
             <img alt="StyleMail Logo" className="mobile-img" src={Logo} width="40%"/>
           </div>
-          
+          <br/>
           <div>
           <h1 className="mobile-size-h1 text-center" id="center">Welcome back to StyleMail, {currentUser.email}!</h1>
           <h3 className="mobile-size-h3 text-center">What would you like to do?</h3>
             <br></br>
           </div>
+          <br/>
           <div className="options">
             <div className="btn">
             <button className="btn-outline-dark dash-button" onClick={handleST}>Send emails using ready-to-go sample templates (Recommended)</button>
             <br></br>
             </div>
-
+            <br/>
             <div className="btn">
             <button className="btn-outline-dark dash-button" onClick={handleCT}>Create custom templates using a fully-featured text editor</button>
             </div>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
             <br></br>
           </div>
         </Card.Body>       

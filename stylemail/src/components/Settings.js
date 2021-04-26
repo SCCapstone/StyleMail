@@ -74,6 +74,7 @@ export default function Settings() {
       <Card.Body>
         <h2 className="text-center mb-4">Settings</h2>
         {error && <Alert style={{textAlign: 'center'}} variant="danger">{error}</Alert>}
+        <br/>
         <Form onSubmit={handleSubmit}>
           <Form.Group id="email">
             <Form.Label>Email</Form.Label>
@@ -104,6 +105,7 @@ export default function Settings() {
             />
           </Form.Group>
           <div style={{textAlign: 'center'}} >
+          <br/>
             <Button className="w-50 disabled" disabled={disableBtn} type="submit">
               Update
             </Button>
@@ -116,11 +118,6 @@ export default function Settings() {
       <br></br>
     <br></br>
     <br></br> 
-    <br></br>
-    <br></br>
-    <br></br> 
-    <br></br>
-    <br></br>
     <br></br>
     </Card>
    
