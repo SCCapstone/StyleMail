@@ -3,23 +3,30 @@ const firebase = require('@firebase/rules-unit-testing');
 const fs = require("fs");
 // Variables
 const MY_PROJECT_ID = "stylemail-edf5f"
-const myId = "something";
-//const theirId = "some";
-//const myEmail = "test@stylemail.com"
+const myId = "JKFDA25648F1F5D9S2";
 const myAuth = {uid:myId};
 
+// Creates a firestore instance that is authenticated
 function getFirestore(auth) {
-    return firebase.initializeTestApp({projectId: MY_PROJECT_ID, auth: auth}).firestore();
+    return firebase.initializeTestApp({projectId: MY_PROJECT_ID, 
+        auth: {uid: auth, email: 'test@stylemail.com'}}).firestore();
 }
 
-    const rules = fs.readFileSync("../firestore.rules", "utf8");
-    firebase.loadFirestoreRules({ projectId: MY_PROJECT_ID, rules });
+// Gets the firebase rules for tests to test
+const rules = fs.readFileSync("../firestore.rules", "utf8");
+firebase.loadFirestoreRules({ projectId: MY_PROJECT_ID, rules });
 
 // Unit tests
 describe("StyleMail App Basic Functions", () => {
     
     it("A test to test the tests", () => {
         assert.equal(5*2, 10)
+    })
+    it('Can a non-authed user create an account', async(done) => {
+        const db = firebase.initializeTestApp({projectId: MY_PROJECT_ID}).firestore();
+        const testDoc = db.collection("users");
+        await firebase.assertFails(testDoc
+            .add({email: 'new@stylemail.com', provider: 'firebase'}).then(done()));
     })
     it("Can a new user create an account", async(done) => {
         const db = getFirestore(myAuth)
