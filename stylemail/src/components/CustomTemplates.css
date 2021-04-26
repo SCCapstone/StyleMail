@@ -1,16 +1,7 @@
 /*
  * TemplateList CSS
  */
-root{
-  display: flex;
-}
- body{
-  margin:0px 10px 90px 10px;
-  line-height: 200px;
-  height: 200px;
-  text-align: center;
-  flex: content;
-}
+
 
 /*.DraftEditor-root {
   margin: 0px 4px 0px 4px
