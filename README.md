@@ -73,8 +73,8 @@ See below for details on how to run the tests.
 ## Running Tests
 
 How to run unit test:
-* cd to StyleMail/stylemail/test and run the command "npm install" (to install dependencies required for the test)
-* After the dependencies finish installing, run the command "npm test" (to run the test)  
+* cd to StyleMail/stylemail/test and run the command "npm install" (to install dependencies required for the tests)
+* After the dependencies finish installing, run the command "npm test" (to run the unit tests)  
 
 How to run behavioral test:  
 1. Ensure you have the latest Java SDK: https://www.oracle.com/java/technologies/javase-jdk16-downloads.html
